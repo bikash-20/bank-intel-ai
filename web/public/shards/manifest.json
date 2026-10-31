@@ -10,8 +10,9 @@
       "faculty": "BIBM",
       "questionCount": 87,
       "fileName": "bb-ad-2026.json",
-      "versionHash": "4bd56c599137dc61",
-      "updatedAt": "2026-10-31T22:22:19.331Z"
+      "versionHash": "0490c5b22f9c99c1",
+      "updatedAt": "2026-10-31T22:22:19.331Z",
+      "sizeBytes": 49558
     },
     {
       "id": "bb-so-it-2026",
@@ -23,7 +24,8 @@
       "questionCount": 15,
       "fileName": "bb-so-it-2026.json",
       "versionHash": "f5cc08a6b9a7072a",
-      "updatedAt": "2026-10-31T22:22:19.333Z"
+      "updatedAt": "2026-10-31T22:22:19.333Z",
+      "sizeBytes": 9063
     },
     {
       "id": "bb-cash-2023",
@@ -35,7 +37,9 @@
       "questionCount": 58,
       "fileName": "bb-cash-2023.json",
       "versionHash": "9a5d2f59ccb2a04c",
-      "updatedAt": "2026-10-31T22:22:19.333Z"
+      "updatedAt": "2026-10-31T22:22:19.333Z",
+      "sizeBytes": 30755
     }
-  ]
+  ],
+  "generatedAt": "2026-10-31T23:27:09.248Z"
 }

@@ -44,7 +44,6 @@ export interface QuestionItem {
   options: Record<OptionKey, string>;
   correctOption: OptionKey;
   appearances: ExamAppearance[];
-  staticExplanation?: AIExplanationPayload; // Populated if pre-baked
 }
 
 export interface ShardManifestItem {

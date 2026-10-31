@@ -26,7 +26,6 @@ interface AIExplainSectionProps {
   correctOption: OptionKey;
   selectedOption: OptionKey | null; // null if unanswered, 'A'|'B'|'C'|'D' if answered
   workerUrl?: string;
-  initialExplanation?: AIExplanationPayload;
 }
 
 // L1 In-Memory Client Cache for 0ms repeat toggles & prefetch deduplication
@@ -43,7 +42,6 @@ export function AIExplainSection({
   selectedOption,
   workerUrl = process.env.NEXT_PUBLIC_WORKER_URL ||
     'https://bank-intel-worker.talukderbikash500.workers.dev',
-  initialExplanation,
 }: AIExplainSectionProps) {
   const { t, locale } = useI18n();
   const isBn = locale === 'bn';
@@ -51,7 +49,6 @@ export function AIExplainSection({
   const [isOpen, setIsOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const [explanation, setExplanation] = useState<AIExplanationPayload | null>(() => {
-    if (initialExplanation) return initialExplanation;
     return clientExplanationCache.get(questionId) ?? null;
   });
   const [error, setError] = useState<string | null>(null);
@@ -60,43 +57,51 @@ export function AIExplainSection({
   useEffect(() => {
     setIsOpen(false);
     setError(null);
-    if (initialExplanation) {
-      clientExplanationCache.set(questionId, initialExplanation);
-      setExplanation(initialExplanation);
-    } else {
-      const cached = clientExplanationCache.get(questionId) ?? null;
-      setExplanation(cached);
-      // Check IndexedDB if not in memory
-      if (!cached) {
-        getExplanationFromIDB(questionId)
-          .then((idbHit) => {
-            if (idbHit) {
-              clientExplanationCache.set(questionId, idbHit);
-              setExplanation(idbHit);
-            }
-          })
-          .catch(() => {});
-      }
+    const cached = clientExplanationCache.get(questionId) ?? null;
+    setExplanation(cached);
+
+    // If not in L1 memory, check IndexedDB (filtering out any old deterministic fallbacks)
+    if (!cached) {
+      getExplanationFromIDB(questionId)
+        .then((idbHit) => {
+          if (
+            idbHit &&
+            !idbHit.generatedBy?.includes('deterministic') &&
+            !idbHit.generatedBy?.includes('static')
+          ) {
+            clientExplanationCache.set(questionId, idbHit);
+            setExplanation(idbHit);
+          }
+        })
+        .catch(() => {});
     }
-  }, [questionId, initialExplanation]);
+  }, [questionId]);
 
   const fetchExplanation = useCallback(async (): Promise<AIExplanationPayload | null> => {
-    // 1. Check L1 Memory Cache
+    // 1. Check L1 Memory Cache (validate real AI generation)
     const memCached = clientExplanationCache.get(questionId);
-    if (memCached) {
+    if (
+      memCached &&
+      !memCached.generatedBy?.includes('deterministic') &&
+      !memCached.generatedBy?.includes('static')
+    ) {
       setExplanation(memCached);
       return memCached;
     }
 
-    // 2. Check L2 IndexedDB
+    // 2. Check L2 IndexedDB (validate real AI generation)
     try {
       const idbHit = await getExplanationFromIDB(questionId);
-      if (idbHit) {
+      if (
+        idbHit &&
+        !idbHit.generatedBy?.includes('deterministic') &&
+        !idbHit.generatedBy?.includes('static')
+      ) {
         clientExplanationCache.set(questionId, idbHit);
         setExplanation(idbHit);
         return idbHit;
       }
-    } catch (e) {
+    } catch {
       // Ignore IDB errors
     }
 
@@ -390,9 +395,11 @@ export function AIExplainSection({
 
               {/* Model Telemetry Footer */}
               <div className="flex items-center justify-between border-t border-white/10 pt-2.5 font-mono text-[11px] text-slate-400">
-                <span>Engine: {explanation.generatedBy.replace('@cf/meta/', '')}</span>
-                <span className="text-emerald-400/90 font-semibold">
-                  {isBn ? '✓ এজ ক্যাশ সংরক্ষিত' : '✓ Edge Cached'}
+                <span className="text-indigo-300 font-medium">
+                  AI Model: {explanation.generatedBy.replace('@cf/meta/', '').replace('@cf/mistralai/', '').replace('workers-ai:', '')}
+                </span>
+                <span className="text-emerald-400 font-semibold">
+                  {isBn ? '✓ লাইভ এজ এআই' : '✓ Live Edge AI'}
                 </span>
               </div>
             </>

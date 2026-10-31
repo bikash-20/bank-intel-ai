@@ -206,7 +206,6 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
         options={question.options}
         correctOption={question.correctOption}
         selectedOption={selectedOption}
-        initialExplanation={question.staticExplanation}
       />
 
       {/* Bottom Action Footer */}
