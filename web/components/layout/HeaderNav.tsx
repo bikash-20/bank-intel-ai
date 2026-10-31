@@ -17,8 +17,8 @@ export const HeaderNav: React.FC = () => {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-3 sm:px-6 h-16">
         {/* Brand Logo */}
         <Link href="/" className="flex items-center gap-2.5 sm:gap-3 group">
-          <div className="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-xl bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 group-hover:scale-105 transition-transform shadow-[0_0_12px_rgba(99,102,241,0.2)]">
-            <ShieldCheck className="h-5 w-5 sm:h-6 sm:w-6" />
+          <div className="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-xl bg-[#F3FBF6] border border-emerald-500/40 p-1 group-hover:scale-105 transition-transform shadow-[0_0_14px_rgba(16,185,129,0.25)] overflow-hidden shrink-0">
+            <img src="/bankintel-pwa.svg" alt="BankIntel Icon" className="h-full w-full object-contain" />
           </div>
           <div className="flex flex-col">
             <span

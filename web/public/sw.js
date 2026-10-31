@@ -1,8 +1,10 @@
-const CACHE_NAME = 'bank-intel-v1';
+const CACHE_NAME = 'bank-intel-v2';
 const PRECACHE_ASSETS = [
   '/',
   '/manifest.json',
-  '/icon.svg',
+  '/bankintel-pwa.svg',
+  '/pwa-192x192.png',
+  '/pwa-512x512.png',
   '/shards/manifest.json',
 ];
 

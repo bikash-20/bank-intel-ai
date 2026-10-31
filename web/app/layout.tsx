@@ -4,6 +4,7 @@ import './globals.css';
 import { I18nProvider } from '../lib/i18n/context';
 import { HeaderNav } from '../components/layout/HeaderNav';
 import { MobileBottomNav } from '../components/layout/MobileBottomNav';
+import { PWAInstallBanner } from '../components/pwa/PWAInstallBanner';
 
 const sansFont = Plus_Jakarta_Sans({
   subsets: ['latin'],
@@ -36,13 +37,29 @@ export const metadata: Metadata = {
   description:
     'Ultra-fast, mobile-first offline PWA with -0.25 negative marking engine and on-demand Per-Option AI distractor explanations in English & Bengali.',
   manifest: '/manifest.json',
+  icons: {
+    icon: [
+      { url: '/bankintel-pwa.svg', type: 'image/svg+xml' },
+      { url: '/pwa-192x192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/pwa-512x512.png', sizes: '512x512', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/pwa-192x192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/pwa-512x512.png', sizes: '512x512', type: 'image/png' },
+    ],
+  },
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'black-translucent',
+    title: 'BankIntel',
+  },
 };
 
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
-  themeColor: '#050608',
+  themeColor: '#075B3B',
 };
 
 export default function RootLayout({
@@ -72,6 +89,9 @@ export default function RootLayout({
 
           {/* Mobile Bottom Navigation Bar */}
           <MobileBottomNav />
+
+          {/* PWA Install Banner */}
+          <PWAInstallBanner />
 
           {/* PWA Service Worker Registration */}
           <script

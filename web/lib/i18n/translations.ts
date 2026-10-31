@@ -93,6 +93,13 @@ export interface Translations {
     item: string;
     emptySelection: string;
   };
+  install: {
+    bannerTitle: string;
+    bannerDesc: string;
+    installBtn: string;
+    iosTip: string;
+    dismiss: string;
+  };
 }
 
 export const TRANSLATIONS: Record<Locale, Translations> = {
@@ -192,6 +199,13 @@ export const TRANSLATIONS: Record<Locale, Translations> = {
       item: 'Question',
       emptySelection: 'Select a question from the revision queue to drill.',
     },
+    install: {
+      bannerTitle: 'Install BankIntel App',
+      bannerDesc: 'Add to Home Screen for 100% offline practice, full-screen exam mode, and zero-latency AI.',
+      installBtn: 'Install App',
+      iosTip: 'Tap the Share icon below, then select "Add to Home Screen".',
+      dismiss: 'Later',
+    },
   },
   bn: {
     appName: 'ব্যাংক-ইনটেল',
@@ -288,6 +302,13 @@ export const TRANSLATIONS: Record<Locale, Translations> = {
       queueTitle: 'রিভিশন তালিকা',
       item: 'প্রশ্ন',
       emptySelection: 'অনুশীলন করতে ডানপাশের তালিকা থেকে একটি প্রশ্ন নির্বাচন করুন।',
+    },
+    install: {
+      bannerTitle: 'ব্যাংক-ইনটেল অ্যাপ ইনস্টল করুন',
+      bannerDesc: 'সম্পূর্ণ অফলাইন প্রস্তুতি, ফুল-স্ক্রিন পরীক্ষার সুবিধা এবং দ্রুত অ্যাক্সেসের জন্য অ্যাপটি ফোনে যুক্ত করুন।',
+      installBtn: 'ইনস্টল করুন',
+      iosTip: 'নিচের Share আইকনে চাপুন এবং "Add to Home Screen" নির্বাচন করুন।',
+      dismiss: 'পরে',
     },
   },
 };
