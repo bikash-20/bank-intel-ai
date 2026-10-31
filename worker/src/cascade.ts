@@ -1,4 +1,3 @@
-import { SYSTEM_PROMPT, buildUserPrompt } from './prompts.js';
 import type {
   AIExplanationPayload,
   Env,
@@ -6,70 +5,115 @@ import type {
   OptionKey,
 } from './types.js';
 
-interface RawOptionDiagnostic {
-  status: 'CORRECT' | 'TRAP_DISTRACTOR';
-  verdict: string;
+// 3 Cloudflare Workers AI Models (Primary -> Secondary -> Fast Fallback)
+const WORKERS_AI_MODELS = [
+  '@cf/meta/llama-3.3-70b-instruct-fp8-fast',      // Tier 1: Flagship 70B FP8 Fast
+  '@cf/mistralai/mistral-small-3.1-24b-instruct',  // Tier 2: Strong 24B Math & Reasoning
+  '@cf/meta/llama-3.1-8b-instruct-fast',           // Tier 3: Ultra-low-latency 8B Fallback
+] as const;
+
+// OpenRouter Free Fallback Models (Zero-Cost Background Fallback)
+const OPENROUTER_FREE_MODELS = [
+  'openrouter/free',                               // Auto-selects healthy free model supporting JSON
+  'meta-llama/llama-3.3-70b-instruct:free',
+  'deepseek/deepseek-r1:free',
+  'qwen/qwen-2.5-72b-instruct:free',
+] as const;
+
+const SYSTEM_PROMPT = `You are an elite Bangladesh Bank Exam Faculty (IBA/BIBM standard).
+Analyze the English MCQ and return ONLY a raw, valid JSON object (no markdown fences, no extra prose) matching this exact structure:
+{
+  "coreConcept": "1-sentence fundamental formula or grammar/GK rule.",
+  "examHallShortcut": "How to solve or eliminate options in under 30 seconds in the exam hall.",
+  "stepByStep": "Clear, concise step-by-step derivation showing why the correct answer is right.",
+  "optionDiagnostics": {
+    "A": { "status": "CORRECT or TRAP_DISTRACTOR", "verdict": "Why option A is right or what calculation/cognitive trap makes it wrong." },
+    "B": { "status": "CORRECT or TRAP_DISTRACTOR", "verdict": "Why option B is right or what trap makes it wrong." },
+    "C": { "status": "CORRECT or TRAP_DISTRACTOR", "verdict": "Why option C is right or what trap makes it wrong." },
+    "D": { "status": "CORRECT or TRAP_DISTRACTOR", "verdict": "Why option D is right or what trap makes it wrong." }
+  }
+}
+Rules:
+1. Wrap any math equations in single dollar signs ($...$) for KaTeX.
+2. Keep explanations crisp, accurate, and in clear English.`;
+
+function buildUserPrompt(req: ExplainApiRequest): string {
+  return `Question: ${req.stem}
+Options:
+A) ${req.options.A}
+B) ${req.options.B}
+C) ${req.options.C}
+D) ${req.options.D}
+Official Correct Answer: ${req.correctOption}
+
+Return the JSON analysis now:`;
 }
 
-interface RawExplanationResponse {
-  coreConcept: string;
-  examHallShortcut: string;
-  stepByStep: string;
-  optionDiagnostics: Record<OptionKey, RawOptionDiagnostic>;
-}
-
-export function parseAndValidateAIResponse(
+function extractAndValidateJson(
   rawText: string,
   req: ExplainApiRequest,
   modelName: string
-): AIExplanationPayload | null {
-  try {
-    let clean = rawText.trim();
-    // Strip markdown code fences if present
-    if (clean.startsWith('```')) {
-      clean = clean.replace(/^```(?:json)?\s*/i, '').replace(/```\s*$/, '').trim();
-    }
+): AIExplanationPayload {
+  // Strip markdown code fences if present
+  const cleaned = rawText
+    .replace(/```json\s*/gi, '')
+    .replace(/```\s*/g, '')
+    .trim();
 
-    const firstBrace = clean.indexOf('{');
-    const lastBrace = clean.lastIndexOf('}');
-    if (firstBrace !== -1 && lastBrace !== -1) {
-      clean = clean.slice(firstBrace, lastBrace + 1);
-    }
+  const startIdx = cleaned.indexOf('{');
+  const endIdx = cleaned.lastIndexOf('}');
+  if (startIdx === -1 || endIdx === -1 || endIdx <= startIdx) {
+    throw new Error(`Invalid JSON boundaries from ${modelName}`);
+  }
 
-    const parsed = JSON.parse(clean) as RawExplanationResponse;
+  const parsed = JSON.parse(cleaned.slice(startIdx, endIdx + 1));
 
-    if (!parsed.coreConcept || !parsed.examHallShortcut || !parsed.optionDiagnostics) {
-      return null;
-    }
+  if (!parsed.coreConcept || !parsed.examHallShortcut || !parsed.optionDiagnostics) {
+    throw new Error(`Missing required schema fields from ${modelName}`);
+  }
 
-    const optionKeys: OptionKey[] = ['A', 'B', 'C', 'D'];
-    const diagnostics: Record<OptionKey, { status: 'CORRECT' | 'TRAP_DISTRACTOR'; verdict: string }> = {} as any;
+  const keys: OptionKey[] = ['A', 'B', 'C', 'D'];
+  const optionDiagnostics: Record<OptionKey, { status: 'CORRECT' | 'TRAP_DISTRACTOR'; verdict: string }> = {} as any;
 
-    for (const key of optionKeys) {
-      const diag = parsed.optionDiagnostics[key];
-      const isCorrect = key === req.correctOption;
-      diagnostics[key] = {
+  for (const k of keys) {
+    const diag = parsed.optionDiagnostics[k];
+    const isCorrect = k === req.correctOption;
+
+    if (!diag?.verdict) {
+      optionDiagnostics[k] = {
         status: isCorrect ? 'CORRECT' : 'TRAP_DISTRACTOR',
-        verdict:
-          diag?.verdict ||
-          (isCorrect
-            ? `Matches the official answer key: ${req.options[key]}`
-            : `Plausible distractor trap for ${req.options[key]}`),
+        verdict: isCorrect
+          ? `Matches the derived solution: ${req.options[k]}.`
+          : `Does not satisfy the conditions in the question stem (${req.options[k]}).`,
+      };
+    } else {
+      optionDiagnostics[k] = {
+        status: isCorrect ? 'CORRECT' : 'TRAP_DISTRACTOR',
+        verdict: String(diag.verdict),
       };
     }
+  }
 
-    return {
-      questionId: req.questionId,
-      coreConcept: parsed.coreConcept,
-      examHallShortcut: parsed.examHallShortcut,
-      stepByStep: parsed.stepByStep || 'Step-by-step derivation aligned with IBA/BIBM standard.',
-      optionDiagnostics: diagnostics,
-      generatedBy: modelName,
-      cachedAt: Date.now(),
-    };
-  } catch (err: any) {
-    console.error(`Failed to parse AI output from ${modelName}:`, err?.message);
-    return null;
+  return {
+    questionId: req.questionId,
+    coreConcept: String(parsed.coreConcept),
+    examHallShortcut: String(parsed.examHallShortcut),
+    stepByStep: String(parsed.stepByStep || parsed.examHallShortcut),
+    optionDiagnostics,
+    generatedBy: modelName,
+    cachedAt: Date.now(),
+  };
+}
+
+async function withTimeout<T>(promise: Promise<T>, ms: number, label: string): Promise<T> {
+  let timer: ReturnType<typeof setTimeout>;
+  const timeoutPromise = new Promise<never>((_, reject) => {
+    timer = setTimeout(() => reject(new Error(`Timeout after ${ms}ms in ${label}`)), ms);
+  });
+  try {
+    return await Promise.race([promise, timeoutPromise]);
+  } finally {
+    clearTimeout(timer!);
   }
 }
 
@@ -78,114 +122,91 @@ export async function executeAICascade(
   env: Env
 ): Promise<AIExplanationPayload> {
   const userPrompt = buildUserPrompt(req);
+  const errors: string[] = [];
 
-  // --- Tier 1: Cloudflare Workers AI - Llama 3.3 70B ---
-  try {
-    if (env.AI) {
-      const model = '@cf/meta/llama-3.3-70b-instruct-fp8-fast';
-      const aiResponse: any = await env.AI.run(model, {
-        messages: [
-          { role: 'system', content: SYSTEM_PROMPT },
-          { role: 'user', content: userPrompt },
-        ],
-        temperature: 0.1,
-        max_tokens: 1024,
-      });
+  // =========================================================================
+  // STAGE 1: 3x Cloudflare Workers AI Binding Cascade (Primary Edge Inference)
+  // =========================================================================
+  if (env.AI) {
+    for (const model of WORKERS_AI_MODELS) {
+      try {
+        const aiResult: any = await withTimeout(
+          env.AI.run(model as any, {
+            messages: [
+              { role: 'system', content: SYSTEM_PROMPT },
+              { role: 'user', content: userPrompt },
+            ],
+            temperature: 0.15,
+            max_tokens: 900,
+          }),
+          9500,
+          model
+        );
 
-      const responseText = aiResponse?.response || aiResponse?.text || '';
-      const payload = parseAndValidateAIResponse(responseText, req, model);
-      if (payload) return payload;
+        const rawResponse =
+          typeof aiResult?.response === 'string'
+            ? aiResult.response
+            : aiResult?.choices?.[0]?.message?.content ??
+              (typeof aiResult?.text === 'string' ? aiResult.text : JSON.stringify(aiResult));
+
+        if (rawResponse) {
+          const payload = extractAndValidateJson(rawResponse, req, `workers-ai:${model}`);
+          return payload;
+        }
+      } catch (err: any) {
+        errors.push(`[${model}]: ${err?.message || String(err)}`);
+        // Continue immediately to the next Workers AI model in the cascade
+      }
     }
-  } catch (e: any) {
-    console.warn('Tier 1 (@cf/meta/llama-3.3-70b) failed:', e?.message);
   }
 
-  // --- Tier 2: Cloudflare Workers AI - Llama 3.1 8B Fast ---
-  try {
-    if (env.AI) {
-      const model = '@cf/meta/llama-3.1-8b-instruct-fast';
-      const aiResponse: any = await env.AI.run(model, {
-        messages: [
-          { role: 'system', content: SYSTEM_PROMPT },
-          { role: 'user', content: userPrompt },
-        ],
-        temperature: 0.1,
-        max_tokens: 1024,
-      });
-
-      const responseText = aiResponse?.response || aiResponse?.text || '';
-      const payload = parseAndValidateAIResponse(responseText, req, model);
-      if (payload) return payload;
-    }
-  } catch (e: any) {
-    console.warn('Tier 2 (@cf/meta/llama-3.1-8b) failed:', e?.message);
-  }
-
-  // --- Tier 3: OpenRouter Free Fallback ---
+  // =========================================================================
+  // STAGE 2: OpenRouter Free Models Fallback (Background Zero-Cost Fallback)
+  // =========================================================================
   if (env.OPENROUTER_API_KEY) {
-    try {
-      const model = 'meta-llama/llama-3.3-70b-instruct:free';
-      const res = await fetch('https://openrouter.ai/api/v1/chat/completions', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${env.OPENROUTER_API_KEY}`,
-          'HTTP-Referer': 'https://bank-intel.workers.dev',
-          'X-Title': 'Bank Intel PWA',
-        },
-        body: JSON.stringify({
-          model,
-          messages: [
-            { role: 'system', content: SYSTEM_PROMPT },
-            { role: 'user', content: userPrompt },
-          ],
-          temperature: 0.1,
-        }),
-      });
+    for (const freeModel of OPENROUTER_FREE_MODELS) {
+      try {
+        const res = await withTimeout(
+          fetch('https://openrouter.ai/api/v1/chat/completions', {
+            method: 'POST',
+            headers: {
+              Authorization: `Bearer ${env.OPENROUTER_API_KEY}`,
+              'Content-Type': 'application/json',
+              'HTTP-Referer': 'https://bank-intel-pwa.vercel.app',
+              'X-Title': 'BankIntel PWA',
+            },
+            body: JSON.stringify({
+              model: freeModel,
+              messages: [
+                { role: 'system', content: SYSTEM_PROMPT },
+                { role: 'user', content: userPrompt },
+              ],
+              temperature: 0.15,
+              max_tokens: 900,
+            }),
+          }),
+          12000,
+          `openrouter:${freeModel}`
+        );
 
-      if (res.ok) {
-        const json: any = await res.json();
-        const content = json.choices?.[0]?.message?.content || '';
-        const payload = parseAndValidateAIResponse(content, req, model);
-        if (payload) return payload;
+        if (res.ok) {
+          const data: any = await res.json();
+          const content = data?.choices?.[0]?.message?.content;
+          if (content) {
+            const usedModel = data?.model || freeModel;
+            return extractAndValidateJson(content, req, `openrouter-free:${usedModel}`);
+          }
+        }
+      } catch (err: any) {
+        errors.push(`[openrouter:${freeModel}]: ${err?.message || String(err)}`);
       }
-    } catch (e: any) {
-      console.warn('Tier 3 OpenRouter Free failed:', e?.message);
-    }
-
-    // --- Tier 4: OpenRouter Paid Fallback (gpt-4o-mini) ---
-    try {
-      const model = 'openai/gpt-4o-mini';
-      const res = await fetch('https://openrouter.ai/api/v1/chat/completions', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${env.OPENROUTER_API_KEY}`,
-          'HTTP-Referer': 'https://bank-intel.workers.dev',
-          'X-Title': 'Bank Intel PWA',
-        },
-        body: JSON.stringify({
-          model,
-          messages: [
-            { role: 'system', content: SYSTEM_PROMPT },
-            { role: 'user', content: userPrompt },
-          ],
-          temperature: 0.1,
-        }),
-      });
-
-      if (res.ok) {
-        const json: any = await res.json();
-        const content = json.choices?.[0]?.message?.content || '';
-        const payload = parseAndValidateAIResponse(content, req, model);
-        if (payload) return payload;
-      }
-    } catch (e: any) {
-      console.warn('Tier 4 OpenRouter gpt-4o-mini failed:', e?.message);
     }
   }
 
-  // Deterministic algorithmic fallback if all AI models timeout or fail
+  // =========================================================================
+  // STAGE 3: Deterministic High-Quality Fallback (Safety Net)
+  // =========================================================================
+  console.warn(`All AI tiers exhausted (${errors.join(' | ')}). Using deterministic faculty fallback.`);
   return generateDeterministicFallback(req);
 }
 
@@ -198,29 +219,29 @@ function generateDeterministicFallback(req: ExplainApiRequest): AIExplanationPay
       status: req.correctOption === 'A' ? 'CORRECT' : 'TRAP_DISTRACTOR',
       verdict:
         req.correctOption === 'A'
-          ? `Exact match with the standard solution: ${req.options.A}.`
-          : `Distractor trap: Candidates select "${req.options.A}" due to premature evaluation or sign inversion.`,
+          ? `Exact match with the official solution: ${req.options.A}.`
+          : `Distractor trap: Candidates select "${req.options.A}" due to sign inversion or premature calculation.`,
     },
     B: {
       status: req.correctOption === 'B' ? 'CORRECT' : 'TRAP_DISTRACTOR',
       verdict:
         req.correctOption === 'B'
-          ? `Exact match with the standard solution: ${req.options.B}.`
-          : `Distractor trap: Candidates select "${req.options.B}" due to rounding or overlooking constraint bounds.`,
+          ? `Exact match with the official solution: ${req.options.B}.`
+          : `Distractor trap: Candidates select "${req.options.B}" by overlooking boundary constraints.`,
     },
     C: {
       status: req.correctOption === 'C' ? 'CORRECT' : 'TRAP_DISTRACTOR',
       verdict:
         req.correctOption === 'C'
-          ? `Exact match with the standard solution: ${req.options.C}.`
+          ? `Exact match with the official solution: ${req.options.C}.`
           : `Distractor trap: Candidates select "${req.options.C}" by confusing numerator and denominator values.`,
     },
     D: {
       status: req.correctOption === 'D' ? 'CORRECT' : 'TRAP_DISTRACTOR',
       verdict:
         req.correctOption === 'D'
-          ? `Exact match with the standard solution: ${req.options.D}.`
-          : `Distractor trap: Common arithmetic misstep or incorrect grammatical rule application.`,
+          ? `Exact match with the official solution: ${req.options.D}.`
+          : `Distractor trap: Common grammatical trap or computational misstep.`,
     },
   };
 
@@ -228,12 +249,11 @@ function generateDeterministicFallback(req: ExplainApiRequest): AIExplanationPay
     questionId: req.questionId,
     coreConcept: isMath
       ? 'Apply fundamental algebraic identity or proportional rate formula.'
-      : `Core standard principle for ${req.subject.toLowerCase().replace('_', ' ')}.`,
+      : `Core standard principle for ${req.subject?.toLowerCase().replace('_', ' ') || 'exam subject'}.`,
     examHallShortcut: `Eliminate extremes immediately. Focus strictly on option [${req.correctOption}] (${correctText}) under 30s.`,
-    stepByStep: `1. Identify target property from prompt.\n2. Deduce canonical value: [${req.correctOption}] (${correctText}).\n3. Confirm alignment with exam answer key.`,
+    stepByStep: `1. Identify target constraint from question stem.\n2. Deduce canonical value: [${req.correctOption}] (${correctText}).\n3. Confirm alignment with official answer key.`,
     optionDiagnostics,
     generatedBy: 'deterministic-faculty-fallback',
     cachedAt: Date.now(),
   };
 }
-

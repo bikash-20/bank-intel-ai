@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { buildBitmaskIndex, queryBitmaskIndex } from '../lib/search/bitmask-index';
+import { buildBitmaskIndex, queryBitmaskIndex } from '../lib/search/bitmask-index.ts';
 import type { QuestionItem } from '../lib/types';
 
 test('Bitmask Index: builds and filters with O(N/32) bitwise speed', () => {

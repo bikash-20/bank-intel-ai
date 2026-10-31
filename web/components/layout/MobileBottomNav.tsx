@@ -70,3 +70,4 @@ export const MobileBottomNav: React.FC = () => {
     </div>
   );
 };
+

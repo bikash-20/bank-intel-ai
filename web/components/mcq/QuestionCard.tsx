@@ -1,17 +1,11 @@
 'use client';
 
 import React, { useState, useEffect, useCallback } from 'react';
-import { Bookmark, Sparkles, ChevronRight } from 'lucide-react';
+import { Bookmark, ChevronRight } from 'lucide-react';
 import { MathText } from './MathText';
 import { OptionRow } from './OptionRow';
-import { AIExplainPanel } from './AIExplainPanel';
-import { clientExplanationLRU } from '../../lib/db/lru';
-import {
-  getExplanationFromIDB,
-  saveExplanationToIDB,
-  recordUserAttempt,
-  toggleBookmark,
-} from '../../lib/db/idb';
+import { AIExplainSection } from './AIExplainSection';
+import { recordUserAttempt, toggleBookmark } from '../../lib/db/idb';
 import { useI18n } from '../../lib/i18n/context';
 import type {
   AIExplanationPayload,
@@ -51,12 +45,6 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
 
   const [selectedOption, setSelectedOption] = useState<OptionKey | null>(null);
   const [hasSubmitted, setHasSubmitted] = useState(false);
-  const [showExplanation, setShowExplanation] = useState(false);
-  const [explanation, setExplanation] = useState<AIExplanationPayload | undefined>(
-    question.staticExplanation
-  );
-  const [isLoadingExplanation, setIsLoadingExplanation] = useState(false);
-  const [explainError, setExplainError] = useState<string | undefined>();
   const [bookmarked, setBookmarked] = useState(initialBookmarked);
   const [startTime] = useState<number>(Date.now());
 
@@ -64,10 +52,7 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
   useEffect(() => {
     setSelectedOption(null);
     setHasSubmitted(false);
-    setShowExplanation(false);
-    setExplanation(question.staticExplanation);
-    setExplainError(undefined);
-  }, [question.id, question.staticExplanation]);
+  }, [question.id]);
 
   const handleSelectOption = useCallback(
     async (key: OptionKey) => {
@@ -98,81 +83,6 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
     [hasSubmitted, question.correctOption, question.id, startTime, mode, onAnswerSelected]
   );
 
-  const fetchAIExplanation = useCallback(async () => {
-    if (explanation) {
-      setShowExplanation((prev) => !prev);
-      return;
-    }
-
-    setShowExplanation(true);
-    setIsLoadingExplanation(true);
-    setExplainError(undefined);
-
-    // 1. Check L1 Client RAM LRU
-    const memoryHit = clientExplanationLRU.get(question.hash);
-    if (memoryHit) {
-      setExplanation(memoryHit);
-      setIsLoadingExplanation(false);
-      return;
-    }
-
-    // 2. Check L2 IndexedDB
-    try {
-      const idbHit = await getExplanationFromIDB(question.id);
-      if (idbHit) {
-        clientExplanationLRU.set(question.hash, idbHit);
-        setExplanation(idbHit);
-        setIsLoadingExplanation(false);
-        return;
-      }
-    } catch (e: any) {
-      console.warn('IDB explanation read error:', e?.message);
-    }
-
-    // 3. Network Fetch to Cloudflare Worker
-    try {
-      const workerUrl =
-        process.env.NEXT_PUBLIC_WORKER_URL ||
-        'https://bank-intel-worker.talukderbikash500.workers.dev';
-
-      const res = await fetch(`${workerUrl}/api/v1/explain`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          questionId: question.id,
-          hash: question.hash,
-          subject: question.subject,
-          stem: question.stem,
-          options: question.options,
-          correctOption: question.correctOption,
-        }),
-      });
-
-      if (!res.ok) {
-        throw new Error(`Worker returned HTTP ${res.status}`);
-      }
-
-      const json = await res.json();
-      if (json.ok && json.data) {
-        const payload = json.data as AIExplanationPayload;
-        clientExplanationLRU.set(question.hash, payload);
-        await saveExplanationToIDB(payload);
-        setExplanation(payload);
-      } else {
-        throw new Error(json.error || 'Failed to generate explanation.');
-      }
-    } catch (err: any) {
-      console.error('AI Explain fetch error:', err?.message);
-      setExplainError(
-        isBn
-          ? 'অফলাইনে নতুন এআই ব্যাখ্যা লোড করা সম্ভব হয়নি।'
-          : 'Edge AI explanation unavailable offline without pre-cache.'
-      );
-    } finally {
-      setIsLoadingExplanation(false);
-    }
-  }, [explanation, question, isBn]);
-
   const handleToggleBookmark = async () => {
     try {
       const newState = await toggleBookmark(question.id);
@@ -182,7 +92,7 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
     }
   };
 
-  // Keyboard navigation listener (1-4/A-D, E, ArrowRight/Space)
+  // Keyboard navigation listener (1-4/A-D, ArrowRight/Space)
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (['INPUT', 'TEXTAREA'].includes((e.target as HTMLElement)?.tagName)) {
@@ -198,11 +108,6 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
         if (key === '4' || key === 'D') handleSelectOption('D');
       }
 
-      if (key === 'E') {
-        e.preventDefault();
-        fetchAIExplanation();
-      }
-
       if (e.key === 'ArrowRight' || e.key === ' ') {
         if (onNext && hasSubmitted) {
           e.preventDefault();
@@ -213,20 +118,19 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [hasSubmitted, handleSelectOption, fetchAIExplanation, onNext]);
+  }, [hasSubmitted, handleSelectOption, onNext]);
 
   const appearance = question.appearances?.[0];
   const subjectName = t.subjects[question.subject] || question.subject;
-
   const num = (v: number | string) => (isBn ? toBnDigits(v) : String(v));
 
   return (
-    <div className="w-full max-w-4xl mx-auto rounded-3xl border border-white/10 bg-obsidian-900/85 p-5 sm:p-8 backdrop-blur-2xl shadow-2xl transition-all duration-300 relative overflow-hidden">
+    <div className="w-full max-w-4xl mx-auto rounded-3xl border border-white/10 bg-obsidian-900/85 p-4 sm:p-8 backdrop-blur-2xl shadow-2xl transition-all duration-300 relative overflow-hidden">
       {/* Top Metadata Header */}
-      <div className="flex flex-wrap items-center justify-between gap-2.5 sm:gap-3 border-b border-white/10 pb-4 mb-6">
+      <div className="flex flex-wrap items-center justify-between gap-2.5 sm:gap-3 border-b border-white/10 pb-3.5 mb-5 sm:mb-6">
         <div className="flex flex-wrap items-center gap-2">
           <span
-            className={`text-xs sm:text-sm font-semibold text-slate-300 bg-white/5 border border-white/10 px-3 py-1 rounded-lg ${
+            className={`text-xs sm:text-sm font-semibold text-slate-300 bg-white/5 border border-white/10 px-3 py-1 rounded-xl ${
               isBn ? 'font-bengali' : 'font-mono'
             }`}
           >
@@ -234,7 +138,7 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
           </span>
 
           <span
-            className={`text-xs sm:text-sm font-semibold text-indigo-300 bg-indigo-500/15 border border-indigo-500/30 px-3 py-1 rounded-lg uppercase ${
+            className={`text-xs sm:text-sm font-semibold text-indigo-300 bg-indigo-500/15 border border-indigo-500/30 px-3 py-1 rounded-xl uppercase ${
               isBn ? 'font-bengali' : 'font-mono'
             }`}
           >
@@ -242,7 +146,7 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
           </span>
 
           {appearance && (
-            <span className="font-mono text-xs text-slate-400 bg-white/5 border border-white/10 px-2.5 py-1 rounded-lg hidden sm:inline-block">
+            <span className="font-mono text-xs text-slate-400 bg-white/5 border border-white/10 px-2.5 py-1 rounded-xl hidden sm:inline-block">
               {appearance.examBody} {appearance.post} ({appearance.year})
               {appearance.faculty && ` • ${appearance.faculty}`}
             </span>
@@ -263,37 +167,20 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
           >
             <Bookmark className="h-4 w-4 sm:h-5 sm:w-5" fill={bookmarked ? 'currentColor' : 'none'} />
           </button>
-
-          {/* AI Explain Toggle */}
-          <button
-            type="button"
-            onClick={fetchAIExplanation}
-            className={`flex items-center gap-2 px-3.5 py-2 rounded-xl border text-xs sm:text-sm font-medium transition-all duration-200 active:scale-95 ${
-              isBn ? 'font-bengali' : 'font-mono'
-            } ${
-              showExplanation
-                ? 'border-indigo-500/60 bg-indigo-500/25 text-indigo-200 shadow-[0_0_18px_rgba(99,102,241,0.25)]'
-                : 'border-white/10 bg-white/5 text-indigo-300 hover:border-indigo-500/40 hover:bg-indigo-500/15'
-            }`}
-          >
-            <Sparkles className="h-4 w-4 text-indigo-400" />
-            <span>{t.card.aiExplain}</span>
-          </button>
         </div>
       </div>
 
       {/* Question Stem */}
-      <div className="text-xl sm:text-2xl font-medium text-slate-100 leading-relaxed mb-7 tracking-normal">
+      <div className="text-xl sm:text-2xl font-medium text-slate-100 leading-relaxed mb-6 tracking-normal">
         <MathText content={question.stem} />
       </div>
 
-      {/* 4 Options */}
-      <div className="grid grid-cols-1 gap-3 sm:gap-4 mb-6">
+      {/* 4 Options (A, B, C, D) */}
+      <div className="grid grid-cols-1 gap-2.5 sm:gap-3.5 mb-2">
         {OPTION_KEYS.map((key) => {
           const text = question.options[key];
           const isSelected = selectedOption === key;
           const isCorrect = key === question.correctOption;
-          const diagnostic = explanation?.optionDiagnostics?.[key];
 
           return (
             <OptionRow
@@ -303,16 +190,27 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
               isSelected={isSelected}
               isCorrectOption={isCorrect}
               hasSubmitted={hasSubmitted}
-              diagnostic={diagnostic}
-              showExplanation={showExplanation}
+              showExplanation={false}
               onSelect={() => handleSelectOption(key)}
             />
           );
         })}
       </div>
 
+      {/* ALWAYS-VISIBLE AI EXPLAIN TOGGLE BAR & EXPANDABLE DRAWER DIRECTLY BELOW OPTION D */}
+      <AIExplainSection
+        questionId={question.id}
+        hash={question.hash}
+        subject={question.subject}
+        stem={question.stem}
+        options={question.options}
+        correctOption={question.correctOption}
+        selectedOption={selectedOption}
+        initialExplanation={question.staticExplanation}
+      />
+
       {/* Bottom Action Footer */}
-      <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-white/10">
+      <div className="flex flex-wrap items-center justify-between gap-3.5 pt-4 mt-4 border-t border-white/10">
         <div
           className={`text-xs sm:text-sm text-slate-400 flex items-center gap-2 ${
             isBn ? 'font-bengali' : 'font-mono'
@@ -332,19 +230,6 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
           </button>
         )}
       </div>
-
-      {/* Expanded AI Explanation Drawer */}
-      {showExplanation && (
-        <div className="mt-7 pt-6 border-t border-white/10">
-          <AIExplainPanel
-            payload={explanation}
-            isLoading={isLoadingExplanation}
-            error={explainError}
-            correctOption={question.correctOption}
-            onRetry={fetchAIExplanation}
-          />
-        </div>
-      )}
     </div>
   );
 };

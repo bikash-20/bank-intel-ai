@@ -24,8 +24,8 @@ export interface AIExplanationPayload {
 
 export interface ExplainApiRequest {
   questionId: string;
-  hash: string;
-  subject: SubjectCode;
+  hash?: string;
+  subject?: SubjectCode;
   stem: string;
   options: Record<OptionKey, string>;
   correctOption: OptionKey;

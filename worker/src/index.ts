@@ -83,7 +83,6 @@ export default {
 
       if (
         !reqBody.questionId ||
-        !reqBody.hash ||
         !reqBody.stem ||
         !reqBody.options ||
         !reqBody.correctOption
@@ -91,7 +90,7 @@ export default {
         const errorBody: ExplainApiResponse = {
           ok: false,
           cacheStatus: 'MISS_GENERATED',
-          error: 'Missing required fields: questionId, hash, stem, options, correctOption.',
+          error: 'Missing required fields: questionId, stem, options, correctOption.',
         };
         return new Response(JSON.stringify(errorBody), {
           status: 400,
@@ -99,9 +98,11 @@ export default {
         });
       }
 
+      const cacheKey = reqBody.hash || reqBody.questionId;
+
       // Check L3a / L3b Cache
       const { payload: cachedPayload, source } = await getCachedExplanation(
-        reqBody.hash,
+        cacheKey,
         env.CACHE
       );
 
@@ -123,7 +124,7 @@ export default {
         const generatedPayload = await executeAICascade(reqBody, env);
 
         // Populate L3b (KV with 90-day TTL) & L3a (Isolate LRU)
-        await setCachedExplanation(reqBody.hash, generatedPayload, env.CACHE);
+        await setCachedExplanation(cacheKey, generatedPayload, env.CACHE);
 
         corsHeaders.set('X-Cache-Status', 'MISS_GENERATED');
         const responseBody: ExplainApiResponse = {
