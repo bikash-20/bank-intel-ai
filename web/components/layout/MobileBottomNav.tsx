@@ -11,63 +11,75 @@ export const MobileBottomNav: React.FC = () => {
   const pathname = usePathname();
   const isBn = locale === 'bn';
 
+  const navItems = [
+    {
+      href: '/',
+      label: isBn ? 'অনুশীলন' : 'Practice',
+      icon: Compass,
+      isActive: pathname === '/',
+    },
+    {
+      href: '/simulate',
+      label: isBn ? 'সিমুলেটর' : 'Simulator',
+      icon: Timer,
+      isActive: pathname.startsWith('/simulate'),
+    },
+    {
+      href: '/vault',
+      label: isBn ? 'ভুল ব্যাংক' : 'Mistakes',
+      icon: AlertOctagon,
+      isActive: pathname.startsWith('/vault'),
+    },
+  ];
+
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden border-t border-white/10 bg-obsidian-950/95 backdrop-blur-2xl px-2 py-1.5 safe-bottom">
-      <div className="grid grid-cols-4 gap-1">
-        <Link
-          href="/"
-          className={`flex flex-col items-center justify-center py-1.5 px-1 rounded-xl transition-all ${
-            pathname === '/'
-              ? 'bg-indigo-500/20 text-indigo-300 font-bold border border-indigo-500/30'
-              : 'text-slate-400 hover:text-slate-200'
-          }`}
-        >
-          <Compass className="h-5 w-5 mb-0.5" />
-          <span className={`text-[11px] leading-tight ${isBn ? 'font-bengali' : ''}`}>
-            {t.nav.practice}
-          </span>
-        </Link>
+    <div
+      className="fixed bottom-0 left-0 right-0 z-50 md:hidden border-t px-3 py-2 safe-bottom transition-colors"
+      style={{
+        backgroundColor: 'var(--surface)',
+        borderColor: 'var(--line)',
+        boxShadow: '0 -10px 30px rgba(0, 0, 0, 0.08)',
+      }}
+    >
+      <div className="grid grid-cols-4 gap-1.5 max-w-md mx-auto">
+        {navItems.map((item) => {
+          const Icon = item.icon;
+          const active = item.isActive;
 
-        <Link
-          href="/simulate"
-          className={`flex flex-col items-center justify-center py-1.5 px-1 rounded-xl transition-all ${
-            pathname.startsWith('/simulate')
-              ? 'bg-emerald-500/20 text-emerald-300 font-bold border border-emerald-500/30'
-              : 'text-slate-400 hover:text-slate-200'
-          }`}
-        >
-          <Timer className="h-5 w-5 mb-0.5" />
-          <span className={`text-[11px] leading-tight ${isBn ? 'font-bengali' : ''}`}>
-            {t.nav.simulator}
-          </span>
-        </Link>
+          return (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="flex flex-col items-center justify-center py-2 px-1 rounded-full transition-all duration-200"
+              style={{
+                backgroundColor: active ? 'var(--pill)' : 'transparent',
+                color: active ? 'var(--pill-ink)' : 'var(--mute)',
+              }}
+            >
+              <Icon className="h-4 w-4 mb-0.5" />
+              <span className="text-[11px] font-sans-app font-medium leading-tight">
+                {item.label}
+              </span>
+            </Link>
+          );
+        })}
 
-        <Link
-          href="/vault"
-          className={`flex flex-col items-center justify-center py-1.5 px-1 rounded-xl transition-all ${
-            pathname.startsWith('/vault')
-              ? 'bg-rose-500/20 text-rose-300 font-bold border border-rose-500/30'
-              : 'text-slate-400 hover:text-slate-200'
-          }`}
-        >
-          <AlertOctagon className="h-5 w-5 mb-0.5" />
-          <span className={`text-[11px] leading-tight ${isBn ? 'font-bengali' : ''}`}>
-            {t.nav.vault}
-          </span>
-        </Link>
-
+        {/* Mobile Language Switcher Button */}
         <button
           type="button"
           onClick={toggleLocale}
-          className="flex flex-col items-center justify-center py-1.5 px-1 rounded-xl text-slate-300 hover:bg-white/5 active:scale-95 transition-all"
+          className="flex flex-col items-center justify-center py-2 px-1 rounded-full transition-all duration-200"
+          style={{
+            backgroundColor: 'transparent',
+            color: 'var(--brand)',
+          }}
         >
-          <Languages className="h-5 w-5 mb-0.5 text-indigo-400" />
-          <span className="text-[11px] font-bold text-indigo-300 leading-tight">
-            {t.nav.langToggle}
+          <Languages className="h-4 w-4 mb-0.5" />
+          <span className="text-[11px] font-sans-app font-semibold leading-tight">
+            {isBn ? 'English' : 'বাংলা'}
           </span>
         </button>
       </div>
     </div>
   );
 };
-

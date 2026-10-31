@@ -27,14 +27,25 @@ export const I18nProvider: React.FC<{ children: React.ReactNode }> = ({ children
       const saved = window.localStorage.getItem(LOCALE_STORAGE_KEY) as Locale;
       if (saved === 'bn' || saved === 'en') {
         setLocaleState(saved);
+        applyLocale(saved);
+      } else {
+        applyLocale('en');
       }
     } catch {
-      // Ignore localStorage read errors in restricted contexts
+      applyLocale('en');
     }
   }, []);
 
+  const applyLocale = (l: Locale) => {
+    if (typeof document !== 'undefined') {
+      document.documentElement.setAttribute('lang', l);
+      document.documentElement.setAttribute('data-lang', l);
+    }
+  };
+
   const setLocale = (newLocale: Locale) => {
     setLocaleState(newLocale);
+    applyLocale(newLocale);
     try {
       window.localStorage.setItem(LOCALE_STORAGE_KEY, newLocale);
     } catch {
@@ -58,4 +69,3 @@ export const I18nProvider: React.FC<{ children: React.ReactNode }> = ({ children
 export function useI18n() {
   return useContext(I18nContext);
 }
-

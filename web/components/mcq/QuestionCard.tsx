@@ -8,7 +8,6 @@ import { AIExplainSection } from './AIExplainSection';
 import { recordUserAttempt, toggleBookmark } from '../../lib/db/idb';
 import { useI18n } from '../../lib/i18n/context';
 import type {
-  AIExplanationPayload,
   OptionKey,
   QuestionItem,
   UserAttempt,
@@ -48,7 +47,7 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
   const [bookmarked, setBookmarked] = useState(initialBookmarked);
   const [startTime] = useState<number>(Date.now());
 
-  // Reset state on question change
+  // Reset selection when question changes
   useEffect(() => {
     setSelectedOption(null);
     setHasSubmitted(false);
@@ -92,7 +91,7 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
     }
   };
 
-  // Keyboard navigation listener (1-4/A-D, ArrowRight/Space)
+  // Keyboard navigation listener (1-4 / A-D, Space / ArrowRight)
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (['INPUT', 'TEXTAREA'].includes((e.target as HTMLElement)?.tagName)) {
@@ -125,58 +124,86 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
   const num = (v: number | string) => (isBn ? toBnDigits(v) : String(v));
 
   return (
-    <div className="w-full max-w-4xl mx-auto rounded-3xl border border-white/10 bg-obsidian-900/85 p-4 sm:p-8 backdrop-blur-2xl shadow-2xl transition-all duration-300 relative overflow-hidden">
+    <div
+      className="w-full question-card-rounded border p-5 sm:p-9 transition-colors duration-300"
+      style={{
+        backgroundColor: 'var(--surface)',
+        borderColor: 'var(--line)',
+        boxShadow: 'var(--shadow)',
+      }}
+    >
       {/* Top Metadata Header */}
-      <div className="flex flex-wrap items-center justify-between gap-2.5 sm:gap-3 border-b border-white/10 pb-3.5 mb-5 sm:mb-6">
+      <div
+        className="flex flex-wrap items-center justify-between gap-3 border-b pb-4 mb-6"
+        style={{ borderColor: 'var(--line)' }}
+      >
         <div className="flex flex-wrap items-center gap-2">
+          {/* Question count pill */}
           <span
-            className={`text-xs sm:text-sm font-semibold text-slate-300 bg-white/5 border border-white/10 px-3 py-1 rounded-xl ${
-              isBn ? 'font-bengali' : 'font-mono'
-            }`}
+            className="px-3.5 py-1.5 rounded-full text-xs font-medium border"
+            style={{
+              backgroundColor: 'var(--surface2)',
+              borderColor: 'var(--line)',
+              color: 'var(--ink)',
+            }}
           >
-            {t.card.questionLabel} {num(questionNumber)} {t.card.of} {num(totalQuestions)}
+            {isBn ? 'প্রশ্ন' : 'Question'} {num(questionNumber)} {isBn ? '/' : 'of'} {num(totalQuestions)}
           </span>
 
+          {/* Subject badge pill */}
           <span
-            className={`text-xs sm:text-sm font-semibold text-indigo-300 bg-indigo-500/15 border border-indigo-500/30 px-3 py-1 rounded-xl uppercase ${
-              isBn ? 'font-bengali' : 'font-mono'
-            }`}
+            className="px-3.5 py-1.5 rounded-full text-xs font-semibold border"
+            style={{
+              backgroundColor: 'var(--surface2)',
+              borderColor: 'var(--line)',
+              color: 'var(--brand)',
+            }}
           >
             {subjectName}
           </span>
 
+          {/* Exam appearance badge pill */}
           {appearance && (
-            <span className="font-mono text-xs text-slate-400 bg-white/5 border border-white/10 px-2.5 py-1 rounded-xl hidden sm:inline-block">
-              {appearance.examBody} {appearance.post} ({appearance.year})
+            <span
+              className="px-3.5 py-1.5 rounded-full text-xs border hidden sm:inline-block"
+              style={{
+                backgroundColor: 'var(--surface2)',
+                borderColor: 'var(--line)',
+                color: 'var(--mute)',
+              }}
+            >
+              {appearance.examBody} {appearance.post} ({num(appearance.year)})
               {appearance.faculty && ` • ${appearance.faculty}`}
             </span>
           )}
         </div>
 
-        <div className="flex items-center gap-2">
-          {/* Bookmark Button */}
-          <button
-            type="button"
-            onClick={handleToggleBookmark}
-            title={bookmarked ? t.card.bookmarked : t.card.bookmark}
-            className={`p-2.5 rounded-xl border transition-all active:scale-95 ${
-              bookmarked
-                ? 'border-amber-500/50 bg-amber-500/20 text-amber-400 shadow-[0_0_12px_rgba(245,158,11,0.2)]'
-                : 'border-white/10 bg-white/5 text-slate-400 hover:text-slate-200 hover:border-white/25'
-            }`}
-          >
-            <Bookmark className="h-4 w-4 sm:h-5 sm:w-5" fill={bookmarked ? 'currentColor' : 'none'} />
-          </button>
-        </div>
+        {/* Bookmark Button */}
+        <button
+          type="button"
+          onClick={handleToggleBookmark}
+          aria-label={bookmarked ? 'Remove bookmark' : 'Bookmark question'}
+          className="h-10 w-10 rounded-full border flex items-center justify-center transition-all duration-200 active:scale-95 shadow-sm"
+          style={{
+            backgroundColor: bookmarked ? 'var(--brand)' : 'var(--surface2)',
+            color: bookmarked ? 'var(--brand-ink)' : 'var(--mute)',
+            borderColor: bookmarked ? 'var(--brand)' : 'var(--line)',
+          }}
+        >
+          <Bookmark
+            className="h-4 w-4"
+            fill={bookmarked ? 'currentColor' : 'none'}
+          />
+        </button>
       </div>
 
-      {/* Question Stem */}
-      <div className="text-xl sm:text-2xl font-medium text-slate-100 leading-relaxed mb-6 tracking-normal">
+      {/* Question Text in --serif weight 500, clamp(26px, 4.2vw, 38px) */}
+      <div className="question-heading mb-7">
         <MathText content={question.stem} />
       </div>
 
-      {/* 4 Options (A, B, C, D) */}
-      <div className="grid grid-cols-1 gap-2.5 sm:gap-3.5 mb-2">
+      {/* 4 Options (A, B, C, D / ক, খ, গ, ঘ) as fully rounded pills */}
+      <div className="grid grid-cols-1 gap-3 sm:gap-3.5 mb-2">
         {OPTION_KEYS.map((key) => {
           const text = question.options[key];
           const isSelected = selectedOption === key;
@@ -197,7 +224,7 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
         })}
       </div>
 
-      {/* ALWAYS-VISIBLE AI EXPLAIN TOGGLE BAR & EXPANDABLE DRAWER DIRECTLY BELOW OPTION D */}
+      {/* ALWAYS-VISIBLE AI EXPLAIN TOGGLE BAR & EXPANDABLE DRAWER */}
       <AIExplainSection
         questionId={question.id}
         hash={question.hash}
@@ -208,27 +235,26 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
         selectedOption={selectedOption}
       />
 
-      {/* Bottom Action Footer */}
-      <div className="flex flex-wrap items-center justify-between gap-3.5 pt-4 mt-4 border-t border-white/10">
+      {/* Bottom Action Footer with Next Question button */}
+      {onNext && hasSubmitted && (
         <div
-          className={`text-xs sm:text-sm text-slate-400 flex items-center gap-2 ${
-            isBn ? 'font-bengali' : 'font-mono'
-          }`}
+          className="flex items-center justify-end pt-5 mt-5 border-t"
+          style={{ borderColor: 'var(--line)' }}
         >
-          <span>{t.card.shortcutHelp}</span>
-        </div>
-
-        {onNext && hasSubmitted && (
           <button
             type="button"
             onClick={onNext}
-            className="flex items-center gap-2 bg-gradient-to-r from-indigo-500 to-indigo-600 hover:from-indigo-400 hover:to-indigo-500 border border-indigo-400/30 px-6 py-2.5 rounded-xl text-sm sm:text-base font-semibold text-white transition-all shadow-[0_0_15px_rgba(99,102,241,0.3)] active:scale-95"
+            className="flex items-center gap-2 px-7 py-3 rounded-full text-base font-semibold shadow-md transition-all active:scale-95"
+            style={{
+              backgroundColor: 'var(--brand)',
+              color: 'var(--brand-ink)',
+            }}
           >
-            <span>{t.card.nextQuestion}</span>
+            <span className="font-sans-app">{t.card.nextQuestion}</span>
             <ChevronRight className="h-5 w-5" />
           </button>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 };

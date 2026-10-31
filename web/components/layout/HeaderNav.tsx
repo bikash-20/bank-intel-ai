@@ -2,96 +2,134 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { ShieldCheck, Compass, Timer, AlertOctagon, Languages } from 'lucide-react';
+import { Sun, Moon } from 'lucide-react';
 import { useI18n } from '../../lib/i18n/context';
+import { useTheme } from '../../lib/theme/context';
 
 export const HeaderNav: React.FC = () => {
-  const { t, locale, toggleLocale } = useI18n();
-  const pathname = usePathname();
+  const { t, locale, setLocale } = useI18n();
+  const { theme, toggleTheme } = useTheme();
 
   const isBn = locale === 'bn';
+  const isDark = theme === 'dark';
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-obsidian-950/85 backdrop-blur-xl">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-3 sm:px-6 h-16">
-        {/* Brand Logo */}
-        <Link href="/" className="flex items-center gap-2.5 sm:gap-3 group">
-          <div className="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-xl bg-[#F3FBF6] border border-emerald-500/40 p-1 group-hover:scale-105 transition-transform shadow-[0_0_14px_rgba(16,185,129,0.25)] overflow-hidden shrink-0">
-            <img src="/bankintel-pwa.svg" alt="BankIntel Icon" className="h-full w-full object-contain" />
-          </div>
-          <div className="flex flex-col">
-            <span
-              className={`text-lg sm:text-xl font-bold tracking-tight text-white flex items-center gap-1.5 ${
-                isBn ? 'font-bengali font-bold' : 'font-display italic'
-              }`}
-            >
-              {t.appName}
-              <span className="text-[10px] not-italic font-mono font-normal uppercase px-1.5 py-0.5 rounded bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
-                {t.appBadge}
-              </span>
-            </span>
-            <span
-              className={`text-[11px] text-slate-400 -mt-1 hidden sm:inline-block ${
-                isBn ? 'font-bengali' : 'font-mono'
-              }`}
-            >
-              {t.appSubtitle}
-            </span>
-          </div>
-        </Link>
+    <header className="w-full flex items-center justify-between gap-4 py-2">
+      {/* Left: Brand Identity */}
+      <Link href="/" className="flex items-center gap-3.5 group">
+        {/* 44px Round Logo Mark in --brand with Bengali letter "ব" in serif */}
+        <div
+          className="h-11 w-11 shrink-0 rounded-full flex items-center justify-center shadow-sm transition-transform duration-200 group-hover:scale-105"
+          style={{
+            backgroundColor: 'var(--brand)',
+            color: 'var(--brand-ink)',
+          }}
+        >
+          <span className="font-serif-app text-[26px] font-semibold leading-none select-none">
+            ব
+          </span>
+        </div>
 
-        {/* Desktop Nav Links & Controls */}
-        <div className="flex items-center gap-2 sm:gap-3">
-          <nav className="hidden md:flex items-center gap-1 sm:gap-2">
-            <Link
-              href="/"
-              className={`flex items-center gap-2 rounded-xl px-3.5 py-2 text-sm font-medium transition-all ${
-                pathname === '/'
-                  ? 'bg-white/10 text-white border border-white/15 shadow-sm'
-                  : 'text-slate-300 hover:text-white hover:bg-white/5'
-              } ${isBn ? 'font-bengali text-base' : ''}`}
-            >
-              <Compass className="h-4 w-4 text-indigo-400" />
-              <span>{t.nav.practice}</span>
-            </Link>
+        {/* App Name and Muted Subtitle */}
+        <div className="flex flex-col">
+          <span className="app-title font-serif-app">
+            {isBn ? 'ব্যাংক-ইনটেল' : 'Bank-Intel'}
+          </span>
+          <span
+            className="text-[13px] leading-tight font-sans-app"
+            style={{ color: 'var(--mute)' }}
+          >
+            {isBn
+              ? 'বাংলাদেশ ব্যাংক ও বিসিএস প্রস্তুতি'
+              : 'Bangladesh Bank & BCS Preparation'}
+          </span>
+        </div>
+      </Link>
 
-            <Link
-              href="/simulate"
-              className={`flex items-center gap-2 rounded-xl px-3.5 py-2 text-sm font-medium transition-all ${
-                pathname.startsWith('/simulate')
-                  ? 'bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 shadow-sm'
-                  : 'text-slate-300 hover:text-white hover:bg-white/5'
-              } ${isBn ? 'font-bengali text-base' : ''}`}
-            >
-              <Timer className="h-4 w-4 text-emerald-400" />
-              <span>{t.nav.simulator}</span>
-            </Link>
-
-            <Link
-              href="/vault"
-              className={`flex items-center gap-2 rounded-xl px-3.5 py-2 text-sm font-medium transition-all ${
-                pathname.startsWith('/vault')
-                  ? 'bg-rose-500/15 text-rose-300 border border-rose-500/30 shadow-sm'
-                  : 'text-slate-300 hover:text-white hover:bg-white/5'
-              } ${isBn ? 'font-bengali text-base' : ''}`}
-            >
-              <AlertOctagon className="h-4 w-4 text-rose-400" />
-              <span>{t.nav.vault}</span>
-            </Link>
-          </nav>
-
-          {/* Language Toggle Button */}
+      {/* Right: Language Switch & Theme Toggle */}
+      <div className="flex items-center gap-3">
+        {/* Language Switch: Pill container with 4px padding, --surface2 bg, --line border */}
+        <div
+          className="hidden md:flex items-center p-1 rounded-full border transition-colors"
+          style={{
+            backgroundColor: 'var(--surface2)',
+            borderColor: 'var(--line)',
+          }}
+        >
           <button
             type="button"
-            onClick={toggleLocale}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-indigo-500/30 bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-300 font-medium text-xs sm:text-sm transition-all active:scale-95 shadow-[0_0_10px_rgba(99,102,241,0.15)]"
-            title={locale === 'en' ? 'বাংলা ভাষায় পরিবর্তন করুন' : 'Switch to English'}
+            onClick={() => setLocale('bn')}
+            className="px-3.5 py-1.5 rounded-full text-[13px] font-medium transition-all duration-200"
+            style={{
+              backgroundColor: isBn ? 'var(--pill)' : 'transparent',
+              color: isBn ? 'var(--pill-ink)' : 'var(--mute)',
+              fontWeight: isBn ? 600 : 500,
+            }}
           >
-            <Languages className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
-            <span className="font-semibold">{t.nav.langToggle}</span>
+            বাংলা
+          </button>
+          <button
+            type="button"
+            onClick={() => setLocale('en')}
+            className="px-3.5 py-1.5 rounded-full text-[13px] font-medium transition-all duration-200"
+            style={{
+              backgroundColor: !isBn ? 'var(--pill)' : 'transparent',
+              color: !isBn ? 'var(--pill-ink)' : 'var(--mute)',
+              fontWeight: !isBn ? 600 : 500,
+            }}
+          >
+            English
           </button>
         </div>
+
+        {/* Theme Toggle: 76x40px pill, --surface2 bg, 1px --line border, 32px knob sliding 36px */}
+        <button
+          type="button"
+          role="switch"
+          aria-checked={isDark}
+          aria-label="Toggle day and night mode"
+          onClick={toggleTheme}
+          className="relative w-[76px] h-10 rounded-full border p-1 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2"
+          style={{
+            backgroundColor: 'var(--surface2)',
+            borderColor: 'var(--line)',
+          }}
+        >
+          {/* Track Icons: Sun on left, Moon on right in --mute */}
+          <div className="absolute inset-0 px-3 flex items-center justify-between pointer-events-none">
+            <Sun
+              className="h-4 w-4 transition-opacity duration-200"
+              style={{
+                color: 'var(--mute)',
+                opacity: isDark ? 0.45 : 0.85,
+              }}
+            />
+            <Moon
+              className="h-4 w-4 transition-opacity duration-200"
+              style={{
+                color: 'var(--mute)',
+                opacity: isDark ? 0.85 : 0.45,
+              }}
+            />
+          </div>
+
+          {/* 32px Round Knob in --pill / --pill-ink sliding 36px right */}
+          <div
+            className="absolute top-[3px] left-[3px] h-8 w-8 rounded-full flex items-center justify-center shadow-md"
+            style={{
+              backgroundColor: 'var(--pill)',
+              color: 'var(--pill-ink)',
+              transform: isDark ? 'translateX(36px)' : 'translateX(0px)',
+              transition: 'transform 0.35s cubic-bezier(0.5, 1.6, 0.5, 1)',
+            }}
+          >
+            {isDark ? (
+              <Moon className="h-3.5 w-3.5" />
+            ) : (
+              <Sun className="h-3.5 w-3.5" />
+            )}
+          </div>
+        </button>
       </div>
     </header>
   );

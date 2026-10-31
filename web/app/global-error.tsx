@@ -15,18 +15,44 @@ export default function GlobalError({
   }, [error]);
 
   return (
-    <html lang="bn" className="dark">
-      <body className="min-h-screen bg-[#050608] text-slate-100 flex items-center justify-center p-4">
-        <div className="max-w-md w-full rounded-3xl p-6 sm:p-8 text-center space-y-5 border border-rose-500/30 bg-[#090A0F] shadow-2xl">
-          <div className="h-16 w-16 rounded-2xl bg-rose-500/15 border border-rose-500/30 flex items-center justify-center text-rose-400 mx-auto">
+    <html lang="bn">
+      <body
+        className="min-h-screen flex items-center justify-center p-4 font-sans"
+        style={{
+          backgroundColor: '#fdfbfa',
+          color: '#2a1a20',
+        }}
+      >
+        <div
+          className="max-w-md w-full rounded-[36px] p-6 sm:p-8 text-center space-y-5 border shadow-xl"
+          style={{
+            backgroundColor: '#ffffff',
+            borderColor: '#efe3e5',
+            boxShadow: '0 18px 50px -24px rgba(155,34,67,.35)',
+          }}
+        >
+          <div
+            className="h-16 w-16 rounded-full flex items-center justify-center mx-auto"
+            style={{
+              backgroundColor: '#fbe8eb',
+              color: '#b3243b',
+              border: '1px solid #b3243b',
+            }}
+          >
             <AlertTriangle className="h-8 w-8" />
           </div>
 
           <div className="space-y-1.5">
-            <h2 className="text-xl sm:text-2xl font-bold text-white">
+            <h2
+              className="text-xl sm:text-2xl font-bold"
+              style={{ color: '#2a1a20' }}
+            >
               পৃষ্ঠাটি লোড হতে সমস্যা হয়েছে
             </h2>
-            <p className="text-sm text-slate-300">
+            <p
+              className="text-sm"
+              style={{ color: '#8a7479' }}
+            >
               System recovery mode — reload to restore state.
             </p>
           </div>
@@ -40,14 +66,17 @@ export default function GlobalError({
                 reset();
               }
             }}
-            className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-indigo-500/30 hover:bg-indigo-500/40 border border-indigo-500/50 text-indigo-200 font-semibold text-sm transition-all shadow-[0_0_15px_rgba(99,102,241,0.25)]"
+            className="w-full flex items-center justify-center gap-2 py-3 px-5 rounded-full font-semibold text-sm transition-all shadow-sm"
+            style={{
+              backgroundColor: '#9b2243',
+              color: '#ffffff',
+            }}
           >
             <RefreshCw className="h-4 w-4" />
-            <span>পৃষ্ঠাটি পুনরায় লোড করুন (Reload)</span>
+            <span>পুনরায় লোড করুন (Reload)</span>
           </button>
         </div>
       </body>
     </html>
   );
 }
-

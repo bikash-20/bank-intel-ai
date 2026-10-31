@@ -6,32 +6,36 @@ const config: Config = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './lib/**/*.{js,ts,jsx,tsx,mdx}',
   ],
-  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        obsidian: {
-          950: '#050608',
-          900: '#090A0F',
-          850: '#0E1117',
-          800: '#141824',
-          700: '#1F2438',
-        },
+        bg: 'var(--bg)',
+        surface: 'var(--surface)',
+        surface2: 'var(--surface2)',
+        line: 'var(--line)',
+        ink: 'var(--ink)',
+        mute: 'var(--mute)',
+        brand: 'var(--brand)',
+        'brand-ink': 'var(--brand-ink)',
+        pill: 'var(--pill)',
+        'pill-ink': 'var(--pill-ink)',
+        ok: 'var(--ok)',
+        okbg: 'var(--okbg)',
+        bad: 'var(--bad)',
+        badbg: 'var(--badbg)',
       },
       fontFamily: {
-        sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
-        display: ['var(--font-display)', 'serif'],
-        mono: ['var(--font-mono)', 'monospace'],
-        bengali: ['var(--font-bengali)', 'var(--font-sans)', 'sans-serif'],
+        sans: ['var(--sans)', 'system-ui', 'sans-serif'],
+        serif: ['var(--serif)', 'Georgia', 'serif'],
       },
-      animation: {
-        'glow-pulse': 'glow-pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+      borderRadius: {
+        pill: '999px',
+        stat: '28px',
+        panel: '36px',
+        card: '44px',
       },
-      keyframes: {
-        'glow-pulse': {
-          '0%, 100%': { opacity: '0.4' },
-          '50%': { opacity: '0.8' },
-        },
+      boxShadow: {
+        theme: 'var(--shadow)',
       },
     },
   },
@@ -39,4 +43,3 @@ const config: Config = {
 };
 
 export default config;
-

@@ -2,27 +2,197 @@
 @tailwind components;
 @tailwind utilities;
 
+/* 1. Theme Tokens (Light Default) */
 :root {
-  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
-  --font-display: 'Newsreader', serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  color-scheme: light;
+  --bg: #fdfbfa;
+  --surface: #ffffff;
+  --surface2: #f8f1f2;
+  --line: #efe3e5;
+  --ink: #2a1a20;
+  --mute: #8a7479;
+  --brand: #9b2243; /* burgundy */
+  --brand-ink: #ffffff;
+  --pill: #27352b; /* dark green, used for every selected pill */
+  --pill-ink: #ffffff;
+  --ok: #2f7a4f;
+  --okbg: #e8f4ec;
+  --bad: #b3243b;
+  --badbg: #fbe8eb;
+  --shadow: 0 18px 50px -24px rgba(155, 34, 67, 0.35);
+  --petal: 0.9;
+
+  /* Typography fallback bindings */
+  --serif: var(--font-fraunces), var(--font-noto-serif-bengali), 'Fraunces', Georgia, serif;
+  --sans: var(--font-inter), var(--font-hind-siliguri), 'Inter', system-ui, sans-serif;
 }
 
+/* Dark Theme Tokens */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0c0a0e;
+  --surface: #16131a;
+  --surface2: #1e1a24;
+  --line: #2a2530;
+  --ink: #f6ecef;
+  --mute: #a1939a;
+  --brand: #ff8fab; /* rose */
+  --brand-ink: #2a0a14;
+  --pill: #f6ecef; /* light pill on dark */
+  --pill-ink: #16131a;
+  --ok: #6fd49a;
+  --okbg: #14291e;
+  --bad: #ff8a9b;
+  --badbg: #301319;
+  --shadow: 0 18px 50px -24px rgba(0, 0, 0, 0.8);
+  --petal: 0.12;
+}
+
+/* System Preference Dark Support for First Visits */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #0c0a0e;
+    --surface: #16131a;
+    --surface2: #1e1a24;
+    --line: #2a2530;
+    --ink: #f6ecef;
+    --mute: #a1939a;
+    --brand: #ff8fab;
+    --brand-ink: #2a0a14;
+    --pill: #f6ecef;
+    --pill-ink: #16131a;
+    --ok: #6fd49a;
+    --okbg: #14291e;
+    --bad: #ff8a9b;
+    --badbg: #301319;
+    --shadow: 0 18px 50px -24px rgba(0, 0, 0, 0.8);
+    --petal: 0.12;
+  }
+}
+
+/* Dynamic Language-Based Serif Switching */
+:root[data-lang="bn"],
+html[lang="bn"] {
+  --serif: var(--font-noto-serif-bengali), var(--font-fraunces), 'Noto Serif Bengali', serif;
+  --sans: var(--font-hind-siliguri), var(--font-inter), 'Hind Siliguri', sans-serif;
+}
+
+:root[data-lang="en"],
+html[lang="en"] {
+  --serif: var(--font-fraunces), var(--font-noto-serif-bengali), 'Fraunces', Georgia, serif;
+  --sans: var(--font-inter), var(--font-hind-siliguri), 'Inter', system-ui, sans-serif;
+}
+
+/* Global Body Styling */
 body {
-  background-color: #050608;
-  color: #f1f5f9;
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.55;
+  transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease;
   overflow-x: hidden;
 }
 
-/* Hide scrollbar for Chrome, Safari and Opera */
+/* Smooth Theme & State Transitions */
+*,
+*::before,
+*::after {
+  border-color: var(--line);
+}
+
+/* Typography Utility Classes */
+.font-serif-app {
+  font-family: var(--serif);
+}
+
+.font-sans-app {
+  font-family: var(--sans);
+}
+
+.app-title {
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.stat-number {
+  font-family: var(--serif);
+  font-size: 38px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.question-heading {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(26px, 4.2vw, 38px);
+  line-height: 1.22;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+}
+
+/* Shape Radii Standards */
+.pill-rounded {
+  border-radius: 999px;
+}
+
+.stat-card-rounded {
+  border-radius: 28px;
+}
+
+.filter-panel-rounded {
+  border-radius: 36px;
+}
+
+.question-card-rounded {
+  border-radius: 44px;
+}
+
+@media (max-width: 640px) {
+  .question-card-rounded {
+    border-radius: 34px;
+  }
+}
+
+/* Background Petal Animations */
+@keyframes fallPetal {
+  0% {
+    transform: translate3d(0, -60px, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate3d(60px, 110vh, 0) rotate(380deg);
+  }
+}
+
+.petal-particle {
+  width: 26px;
+  height: 32px;
+  border-radius: 70% 0 70% 30%;
+  background: radial-gradient(circle at 30% 30%, #ffd3df, #f27ea3);
+  filter: blur(0.6px);
+  will-change: transform;
+  animation: fallPetal linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .petal-particle {
+    animation: none !important;
+    display: none;
+  }
+}
+
+/* Utility to Hide Scrollbar */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
-
-/* Hide scrollbar for IE, Edge and Firefox */
 .no-scrollbar {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 /* Safe bottom inset for iOS Home Indicator */
@@ -30,19 +200,9 @@ body {
   padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
 }
 
-/* Tabular Numbers Enforcement across all metric counters & option keys */
-.tabular-nums,
-[data-tabular-nums='true'] {
+/* Tabular Numbers */
+.tabular-nums {
   font-variant-numeric: tabular-nums;
   -webkit-font-feature-settings: 'tnum' 1;
   font-feature-settings: 'tnum' 1;
 }
-
-/* Glass card utility */
-.glass-panel {
-  background: rgba(14, 17, 23, 0.7);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-

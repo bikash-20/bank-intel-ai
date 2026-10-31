@@ -1,39 +1,42 @@
 import type { Metadata, Viewport } from 'next';
-import { Plus_Jakarta_Sans, JetBrains_Mono, Newsreader, Hind_Siliguri } from 'next/font/google';
+import { Fraunces, Noto_Serif_Bengali, Inter, Hind_Siliguri } from 'next/font/google';
 import './globals.css';
+import { ThemeProvider } from '../lib/theme/context';
 import { I18nProvider } from '../lib/i18n/context';
 import { HeaderNav } from '../components/layout/HeaderNav';
 import { MobileBottomNav } from '../components/layout/MobileBottomNav';
 import { PWAInstallBanner } from '../components/pwa/PWAInstallBanner';
+import { Petals } from '../components/decor/Petals';
 
-const sansFont = Plus_Jakarta_Sans({
+const fraunces = Fraunces({
   subsets: ['latin'],
-  variable: '--font-sans',
+  variable: '--font-fraunces',
   display: 'swap',
 });
 
-const displayFont = Newsreader({
-  subsets: ['latin'],
-  style: ['italic', 'normal'],
-  variable: '--font-display',
+const notoSerifBengali = Noto_Serif_Bengali({
+  subsets: ['bengali'],
+  weight: ['500', '700'],
+  variable: '--font-noto-serif-bengali',
   display: 'swap',
 });
 
-const monoFont = JetBrains_Mono({
+const inter = Inter({
   subsets: ['latin'],
-  variable: '--font-mono',
+  weight: ['400', '500', '600'],
+  variable: '--font-inter',
   display: 'swap',
 });
 
-const bengaliFont = Hind_Siliguri({
+const hindSiliguri = Hind_Siliguri({
   subsets: ['bengali', 'latin'],
-  weight: ['400', '500', '600', '700'],
-  variable: '--font-bengali',
+  weight: ['400', '500', '600'],
+  variable: '--font-hind-siliguri',
   display: 'swap',
 });
 
 export const metadata: Metadata = {
-  title: 'BankIntel — Bangladesh Bank & BSC MCQ Intelligence Platform',
+  title: 'Bank-Intel — Bangladesh Bank & BCS MCQ Intelligence Platform',
   description:
     'Ultra-fast, mobile-first offline PWA with -0.25 negative marking engine and on-demand Per-Option AI distractor explanations in English & Bengali.',
   manifest: '/manifest.json',
@@ -50,8 +53,8 @@ export const metadata: Metadata = {
   },
   appleWebApp: {
     capable: true,
-    statusBarStyle: 'black-translucent',
-    title: 'BankIntel',
+    statusBarStyle: 'default',
+    title: 'Bank-Intel',
   },
 };
 
@@ -59,7 +62,7 @@ export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
-  themeColor: '#075B3B',
+  themeColor: '#9b2243',
 };
 
 export default function RootLayout({
@@ -70,46 +73,71 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`dark ${sansFont.variable} ${displayFont.variable} ${monoFont.variable} ${bengaliFont.variable}`}
+      className={`${fraunces.variable} ${notoSerifBengali.variable} ${inter.variable} ${hindSiliguri.variable}`}
+      suppressHydrationWarning
     >
-      <body className="min-h-screen bg-obsidian-950 font-sans text-slate-100 antialiased selection:bg-indigo-500/30 selection:text-indigo-200 pb-20 sm:pb-8">
-        <I18nProvider>
-          {/* Subtle background glow */}
-          <div className="fixed inset-0 pointer-events-none z-0">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] sm:w-[1000px] h-[300px] sm:h-[400px] bg-indigo-600/5 blur-[120px] rounded-full" />
-          </div>
-
-          {/* Desktop/Tablet Header Nav */}
-          <HeaderNav />
-
-          {/* Main View Area */}
-          <main className="relative z-10 mx-auto max-w-7xl px-3 sm:px-6 py-4 sm:py-8">
-            {children}
-          </main>
-
-          {/* Mobile Bottom Navigation Bar */}
-          <MobileBottomNav />
-
-          {/* PWA Install Banner */}
-          <PWAInstallBanner />
-
-          {/* PWA Service Worker Registration */}
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
-                if ('serviceWorker' in navigator) {
-                  window.addEventListener('load', function() {
-                    navigator.serviceWorker.register('/sw.js').then(function(reg) {
-                      reg.update();
-                    }).catch(function(err) {
-                      console.log('SW registration error:', err);
-                    });
-                  });
+      <head>
+        {/* Zero-CLS / Zero-Flicker Theme & Language Init */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                var theme = localStorage.getItem('bi-theme');
+                if (!theme) {
+                  theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
                 }
-              `,
-            }}
-          />
-        </I18nProvider>
+                document.documentElement.setAttribute('data-theme', theme);
+                document.documentElement.style.colorScheme = theme;
+
+                var lang = localStorage.getItem('bank_intel_locale_v1') || 'en';
+                document.documentElement.setAttribute('lang', lang);
+                document.documentElement.setAttribute('data-lang', lang);
+              } catch (e) {}
+            `,
+          }}
+        />
+      </head>
+      <body className="min-h-screen antialiased selection:bg-[#ffd3df] selection:text-[#2a1a20]">
+        <ThemeProvider>
+          <I18nProvider>
+            {/* Background Falling Petals Signature Layer */}
+            <Petals />
+
+            {/* Application Main Layout Wrapper (Centered Max Width 1040px, Padding 18px 20px 110px) */}
+            <div className="relative z-10 mx-auto max-w-[1040px] px-4 sm:px-5 pt-[18px] pb-[110px] space-y-6">
+              {/* Header */}
+              <HeaderNav />
+
+              {/* Page Content */}
+              <main className="w-full">
+                {children}
+              </main>
+            </div>
+
+            {/* Mobile Bottom Navigation */}
+            <MobileBottomNav />
+
+            {/* PWA Installation Prompt Banner */}
+            <PWAInstallBanner />
+
+            {/* PWA Service Worker Registration with Immediate Update Check */}
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `
+                  if ('serviceWorker' in navigator) {
+                    window.addEventListener('load', function() {
+                      navigator.serviceWorker.register('/sw.js').then(function(reg) {
+                        reg.update();
+                      }).catch(function(err) {
+                        console.log('SW registration error:', err);
+                      });
+                    });
+                  }
+                `,
+              }}
+            />
+          </I18nProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
