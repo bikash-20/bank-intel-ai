@@ -1,0 +1,19 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "bank-intel-worker",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-10-01",
+  "ai": {
+    "binding": "AI"
+  },
+  "kv_namespaces": [
+    {
+      "binding": "CACHE",
+      "id": "bab465a6d0da4c8c886a0e234368510a"
+    }
+  ],
+  "vars": {
+    "ALLOWED_ORIGIN": "*"
+  }
+}
+

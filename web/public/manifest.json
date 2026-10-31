@@ -1,0 +1,17 @@
+{
+  "name": "BankIntel — Bangladesh Bank & BSC MCQ Intelligence Platform",
+  "short_name": "BankIntel",
+  "description": "Zero-latency offline MCQ intelligence platform with negative marking simulator and multi-model AI explain.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050608",
+  "theme_color": "#090A0F",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
+

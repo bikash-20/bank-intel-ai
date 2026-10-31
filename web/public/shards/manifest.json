@@ -1,0 +1,41 @@
+{
+  "version": "1.0.0",
+  "shards": [
+    {
+      "id": "bb-ad-2026",
+      "title": "Bangladesh Bank Assistant Director 2026",
+      "examBody": "BB",
+      "post": "Assistant Director",
+      "year": 2026,
+      "faculty": "BIBM",
+      "questionCount": 87,
+      "fileName": "bb-ad-2026.json",
+      "versionHash": "4bd56c599137dc61",
+      "updatedAt": "2026-10-31T22:22:19.331Z"
+    },
+    {
+      "id": "bb-so-it-2026",
+      "title": "Bangladesh Bank Senior Officer (IT) 2026",
+      "examBody": "BB",
+      "post": "Senior Officer (IT)",
+      "year": 2026,
+      "faculty": "CTI",
+      "questionCount": 15,
+      "fileName": "bb-so-it-2026.json",
+      "versionHash": "f5cc08a6b9a7072a",
+      "updatedAt": "2026-10-31T22:22:19.333Z"
+    },
+    {
+      "id": "bb-cash-2023",
+      "title": "Bangladesh Bank Officer (Cash) 2023",
+      "examBody": "BB",
+      "post": "Officer (Cash)",
+      "year": 2023,
+      "faculty": "BIBM",
+      "questionCount": 58,
+      "fileName": "bb-cash-2023.json",
+      "versionHash": "9a5d2f59ccb2a04c",
+      "updatedAt": "2026-10-31T22:22:19.333Z"
+    }
+  ]
+}

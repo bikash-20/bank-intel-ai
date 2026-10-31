@@ -1,0 +1,1336 @@
+[
+  {
+    "id": "bb-cash-2023-q026",
+    "hash": "5889d04940329dac",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "Which of the following word is plural?",
+    "options": {
+      "A": "Physics",
+      "B": "Ethics",
+      "C": "Scissors",
+      "D": "News"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Officer (Cash)",
+        "year": 2023,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-cash-2023-q027",
+    "hash": "90050e43f85c874f",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "Which one is noun?",
+    "options": {
+      "A": "Nostalgic",
+      "B": "Nostalgic",
+      "C": "Nostalgica",
+      "D": "Nostalgia"
+    },
+    "correctOption": "D",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Officer (Cash)",
+        "year": 2023,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-cash-2023-q028",
+    "hash": "868cfcf30e77bd5c",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "The term VIGOR is the same as –",
+    "options": {
+      "A": "Warmth",
+      "B": "Courage",
+      "C": "Boldness",
+      "D": "Strength"
+    },
+    "correctOption": "D",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Officer (Cash)",
+        "year": 2023,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-cash-2023-q029",
+    "hash": "ab70a4b1b745a135",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "‍Synonym of the word ‘Prolific’ is –",
+    "options": {
+      "A": "Plenty",
+      "B": "Fertile",
+      "C": "Conceptual",
+      "D": "Predominant"
+    },
+    "correctOption": "A",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Officer (Cash)",
+        "year": 2023,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-cash-2023-q031",
+    "hash": "35bcb79741600e72",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "Which of the following is the opposite of the word BONDAGE?",
+    "options": {
+      "A": "Liberty",
+      "B": "Tharldom",
+      "C": "Enslavement",
+      "D": "Serfdom"
+    },
+    "correctOption": "A",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Officer (Cash)",
+        "year": 2023,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-cash-2023-q032",
+    "hash": "286147b1144a3de2",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "Which one of the following is the analogy of TROPHY : CONTESTANT?",
+    "options": {
+      "A": "Baton : Runner",
+      "B": "Loan: Cashier",
+      "C": "Honors : Student",
+      "D": "Pride : Parent"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Officer (Cash)",
+        "year": 2023,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-cash-2023-q033",
+    "hash": "b8f6c517fcb1a5f6",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "Which of the following resembles LOGIC : REASONING?",
+    "options": {
+      "A": "Ethics : Behavior",
+      "B": "Sensitivity : Morality",
+      "C": "Bravery : Charisma",
+      "D": "Creativity : Enthusiasm"
+    },
+    "correctOption": "A",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Officer (Cash)",
+        "year": 2023,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-cash-2023-q034",
+    "hash": "d0d4c08d28bb6449",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "Which one of the following is the analogy of BENCH : STOOL?",
+    "options": {
+      "A": "Room : Veranda",
+      "B": "Table : Cupboard",
+      "C": "Cup : Saucer",
+      "D": "Yardstick : Foot rule"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Officer (Cash)",
+        "year": 2023,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-cash-2023-q036",
+    "hash": "0cf77eeb296a9bbc",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "Fill in the gap of the sentence: ‘You cannot get this book … such a price.",
+    "options": {
+      "A": "for",
+      "B": "at",
+      "C": "with",
+      "D": "on"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Officer (Cash)",
+        "year": 2023,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-cash-2023-q037",
+    "hash": "671767d95c70018a",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "Which one of the following spelling is correct?",
+    "options": {
+      "A": "Miscelaneous",
+      "B": "Miscellaneous",
+      "C": "Miscelaneous",
+      "D": "Misellaneous"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Officer (Cash)",
+        "year": 2023,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-cash-2023-q038",
+    "hash": "a15aa731ce4e0f04",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "Choose the correct spelling from the following?",
+    "options": {
+      "A": "Sunami",
+      "B": "Shunami",
+      "C": "Tsunami",
+      "D": "Tsuname"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Officer (Cash)",
+        "year": 2023,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-cash-2023-q039",
+    "hash": "d3a8c495e547cc5b",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "Identify a substitute word for the following sentence: `A name wrongly or unsuitably applied to a person or an object’.",
+    "options": {
+      "A": "Misnaming",
+      "B": "Misnomer",
+      "C": "Misreferring",
+      "D": "Assigning"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Officer (Cash)",
+        "year": 2023,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-cash-2023-q041",
+    "hash": "3d3811995bf76bb0",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "Select the most appropriate option to complete the sentence: ‘Do not quarrel over the money. Share it …. the five of you’.",
+    "options": {
+      "A": "among",
+      "B": "between",
+      "C": "equally",
+      "D": "by"
+    },
+    "correctOption": "A",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Officer (Cash)",
+        "year": 2023,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-cash-2023-q042",
+    "hash": "4df88dc5fcd49ebd",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "Pick appropriate word and complete the sentence ‘ …. at the top my voice, I tried to warn everybody’.",
+    "options": {
+      "A": "Having shouted",
+      "B": "Being Shouted",
+      "C": "Since I shouted",
+      "D": "Shouting"
+    },
+    "correctOption": "D",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Officer (Cash)",
+        "year": 2023,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-cash-2023-q043",
+    "hash": "d47b0a16cd0e676b",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "Which one of the following sentences is correct?",
+    "options": {
+      "A": "I found his pulse",
+      "B": "I examined his pulse",
+      "C": "I saw his pulse",
+      "D": "I felt his pulse"
+    },
+    "correctOption": "D",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Officer (Cash)",
+        "year": 2023,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-cash-2023-q046",
+    "hash": "7a3e1a12d12fd706",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "Which of the following option should be used to replace the underlined portion to correct the sentence ‘Arafat has the guts to rise from the occasion and come out successful’.",
+    "options": {
+      "A": "to rise to",
+      "B": "in rising from",
+      "C": "to raise with",
+      "D": "to rise against"
+    },
+    "correctOption": "A",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Officer (Cash)",
+        "year": 2023,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-cash-2023-q048",
+    "hash": "9f7b7ef2d919c30a",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "Which of the following is a feminine gender?",
+    "options": {
+      "A": "Swan",
+      "B": "Baby",
+      "C": "Niece",
+      "D": "Dancer"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Officer (Cash)",
+        "year": 2023,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-cash-2023-q051",
+    "hash": "48edaaac08126eab",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "2^30 + 2^30 + 2^30 + 2^30 = ?",
+    "options": {
+      "A": "8^30",
+      "B": "8^120",
+      "C": "2^32",
+      "D": "2^30"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Officer (Cash)",
+        "year": 2023,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-cash-2023-q052",
+    "hash": "eed4580c2dcf6645",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "If the sum of 3 consecutive integer is 210, then the sum of the two smaller integer is –",
+    "options": {
+      "A": "139",
+      "B": "140",
+      "C": "141",
+      "D": "Cannot be determined"
+    },
+    "correctOption": "A",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Officer (Cash)",
+        "year": 2023,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-cash-2023-q053",
+    "hash": "f628d870cb07d701",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": true,
+    "stem": "If $a2 + b2 = 45$ and ab = 18, find $1/a + 1/b$",
+    "options": {
+      "A": "$\\frac{1}{3}$",
+      "B": "$\\frac{1}{2}$",
+      "C": "$\\frac{2}{3}$",
+      "D": "$\\frac{1}{4}$"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Officer (Cash)",
+        "year": 2023,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-cash-2023-q054",
+    "hash": "5a9d2a10a86b8d76",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "If ax = b and by = a, then find the value of xy?",
+    "options": {
+      "A": "1",
+      "B": "0",
+      "C": "a",
+      "D": "y"
+    },
+    "correctOption": "A",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Officer (Cash)",
+        "year": 2023,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-cash-2023-q055",
+    "hash": "d1a2e959fff20242",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "Students of a class stand in a queue. If Ratan is 19th in order from both ends, how many students are there in the queue?",
+    "options": {
+      "A": "20",
+      "B": "37",
+      "C": "38",
+      "D": "39"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Officer (Cash)",
+        "year": 2023,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-cash-2023-q056",
+    "hash": "f380147f87f6ec47",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": true,
+    "stem": "If 1 is added to the numerator of a fraction, the fraction becomes 1. If 1 is added to the denominator, the fraction becomes $\\frac{1}{2}$. Find the fraction.",
+    "options": {
+      "A": "$\\frac{1}{3}$",
+      "B": "$\\frac{1}{2}$",
+      "C": "$\\frac{2}{3}$",
+      "D": "$\\frac{3}{4}$"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Officer (Cash)",
+        "year": 2023,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-cash-2023-q057",
+    "hash": "0ebd025f00b11ee9",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "The cost of 9 mangoes and 5 apples is equal to the cost of 7 mangoes and 8 apples. Find the ratio between the cost of 1 mango and the cost of one apple.",
+    "options": {
+      "A": "3 : 2",
+      "B": "2 : 3",
+      "C": "5 : 8",
+      "D": "9 : 7"
+    },
+    "correctOption": "A",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Officer (Cash)",
+        "year": 2023,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-cash-2023-q058",
+    "hash": "9bff6ec3092bb14b",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "A shopkeeper has sufficient money to buy 50 books. On reduction in the price of each book by Tk. 4, he could buy 10 books more. How much money does he has?",
+    "options": {
+      "A": "Tk. 1000",
+      "B": "Tk 1200",
+      "C": "Tk 1500",
+      "D": "Tk 2000"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Officer (Cash)",
+        "year": 2023,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-cash-2023-q059",
+    "hash": "de6b78ae4b2a245c",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "A man deposits certain amount in his bank account. After a few days, he withdraw half of the money deposited and deposits Tk. 500 more. If he has a balance of Tk. 2000 in his bank account, find the amount deposited initially.",
+    "options": {
+      "A": "Tk. 1500",
+      "B": "Tk. 2000",
+      "C": "Tk 2500",
+      "D": "Tk. 3000"
+    },
+    "correctOption": "D",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Officer (Cash)",
+        "year": 2023,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-cash-2023-q061",
+    "hash": "bad923998875e42b",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "In a group of 135 persons, 50% people contributed tk. 40 each, 30% contributed Tk. 60 each and the remaining person contributed Tk. 80. Find the average contribution for the group.",
+    "options": {
+      "A": "Tk. 50",
+      "B": "Tk. 54",
+      "C": "Tk. 60",
+      "D": "Tk. 62"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Officer (Cash)",
+        "year": 2023,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-cash-2023-q063",
+    "hash": "7a921f7281bdb4e9",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "If 4% of (P + Q) are 8 and P is a positive integer. What is the greatest possible value of Q?",
+    "options": {
+      "A": "200",
+      "B": "199",
+      "C": "198",
+      "D": "196"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Officer (Cash)",
+        "year": 2023,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-cash-2023-q064",
+    "hash": "b90ae5abed01da3f",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "Income of A is 25% less than B. What percent B’s income would be more than A?",
+    "options": {
+      "A": "35%",
+      "B": "33.33%",
+      "C": "30%",
+      "D": "25%"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Officer (Cash)",
+        "year": 2023,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-cash-2023-q065",
+    "hash": "22f22c75c11329b2",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "If a rectangle’s length and width are both doubled, by what percent is the rectangle’s area increased?",
+    "options": {
+      "A": "50%",
+      "B": "100%",
+      "C": "200%",
+      "D": "300%"
+    },
+    "correctOption": "D",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Officer (Cash)",
+        "year": 2023,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-cash-2023-q066",
+    "hash": "a106c8b1e827cdf8",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "A box contains 90 nuts each of 100gm and 100 bolts each of 150 gm. If the entire box weights 35.5 kg. then find the weight of the empty box.",
+    "options": {
+      "A": "10.5 kg",
+      "B": "11 kg",
+      "C": "11.5 kg",
+      "D": "24kg"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Officer (Cash)",
+        "year": 2023,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-cash-2023-q067",
+    "hash": "f22be643ac9b419e",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "A wholesaler bought 1200 radios for Tk. 18 each. The wholesaler sold 60 percent of the radios for Tk. 30 each and the rest for Tk. 15 each. What is the wholesaler’s average (arithmetic mean) profit per radio?",
+    "options": {
+      "A": "Tk. 6",
+      "B": "Tk. 5",
+      "C": "Tk. 4",
+      "D": "Tk. 3"
+    },
+    "correctOption": "A",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Officer (Cash)",
+        "year": 2023,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-cash-2023-q068",
+    "hash": "3bfc384a9a084a4f",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": true,
+    "stem": "Eight people are planning to share equally the cost of a rental car. If one person withdraws from the arrangement and the others share equally the entire cost of the car, then the share of each of the remaining persons will be increased by-",
+    "options": {
+      "A": "$\\frac{1}{8}$",
+      "B": "1/7",
+      "C": "$\\frac{7}{8}$",
+      "D": "None of these"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Officer (Cash)",
+        "year": 2023,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-cash-2023-q071",
+    "hash": "987a6a3e25ae007e",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "‘Dengue’ is a-",
+    "options": {
+      "A": "Latine word",
+      "B": "English word",
+      "C": "French word",
+      "D": "Spanish word"
+    },
+    "correctOption": "D",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Officer (Cash)",
+        "year": 2023,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-cash-2023-q073",
+    "hash": "c211fa0adfdfc771",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "Who is the first female ‘Megseysey’ award winner in Bangladesh?",
+    "options": {
+      "A": "Anwar Syed Haq",
+      "B": "Mokbula Manzoor",
+      "C": "Taherunnesa Abdullah",
+      "D": "Tahmina Anam"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Officer (Cash)",
+        "year": 2023,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-cash-2023-q074",
+    "hash": "54599097a02cf831",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "How many Bengalis have been with the ‘Knighthood’ title?",
+    "options": {
+      "A": "2",
+      "B": "4",
+      "C": "5",
+      "D": "3"
+    },
+    "correctOption": "D",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Officer (Cash)",
+        "year": 2023,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-cash-2023-q075",
+    "hash": "56ece03ea1aa751d",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "Who is the designer of the official logo of the Bangladesh Government?",
+    "options": {
+      "A": "Saha",
+      "B": "Kamrul Hasan",
+      "C": "Narayan Das",
+      "D": "Fazle Hasan"
+    },
+    "correctOption": "A",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Officer (Cash)",
+        "year": 2023,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-cash-2023-q076",
+    "hash": "6f7fcedffd6ad0dc",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "Which Mughal Emperor is laid to rest in Yangon?",
+    "options": {
+      "A": "Sher Shah",
+      "B": "Elias Shah",
+      "C": "Bahadur Shah",
+      "D": "Jafar Shah"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Officer (Cash)",
+        "year": 2023,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-cash-2023-q077",
+    "hash": "edba26740badf938",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "Which of the following is the largest border in the world between two countries?",
+    "options": {
+      "A": "USA-Canada",
+      "B": "Russia-China",
+      "C": "Brazil-Argentina",
+      "D": "India-China"
+    },
+    "correctOption": "A",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Officer (Cash)",
+        "year": 2023,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-cash-2023-q078",
+    "hash": "80687bc47953a51f",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "Which country is called ‘Great Britain of the East’?",
+    "options": {
+      "A": "Korea",
+      "B": "Thailand",
+      "C": "Japan",
+      "D": "Bangladesh"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Officer (Cash)",
+        "year": 2023,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-cash-2023-q079",
+    "hash": "41c7622214e504ac",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "‘Hoplology’ is the study of what?",
+    "options": {
+      "A": "Weapons",
+      "B": "Fire",
+      "C": "Animal",
+      "D": "Weather"
+    },
+    "correctOption": "A",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Officer (Cash)",
+        "year": 2023,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-cash-2023-q081",
+    "hash": "dfcfd40ce89fc332",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "What is Ervebo?",
+    "options": {
+      "A": "Measles Vaccine",
+      "B": "Polio Vaccine",
+      "C": "Small Pox Vaccine",
+      "D": "Ebola Vaccine"
+    },
+    "correctOption": "D",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Officer (Cash)",
+        "year": 2023,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-cash-2023-q082",
+    "hash": "72a419b32a9c9560",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "Industrial shares considered as safe investment-",
+    "options": {
+      "A": "Preferred Stock",
+      "B": "Blue Chip",
+      "C": "ESG Stocks",
+      "D": "Value Stocks"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Officer (Cash)",
+        "year": 2023,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-cash-2023-q083",
+    "hash": "c72d54714bda0fe4",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "Bangladesh will graduate from LDC to developing country in-",
+    "options": {
+      "A": "2026",
+      "B": "2023",
+      "C": "2041",
+      "D": "2071"
+    },
+    "correctOption": "A",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Officer (Cash)",
+        "year": 2023,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-cash-2023-q084",
+    "hash": "016039f10b5728ab",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "As per the declaration of the government Bangladesh will turn into ‘Smart Bangladesh’ by-",
+    "options": {
+      "A": "2030",
+      "B": "2026",
+      "C": "2041",
+      "D": "2071"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Officer (Cash)",
+        "year": 2023,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-cash-2023-q085",
+    "hash": "987acd6491c65871",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "Tax-free income for individuals in Bangladesh for the tax years 2023-2024 is-",
+    "options": {
+      "A": "Taka 300, 000",
+      "B": "Taka 350, 000",
+      "C": "Taka 400, 000",
+      "D": "Taka 475, 000"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Officer (Cash)",
+        "year": 2023,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-cash-2023-q086",
+    "hash": "60941564f407c3ce",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "Value Added Tax (VAT) was introduced in Bangladesh in-",
+    "options": {
+      "A": "1991",
+      "B": "2001",
+      "C": "1881",
+      "D": "2011"
+    },
+    "correctOption": "A",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Officer (Cash)",
+        "year": 2023,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-cash-2023-q087",
+    "hash": "2d53866b2e06fe69",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "Which of the following is different?",
+    "options": {
+      "A": "Nigeria",
+      "B": "Niger",
+      "C": "Namibia",
+      "D": "Nicaragua"
+    },
+    "correctOption": "D",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Officer (Cash)",
+        "year": 2023,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-cash-2023-q088",
+    "hash": "280aa0ef1c5e5487",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "The ICC World Cup 2023 is going to be hosted by-",
+    "options": {
+      "A": "Australia",
+      "B": "England",
+      "C": "India",
+      "D": "South Africa"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Officer (Cash)",
+        "year": 2023,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-cash-2023-q089",
+    "hash": "300071a96528f520",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "Which sector has the largest share of the GDP of Bangladesh?",
+    "options": {
+      "A": "Industry",
+      "B": "Service",
+      "C": "Agriculture",
+      "D": "None of the above"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Officer (Cash)",
+        "year": 2023,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-cash-2023-q091",
+    "hash": "e9f199680b1ca4c6",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "A computer cannot do anything without a-",
+    "options": {
+      "A": "Memory",
+      "B": "Programme",
+      "C": "Chip",
+      "D": "Output device"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Officer (Cash)",
+        "year": 2023,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-cash-2023-q092",
+    "hash": "1aa09b1d334f57a7",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "Which of the following is not computer hardware?",
+    "options": {
+      "A": "Monitor",
+      "B": "MS paint",
+      "C": "Keyboard",
+      "D": "RAM"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Officer (Cash)",
+        "year": 2023,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-cash-2023-q094",
+    "hash": "73597bec743dcb44",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "Keys lebelled F1 to F12 are … kyes.",
+    "options": {
+      "A": "Input",
+      "B": "Output",
+      "C": "Help",
+      "D": "Function"
+    },
+    "correctOption": "D",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Officer (Cash)",
+        "year": 2023,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-cash-2023-q095",
+    "hash": "2f0a0543945caf3b",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "Which technology is used by cryptocurrencies?",
+    "options": {
+      "A": "Database",
+      "B": "Spreadsheet",
+      "C": "Blockchain",
+      "D": "Text file"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Officer (Cash)",
+        "year": 2023,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-cash-2023-q096",
+    "hash": "901866277596c076",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "Short cut to save a file is-",
+    "options": {
+      "A": "Ctrl +s",
+      "B": "Alt + s",
+      "C": "Ctrl + F1",
+      "D": "Ctrl + 2"
+    },
+    "correctOption": "A",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Officer (Cash)",
+        "year": 2023,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-cash-2023-q097",
+    "hash": "93746c24bb633e20",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "Which of the following is the strongest password?",
+    "options": {
+      "A": "XxY59*&",
+      "B": "BCD1234",
+      "C": "A1B2C3D4",
+      "D": "PasSwOrD"
+    },
+    "correctOption": "A",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Officer (Cash)",
+        "year": 2023,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-cash-2023-q098",
+    "hash": "6e2f46643869ed5d",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "RTGS is a-",
+    "options": {
+      "A": "Payment system",
+      "B": "Governance system",
+      "C": "Righ-based group",
+      "D": "An anti-virus software"
+    },
+    "correctOption": "A",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Officer (Cash)",
+        "year": 2023,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-cash-2023-q099",
+    "hash": "69c700836aabd356",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "Which one of the following is an example of an operating system?",
+    "options": {
+      "A": "Microsoft Word",
+      "B": "Microsoft Excel",
+      "C": "Microsoft Access",
+      "D": "Microsoft Windows"
+    },
+    "correctOption": "D",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Officer (Cash)",
+        "year": 2023,
+        "faculty": "BIBM"
+      }
+    ]
+  }
+]

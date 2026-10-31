@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">BankIntel PWA icon</title>
+  <desc id="desc">Bank building and open book with a Bangladesh-inspired red accent and AI sparkle.</desc>
+  <defs>
+    <linearGradient id="green" x1="96" y1="66" x2="408" y2="438" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#159B62"/>
+      <stop offset="1" stop-color="#075B3B"/>
+    </linearGradient>
+    <linearGradient id="page" x1="105" y1="337" x2="408" y2="438" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8FFF9"/>
+      <stop offset="1" stop-color="#DFF4E7"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" fill="#F3FBF6"/>
+  <!-- Bank roof and structure -->
+  <path d="M118 196L256 112L394 196H118Z" fill="url(#green)"/>
+  <path d="M139 207H373" stroke="#075B3B" stroke-width="13" stroke-linecap="round"/>
+  <path d="M153 220V315M205 220V315M307 220V315M359 220V315" stroke="url(#green)" stroke-width="23" stroke-linecap="round"/>
+  <path d="M130 326H382" stroke="#075B3B" stroke-width="15" stroke-linecap="round"/>
+
+  <!-- Open book -->
+  <path d="M256 367C218 339 166 331 99 347V399C161 385 216 395 256 425C296 395 351 385 413 399V347C346 331 294 339 256 367Z" fill="url(#page)" stroke="#0B7149" stroke-width="13" stroke-linejoin="round"/>
+  <path d="M256 367V424" stroke="#0B7149" stroke-width="10" stroke-linecap="round"/>
+  <path d="M124 365C166 359 201 366 226 382M388 365C346 359 311 366 286 382" stroke="#9BCFB0" stroke-width="8" stroke-linecap="round"/>
+
+  <!-- Bangladesh-inspired red accent and AI sparkle -->
+  <circle cx="371" cy="128" r="25" fill="#E5484D"/>
+  <path d="M421 78L428 98L448 105L428 112L421 132L414 112L394 105L414 98L421 78Z" fill="#E5484D"/>
+  <circle cx="91" cy="270" r="8" fill="#E5484D"/>
+</svg>

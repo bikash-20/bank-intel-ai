@@ -1,0 +1,2107 @@
+[
+  {
+    "id": "bb-ad-2026-q001",
+    "hash": "462bb49cdf825087",
+    "subject": "ANALYTICAL",
+    "topic": "Ranking & Ordering",
+    "hasMath": true,
+    "stem": "In a class, Rahim ranks $7^{th}$ from the top and $26^{th}$ from the bottom. How many students are in the class?",
+    "options": {
+      "A": "32",
+      "B": "35",
+      "C": "37",
+      "D": "40"
+    },
+    "correctOption": "A",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ],
+    "staticExplanation": {
+      "questionId": "bb-ad-2026-q001",
+      "coreConcept": "Linear positioning identity: $\\text{Total} = \\text{Rank}_{\\text{top}} + \\text{Rank}_{\\text{bottom}} - 1$.",
+      "examHallShortcut": "Direct mental math: $7 + 26 - 1 = 32$. Take 2 seconds and eliminate all other choices.",
+      "stepByStep": "1. Rahim is counted twice: once from the top (7th) and once from the bottom (26th).\n2. Formula: $\\text{Total} = 7 + 26 - 1 = 32$.\n3. Therefore, the class has exactly 32 students.",
+      "optionDiagnostics": {
+        "A": {
+          "status": "CORRECT",
+          "verdict": "Exact match: $7 + 26 - 1 = 32$. Rahim is correctly counted once."
+        },
+        "B": {
+          "status": "TRAP_DISTRACTOR",
+          "verdict": "Candidates pick 35 by misreading 26 as 28 or confusing with $7 + 28$."
+        },
+        "C": {
+          "status": "TRAP_DISTRACTOR",
+          "verdict": "Arithmetic miscalculation of $7 + 30$."
+        },
+        "D": {
+          "status": "TRAP_DISTRACTOR",
+          "verdict": "Result of arbitrary rounding up without applying the inclusion-exclusion principle."
+        }
+      },
+      "generatedBy": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+      "cachedAt": 1793485339330
+    }
+  },
+  {
+    "id": "bb-ad-2026-q002",
+    "hash": "d7d045a266f20e47",
+    "subject": "MATH",
+    "topic": "Arithmetic & Algebra",
+    "hasMath": false,
+    "stem": "The total number of legs of a group of cows and chickens is 14 more than twice the total number of their heads. How many cows are there in that group?",
+    "options": {
+      "A": "5",
+      "B": "6",
+      "C": "7",
+      "D": "9"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q003",
+    "hash": "e757974c6b475cbe",
+    "subject": "ENGLISH",
+    "topic": "Prefix & Suffix",
+    "hasMath": false,
+    "stem": "Choose the option where the suffix or prefix has been wrongly used.",
+    "options": {
+      "A": "Antithesis",
+      "B": "Antifreeze",
+      "C": "Unfield",
+      "D": "Infiltrate"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q007",
+    "hash": "d7e0a68cc535746d",
+    "subject": "ENGLISH",
+    "topic": "Grammar & Vocabulary",
+    "hasMath": false,
+    "stem": "Read the text and decide which option (A, B, C or D) best fits each gap.",
+    "options": {
+      "A": "flagrant",
+      "B": "malevolent",
+      "C": "pretentious",
+      "D": "flamboyant"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q011",
+    "hash": "7abe20225f2e4885",
+    "subject": "ENGLISH",
+    "topic": "Grammar & Vocabulary",
+    "hasMath": false,
+    "stem": "Recent studies have been very useful in mapping the cognitive architecture of human short-term memory to specific brain regions.",
+    "options": {
+      "A": "mapping",
+      "B": "cognitive",
+      "C": "human",
+      "D": "specific"
+    },
+    "correctOption": "D",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q012",
+    "hash": "9f7d2557ccfd8e2f",
+    "subject": "ENGLISH",
+    "topic": "Grammar & Vocabulary",
+    "hasMath": false,
+    "stem": "An investment fund must prepare disclosure documents that are transparent and contain key information about the fund.",
+    "options": {
+      "A": "prepare",
+      "B": "contain",
+      "C": "are",
+      "D": "transparent"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q013",
+    "hash": "bfeb6bac3a1c1950",
+    "subject": "ENGLISH",
+    "topic": "Grammar & Vocabulary",
+    "hasMath": false,
+    "stem": "The advisor told the politician that his message needed to be more carefully calibrated to appeal to a broader audience.",
+    "options": {
+      "A": "calibrated",
+      "B": "needed",
+      "C": "advisor",
+      "D": "broader"
+    },
+    "correctOption": "A",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q014",
+    "hash": "2bbd21fac15e5fa6",
+    "subject": "ENGLISH",
+    "topic": "Grammar & Vocabulary",
+    "hasMath": false,
+    "stem": "Spreading false rumors online has a pernicious influence on public trust.",
+    "options": {
+      "A": "destructive",
+      "B": "empowering",
+      "C": "beneficial",
+      "D": "profound"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q015",
+    "hash": "fd6ddb926456851b",
+    "subject": "ENGLISH",
+    "topic": "Grammar & Vocabulary",
+    "hasMath": false,
+    "stem": "I had hoped the seminar would attract a large audience, but the information was too esoteric for wide appeal.",
+    "options": {
+      "A": "obscure",
+      "B": "simple",
+      "C": "abstruse",
+      "D": "irrelevant"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q009",
+    "hash": "f23f2b741f4dc344",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "He respectedly requested everyone to take their seats so that the show could begin perfunctorily.",
+    "options": {
+      "A": "respectfully",
+      "B": "take",
+      "C": "begin",
+      "D": "perfunctorily"
+    },
+    "correctOption": "A",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q010",
+    "hash": "3348fb1874c3add3",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "Recent studies have been very useful in mapping the cognitive architecture of human short-term memory to specificity brain regions.",
+    "options": {
+      "A": "mapping",
+      "B": "cognitive",
+      "C": "human",
+      "D": "specificity"
+    },
+    "correctOption": "D",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q004",
+    "hash": "4f4408a3ecd632c1",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "An investment fund must prepare disclosure documents that are transparent and contains key information about the fund.",
+    "options": {
+      "A": "prepare",
+      "B": "contains",
+      "C": "are",
+      "D": "transparent"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q005",
+    "hash": "d00fbac632f8c782",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "The advisor told the politician that his message needed to be more carefully celibated to appeal to a broader audience.",
+    "options": {
+      "A": "celibated",
+      "B": "needed",
+      "C": "advisor",
+      "D": "broader"
+    },
+    "correctOption": "A",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q006",
+    "hash": "1860628c4d7e46c9",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "The coach was famous for laconic press conferences, often answering with a simple nod.",
+    "options": {
+      "A": "succinct",
+      "B": "verbose",
+      "C": "innovative",
+      "D": "indifferent"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q016",
+    "hash": "e13f345f08703af2",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "The investigative journalist was tenacious in her quest to uncover the truth behind the scandal.",
+    "options": {
+      "A": "irresolute",
+      "B": "wavering",
+      "C": "obnoxious",
+      "D": "exuberant"
+    },
+    "correctOption": "A",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q017",
+    "hash": "b28965cb536dd0bc",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "i) The climbers found that the final assent to the summit was the most difficult part of the expedition. ii) The company’s rapid assent in the industry caught the attention of global investors. iii) After reviewing the revised contract, the board members decided to assent to the terms.",
+    "options": {
+      "A": "i only",
+      "B": "ii only",
+      "C": "iii only",
+      "D": "All are correct"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q018",
+    "hash": "91f07fe4fd0bc531",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "i) The company divided the large project into three discreet phases to make tracking progress easier. ii) The manager promised to handle the employee complaint in a discreet manner. iii) Although the twins look alike, they have completely discreet personalities.",
+    "options": {
+      "A": "i only",
+      "B": "ii only",
+      "C": "iii only",
+      "D": "All are correct"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q019",
+    "hash": "1e991ab933aa1520",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "Mr. Joynal was absolved ______ the criminal case.",
+    "options": {
+      "A": "with",
+      "B": "of",
+      "C": "with",
+      "D": "off"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q020",
+    "hash": "bf1bcea08716f608",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "Which of the following is not a comparative form of an adjective?",
+    "options": {
+      "A": "Farther",
+      "B": "Further",
+      "C": "Later",
+      "D": "Latter"
+    },
+    "correctOption": "D",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q021",
+    "hash": "d41d9d4d2cda5e1d",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "‘শেরে বাংলা মহান ছিলেন নেতা’ – এখানে বাক্য গঠনের কোন বৈশিষ্ট্য লঙ্ঘিত হয়েছে?",
+    "options": {
+      "A": "আকাঙ্খা",
+      "B": "আসত্তি",
+      "C": "আসক্তি",
+      "D": "যোগ্যতা"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q022",
+    "hash": "b9e8f69a24dce909",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "নিচের কোনটি অভিশ্রুতির উদাহরণ?",
+    "options": {
+      "A": "রাধিয়া > রাইধ্যা > রেঁধে",
+      "B": "কর্তব্য > কাজ > কাম",
+      "C": "প্রেম > পেরেম > পেম",
+      "D": "শ্রেষ্ঠ > শ্রেষ্ট > শেরেষ্ট"
+    },
+    "correctOption": "A",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q023",
+    "hash": "f2f96e704b3b1bed",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "নিচের কোন ধ্বনিটি উষ্ম ধ্বনি হলেও শিস ধ্বনি নয়?",
+    "options": {
+      "A": "শ",
+      "B": "স",
+      "C": "হ",
+      "D": "ষ"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q024",
+    "hash": "4eb9d362b8b89f56",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "পদাত্মক দ্বিরুক্তির উদাহরণ কোনটি?",
+    "options": {
+      "A": "কড়কড়",
+      "B": "রোজ রোজ",
+      "C": "মিউমিউ",
+      "D": "ঝমঝম"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q025",
+    "hash": "0f3dbb95714d1a10",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "‘ফ’ ধ্বনির ধ্বনি তাত্ত্বিক পরিচয় কি?",
+    "options": {
+      "A": "ওষ্ঠ্য, মহাপ্রাণ ও ঘোষ",
+      "B": "কণ্ঠ, অল্পপ্রাণ ও অঘোষ",
+      "C": "ওষ্ঠ্য, অল্পপ্রাণ ও অঘোষ",
+      "D": "ওষ্ঠ্য, মহাপ্রাণ ও অঘোষ"
+    },
+    "correctOption": "D",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q026",
+    "hash": "a22fa752f2510fa5",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "‘সম্পৃক্ত’ শব্দটির সঠিক অর্থ কি?",
+    "options": {
+      "A": "সংযুক্ত",
+      "B": "আটবাধা",
+      "C": "অন্তর্ভুক্ত",
+      "D": "দুই বা তার অধিকের মিলন"
+    },
+    "correctOption": "A",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q028",
+    "hash": "1dd84ff3b93377ac",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "মধ্যযুগীয় বাংলা সাহিত্য ‘শ্রীকৃষ্ণকীর্তন’-এর রচয়িতা বড়ু চণ্ডীদাসের প্রকৃত নাম কি?",
+    "options": {
+      "A": "অনন্ত",
+      "B": "চণ্ডীবাবু",
+      "C": "বডু দত্ত",
+      "D": "জয়ন্ত"
+    },
+    "correctOption": "A",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q030",
+    "hash": "06e26cfcfbb91213",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "সৈয়দ ওয়ালীউল্লাহর লেখা ‘লালসালু’ উপন্যাসের অন্যতম প্রধান একটি নারী চরিত্রের নাম কি?",
+    "options": {
+      "A": "জমিলা",
+      "B": "জোহরা",
+      "C": "রাবেয়া",
+      "D": "তাহেরা"
+    },
+    "correctOption": "A",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q033",
+    "hash": "ffeb8ab2856ce964",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "বাংলা ভাষায় ‘বাবা’ শব্দটি কোন ভাষা থেকে এসেছে?",
+    "options": {
+      "A": "তুর্কি",
+      "B": "ফরাসি",
+      "C": "ফারসি",
+      "D": "আরবি"
+    },
+    "correctOption": "A",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q034",
+    "hash": "e9f5ea602edd4a15",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "যে সমাসে পূর্বপদের বিভক্তি লোপ হয় না তাকে কি বলে?",
+    "options": {
+      "A": "সমাস",
+      "B": "অলু",
+      "C": "প্রাদি সমাস",
+      "D": "দ্বিগু সমাস"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q035",
+    "hash": "359bdbaaf66386ad",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "নিচের কোন শব্দের উচ্চারণে ‘স্বতন্ত্র ঞ’ রয়েছে?",
+    "options": {
+      "A": "জ্ঞান",
+      "B": "অঞ্চল",
+      "C": "ঝঞ্ঝা",
+      "D": "মিঞা"
+    },
+    "correctOption": "D",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q040",
+    "hash": "399e940c0e295291",
+    "subject": "ENGLISH",
+    "topic": "ENGLISH",
+    "hasMath": false,
+    "stem": "এক কথায় প্রকাশ করুন: ‘এক বস্তুতে অন্য বস্তুর কল্পনা’",
+    "options": {
+      "A": "অন্যধাস",
+      "B": "অনধ্যাস",
+      "C": "অধ্যাস",
+      "D": "বিন্যাস"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q041",
+    "hash": "06f0774a57a2e5d9",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "Two pipes fill a tank in 20 and 30 minutes; a drain empties it in 15 minutes. If the tank is half full, and the pipes and the drain are opened together, how long will it take to fill the tank?",
+    "options": {
+      "A": "20 minutes",
+      "B": "24 minutes",
+      "C": "30 minutes",
+      "D": "36 minutes"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ],
+    "staticExplanation": {
+      "questionId": "bb-ad-2026-q041",
+      "coreConcept": "Net rate of work equation: $\\text{Rate} = R_1 + R_2 - R_3$.",
+      "examHallShortcut": "Compute per-minute rates: $\\frac{1}{20} + \\frac{1}{30} - \\frac{1}{15} = \\frac{3 + 2 - 4}{60} = \\frac{1}{60}$. Time to fill full tank = $60\\text{ min}$. Tank is half full $\\implies \\frac{60}{2} = 30\\text{ min}$.",
+      "stepByStep": "1. In 1 minute, Pipe 1 fills $\\frac{1}{20}$, Pipe 2 fills $\\frac{1}{30}$, and drain empties $\\frac{1}{15}$.\n2. Combined rate per minute = $\\frac{3 + 2 - 4}{60} = \\frac{1}{60}$ tank/min.\n3. The tank is already half full, so $\\frac{1}{2}$ tank remains to be filled.\n4. Required time = $\\frac{1/2}{1/60} = 30\\text{ minutes}$.",
+      "optionDiagnostics": {
+        "A": {
+          "status": "TRAP_DISTRACTOR",
+          "verdict": "Calculated by considering only Pipe 1 operating alone on a half tank: $20 / 2 = 10$, then doubling erroneously."
+        },
+        "B": {
+          "status": "TRAP_DISTRACTOR",
+          "verdict": "Arises if candidate forgets the drain and computes $(20 \\times 30)/(20 + 30) = 12$, times 2."
+        },
+        "C": {
+          "status": "CORRECT",
+          "verdict": "Accurate net rate: $\\frac{1}{60}\\text{ per min} \\times 30\\text{ min} = \\frac{1}{2}\\text{ tank}$."
+        },
+        "D": {
+          "status": "TRAP_DISTRACTOR",
+          "verdict": "Overlooked subtracting the 15-minute drain rate properly."
+        }
+      },
+      "generatedBy": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+      "cachedAt": 1793485339330
+    }
+  },
+  {
+    "id": "bb-ad-2026-q042",
+    "hash": "56334cd2f05cda62",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "A viral post’s share count starts at 3. Each next value equals twice the previous minus 1. Find the 5th term.",
+    "options": {
+      "A": "33",
+      "B": "31",
+      "C": "29",
+      "D": "28"
+    },
+    "correctOption": "A",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ],
+    "staticExplanation": {
+      "questionId": "bb-ad-2026-q042",
+      "coreConcept": "Recurrence relation: $a_{n} = 2a_{n-1} - 1$ with seed $a_1 = 3$.",
+      "examHallShortcut": "Iterate sequence in head: $a_1=3, a_2=5, a_3=9, a_4=17, a_5=33$. Pattern is $2^n + 1$. For $n=5$, $2^5 + 1 = 32 + 1 = 33$.",
+      "stepByStep": "1. $a_1 = 3$\n2. $a_2 = 2(3) - 1 = 5$\n3. $a_3 = 2(5) - 1 = 9$\n4. $a_4 = 2(9) - 1 = 17$\n5. $a_5 = 2(17) - 1 = 33$.",
+      "optionDiagnostics": {
+        "A": {
+          "status": "CORRECT",
+          "verdict": "Exact match following recurrence $a_5 = 33$."
+        },
+        "B": {
+          "status": "TRAP_DISTRACTOR",
+          "verdict": "Off-by-two calculation trap if candidate miscalculates $2(17) - 3$."
+        },
+        "C": {
+          "status": "TRAP_DISTRACTOR",
+          "verdict": "Arithmetic subtraction slip ($34 - 5$)."
+        },
+        "D": {
+          "status": "TRAP_DISTRACTOR",
+          "verdict": "Stopping early or misapplying the multiplier."
+        }
+      },
+      "generatedBy": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+      "cachedAt": 1793485339330
+    }
+  },
+  {
+    "id": "bb-ad-2026-q043",
+    "hash": "714d0a4e135b12d1",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "What is the minimum number of plants one should have so that they can be arranged in 12, 15 or 18 rows and also be arranged in an equal number of rows and columns?",
+    "options": {
+      "A": "180",
+      "B": "900",
+      "C": "144",
+      "D": "225"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q044",
+    "hash": "4e8a12600a28a26c",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "A lift serves floors 1 through 16, moving one floor every 12 seconds. It waits 48 seconds at both endpoints. It can complete how many round trips from 9:00 AM to 3:20 AM?",
+    "options": {
+      "A": "46",
+      "B": "48",
+      "C": "50",
+      "D": "52"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q045",
+    "hash": "25db75ec25e7c34f",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "What should be the ratio of sugar in a mixture costing BDT 50 per kg and BDT 55 per kg, such that there will be 10% profit if the mixture is sold for BDT 60 per kg?",
+    "options": {
+      "A": "10:11",
+      "B": "10:1",
+      "C": "1:10",
+      "D": "6:5"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q046",
+    "hash": "42430cb30ea9705c",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "In triangle ABC, the external bisectors of the angles B and C intersect at point O. If angle A is 90 degrees, then the measure of the angle BOC is ________",
+    "options": {
+      "A": "90º",
+      "B": "75º",
+      "C": "60º",
+      "D": "45º"
+    },
+    "correctOption": "D",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q047",
+    "hash": "cebe87e1cd096073",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": true,
+    "stem": "Find the value of ($\\sqrt{3}$ + 1)(10 + $\\sqrt{12}$)($\\sqrt{12}$ – 2)(55 – $\\sqrt{3}$).",
+    "options": {
+      "A": "224",
+      "B": "176",
+      "C": "148",
+      "D": "124"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q048",
+    "hash": "bcd0e1ccde87d3f7",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "A circle is inscribed in a right triangle whose legs measure 9 and 12. Find the radius of the circle.",
+    "options": {
+      "A": "2",
+      "B": "3",
+      "C": "3.5",
+      "D": "4"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q049",
+    "hash": "c7df74e0d9f3b613",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "In a geometric progression, the 3rd term is 12 and the 6th term is 96. Find the sum of the first 8 terms.",
+    "options": {
+      "A": "510",
+      "B": "765",
+      "C": "1020",
+      "D": "None"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q050",
+    "hash": "b5722aefff7bada8",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "The present ages of a father and his son are in the ratio 7:2. Five years ago, the ratio was 6:1. Find the sum of their present ages.",
+    "options": {
+      "A": "45 years",
+      "B": "40 years",
+      "C": "35 years",
+      "D": "30 years"
+    },
+    "correctOption": "A",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q051",
+    "hash": "98b7121d226947d5",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "How many positive divisors of 7200 are perfect squares?",
+    "options": {
+      "A": "8",
+      "B": "10",
+      "C": "12",
+      "D": "15"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q052",
+    "hash": "520f6bcbba4a2c3f",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": true,
+    "stem": "For x > 0, what is the minimum value of $x + 16/x$?",
+    "options": {
+      "A": "4",
+      "B": "8",
+      "C": "12",
+      "D": "16"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q053",
+    "hash": "7e9f08a517dc82ac",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "A cistern is normally filled in 6 hours, but a leak makes it take 8 hours. How long would the leak alone take to empty a full cistern?",
+    "options": {
+      "A": "24 hours",
+      "B": "30 hours",
+      "C": "36 hours",
+      "D": "48 hours"
+    },
+    "correctOption": "A",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q054",
+    "hash": "f791dd9e299f7470",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "Nasif’s watch gains 4 minutes per hour. It was correct at 2:00 pm yesterday. When it displays 6:00 am today, what is the accurate time?",
+    "options": {
+      "A": "4:00 am",
+      "B": "4:30 am",
+      "C": "5:00 am",
+      "D": "5:30 am"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q055",
+    "hash": "272cdb699e8e16aa",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "ab is negative, and a² + b² is greater than 0, but less than 114. What is the minimum value of ab?",
+    "options": {
+      "A": "-45",
+      "B": "-48",
+      "C": "-49",
+      "D": "-56"
+    },
+    "correctOption": "D",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q056",
+    "hash": "52f1f468b0f19585",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "If positive integers m and n satisfy m+n<10, how many distinct values can mn assume?",
+    "options": {
+      "A": "16",
+      "B": "17",
+      "C": "18",
+      "D": "20"
+    },
+    "correctOption": "A",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q057",
+    "hash": "db3d3544877aa917",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "Find the smallest positive integer that leaves a remainder of 3 when divided by 7, a remainder of 4 when divided by 9, and a remainder 8 when divided by 11.",
+    "options": {
+      "A": "256",
+      "B": "283",
+      "C": "361",
+      "D": "428"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q058",
+    "hash": "e5efc408bdd978dc",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "A circular garden’s diameter has endpoints at coordinates (2,3) and (8,11). Find its area in terms of \\pi .",
+    "options": {
+      "A": "100\\pi",
+      "B": "50\\pi",
+      "C": "25\\pi",
+      "D": "10\\pi"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q059",
+    "hash": "dcc89fd0bddacd14",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "Nasrin and Farid can finish a project in 12 and 18 days. They work together for 4 days, then Nasrin leaves. How many more days does Farid need?",
+    "options": {
+      "A": "6 days",
+      "B": "8 days",
+      "C": "12 days",
+      "D": "13 days"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q060",
+    "hash": "a9aacd41a7d94570",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "In a factory, yield drops 10% each stage: cutting, sewing, finishing. To ship 729 flawless shirts, how many starting materials (in shirts) are needed?",
+    "options": {
+      "A": "867",
+      "B": "1000",
+      "C": "1458",
+      "D": "1800"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q061",
+    "hash": "564d93b388945992",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "Fill the blank in the following letter series: QAR, RAS, SAT, TAU, ________",
+    "options": {
+      "A": "UAV",
+      "B": "UAT",
+      "C": "TAS",
+      "D": "TAT"
+    },
+    "correctOption": "A",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q062",
+    "hash": "377d8eda0cf7c5a0",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "If 8 Ω 5 = 3048 and 7 Ω 4 = 2442, then 6 Ω 3 = ?",
+    "options": {
+      "A": "1830",
+      "B": "1836",
+      "C": "1840",
+      "D": "1848"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q063",
+    "hash": "228dc9c8a01d3fdd",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "If “WATER” is coded as “YCVGT”, how is “FIRE” coded?",
+    "options": {
+      "A": "HKTG",
+      "B": "GLTH",
+      "C": "HTGL",
+      "D": "LGJK"
+    },
+    "correctOption": "A",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q064",
+    "hash": "0c3a7aabafa38a5f",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "If yesterday was a day that is two days before Thursday, what day is tomorrow?",
+    "options": {
+      "A": "Friday",
+      "B": "Monday",
+      "C": "Tuesday",
+      "D": "Wednesday"
+    },
+    "correctOption": "A",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q065",
+    "hash": "66d83ec69ff96d9d",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "A man walks 5 km north, turns right and walks 3 km, then turns right and walks 5 km. How far and in which direction is he from his starting point?",
+    "options": {
+      "A": "3 km East",
+      "B": "3 km West",
+      "C": "8 km East",
+      "D": "5 km South"
+    },
+    "correctOption": "A",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q066",
+    "hash": "f9fdf76190737faa",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "In a class, Rahim ranks 7th from the top and 26th from the bottom. How many students are in the class?",
+    "options": {
+      "A": "32",
+      "B": "35",
+      "C": "37",
+      "D": "40"
+    },
+    "correctOption": "A",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ],
+    "staticExplanation": {
+      "questionId": "bb-ad-2026-q066",
+      "coreConcept": "Linear positioning identity: $\\text{Total} = \\text{Rank}_{\\text{top}} + \\text{Rank}_{\\text{bottom}} - 1$.",
+      "examHallShortcut": "Direct mental math: $7 + 26 - 1 = 32$. Take 2 seconds and eliminate all other choices.",
+      "stepByStep": "1. Rahim is counted twice: once from the top (7th) and once from the bottom (26th).\n2. Formula: $\\text{Total} = 7 + 26 - 1 = 32$.\n3. Therefore, the class has exactly 32 students.",
+      "optionDiagnostics": {
+        "A": {
+          "status": "CORRECT",
+          "verdict": "Exact match: $7 + 26 - 1 = 32$. Rahim is correctly counted once."
+        },
+        "B": {
+          "status": "TRAP_DISTRACTOR",
+          "verdict": "Candidates pick 35 by misreading 26 as 28 or confusing with $7 + 28$."
+        },
+        "C": {
+          "status": "TRAP_DISTRACTOR",
+          "verdict": "Arithmetic miscalculation of $7 + 30$."
+        },
+        "D": {
+          "status": "TRAP_DISTRACTOR",
+          "verdict": "Result of arbitrary rounding up without applying the inclusion-exclusion principle."
+        }
+      },
+      "generatedBy": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+      "cachedAt": 1793485339330
+    }
+  },
+  {
+    "id": "bb-ad-2026-q067",
+    "hash": "059ba28166ea8e80",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "Three of the following four are alike in a certain way and so form a group. Which is the one that does not belong to that group?",
+    "options": {
+      "A": "Onion",
+      "B": "Ginger",
+      "C": "Garlic",
+      "D": "Pepper"
+    },
+    "correctOption": "D",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q068",
+    "hash": "58a1c5985d222094",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "What is the next in the sequence: 6, 14, 30, 62, _____?",
+    "options": {
+      "A": "86",
+      "B": "126",
+      "C": "147",
+      "D": "210"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q069",
+    "hash": "1f8cd529f9fe70e7",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "A is the brother of B. B is the sister of C. C is the father of D. What is the relationship of A with D?",
+    "options": {
+      "A": "Father",
+      "B": "Brother",
+      "C": "Uncle",
+      "D": "Cousin"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q070",
+    "hash": "cce849f4c43529a2",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "If 5 # 3 = 16 and 7 # 2 = 18, then 6 # 4 = ?",
+    "options": {
+      "A": "18",
+      "B": "20",
+      "C": "22",
+      "D": "24"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q071",
+    "hash": "9084e5e4ef64c921",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "Find the word that names a necessary part of a ‘shoe’.",
+    "options": {
+      "A": "sole",
+      "B": "leather",
+      "C": "laces",
+      "D": "walking"
+    },
+    "correctOption": "A",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q072",
+    "hash": "736bb4d3d2c8d8fa",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "People of the Bush tribe are always known to speak the truth. People of the Kush tribe are always known to tell lies. ABC says to PQR, ‘I am of the Bush or I am of the Kush tribe’. PQR tells XYZ, ‘ABC is a Bush’. XYZ replies, ‘No, he’s a Kush.’ How many Bush people are there in the group?",
+    "options": {
+      "A": "1",
+      "B": "2",
+      "C": "3",
+      "D": "Cannot Say"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q073",
+    "hash": "e3e28b458aced71d",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "All the faces of a cube are painted with blue colour. Then it is cut into 64 small equal cubes. How many small cubes will be formed, having no face coloured?",
+    "options": {
+      "A": "4",
+      "B": "8",
+      "C": "16",
+      "D": "32"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q074",
+    "hash": "09c3b4645248d269",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "In a dictionary, which of the following words comes first?",
+    "options": {
+      "A": "Referendum",
+      "B": "Referable",
+      "C": "Reference",
+      "D": "Refection"
+    },
+    "correctOption": "D",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q075",
+    "hash": "9673cb24ec682169",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "Which word does NOT belong with the others?",
+    "options": {
+      "A": "twine",
+      "B": "cord",
+      "C": "tape",
+      "D": "yarn"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q076",
+    "hash": "76325e6842a5f79d",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "Nurse Kemp has worked more night shifts in a row than Nurse Rogers, who has worked five. Nurse Miller has worked fifteen night shifts in a row, more than Nurses Kemp and Rogers combined. Nurse Calvin has worked eight night shifts in a row, less than Nurse Kemp. How many night shifts in a row has Nurse Kemp worked?",
+    "options": {
+      "A": "Eight",
+      "B": "Nine",
+      "C": "Ten",
+      "D": "Eleven"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q077",
+    "hash": "48362710dfa5bf4d",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "Play is to the actor as a concert is to –",
+    "options": {
+      "A": "symphony",
+      "B": "musician",
+      "C": "percussion",
+      "D": "piano"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q079",
+    "hash": "5ba1c1d6a596c186",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "Which individual sport below doesn’t fit with the others?",
+    "options": {
+      "A": "Cycling",
+      "B": "Marathon",
+      "C": "Swimming",
+      "D": "Archery"
+    },
+    "correctOption": "D",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q080",
+    "hash": "5b09587dd060df60",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "What is the next number in the series: 1, 1/2, 1/4, …?",
+    "options": {
+      "A": "1/3",
+      "B": "1/6",
+      "C": "1/8",
+      "D": "1/16"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q082",
+    "hash": "0eb5b39ae42436a6",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "As per the Monetary Policy Statement (July-December 26), the Standing Lending Facility (SLF) rate will remain at:",
+    "options": {
+      "A": "10%",
+      "B": "11.5%",
+      "C": "7.5%",
+      "D": "8.3%"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q083",
+    "hash": "0071185f70ee203c",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "Which currency was the last addition to the IMF’s Special Drawing Rights (SDR) valuation basket?",
+    "options": {
+      "A": "Franc",
+      "B": "Yen",
+      "C": "Renminbi",
+      "D": "Sterling"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q085",
+    "hash": "c6cb1bcfd3979809",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "Bangladesh Bank launched Risk-Based Supervision (RBS) in January 2026, replacing which previous supervisory rating system?",
+    "options": {
+      "A": "CRAR",
+      "B": "BASEL III",
+      "C": "CAMELS",
+      "D": "ECL"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q086",
+    "hash": "9bd313f360e56f54",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "What is the highest refinancing rate for the ‘digital’ or ‘e-loan’ according to the latest policy of the central bank?",
+    "options": {
+      "A": "8%",
+      "B": "9%",
+      "C": "10%",
+      "D": "11%"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q087",
+    "hash": "65fa13dea596e14e",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "The CAMELS rating system used by bank supervisors evaluates all of the following EXCEPT:",
+    "options": {
+      "A": "Asset quality",
+      "B": "Management",
+      "C": "Turnover",
+      "D": "Earnings"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q088",
+    "hash": "c9e759c3793e7473",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "What is the amount of the stimulus package by the central bank to facilitate the credit flow in the private sector?",
+    "options": {
+      "A": "BDT 450 Billion",
+      "B": "BDT 500 Billion",
+      "C": "BDT 550 Billion",
+      "D": "BDT 600 Billion"
+    },
+    "correctOption": "D",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q090",
+    "hash": "9ec593e871ab9231",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "Bangladesh Bank (BB) has recently directed commercial banks to keep the weighted average spread between lending and deposit rates within-",
+    "options": {
+      "A": "3%",
+      "B": "3.5%",
+      "C": "4%",
+      "D": "4.5%"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q091",
+    "hash": "ec939d3486ce3e44",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "A type of malicious software that infects computer systems, encrypts files, or locks users out of their devices is called –",
+    "options": {
+      "A": "Ransomware",
+      "B": "Trojan horse",
+      "C": "XSS injection",
+      "D": "Denial of Service (DoS)"
+    },
+    "correctOption": "A",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q092",
+    "hash": "94d9545ce4e87d80",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "Which of the following is a core banking software?",
+    "options": {
+      "A": "QuickBook",
+      "B": "Unix",
+      "C": "SAP",
+      "D": "T24"
+    },
+    "correctOption": "D",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q093",
+    "hash": "fc689c736ce4df06",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "Which protocol is used to send an email from a client to a mail server?",
+    "options": {
+      "A": "HTTP",
+      "B": "FTP",
+      "C": "SMTP",
+      "D": "TCP/IP"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q094",
+    "hash": "2c1977d8d0ae775c",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "Which of the following is a volatile memory that loses its contents when power is off?",
+    "options": {
+      "A": "Flash drive",
+      "B": "RAM",
+      "C": "Hard disk",
+      "D": "ROM"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q095",
+    "hash": "718a39fd998f769c",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "What type of cyberattack specifically uses deceptive emails, websites, or text messages to trick individuals into revealing sensitive information like passwords and credit card numbers?",
+    "options": {
+      "A": "Man-in-the-middle",
+      "B": "Phishing",
+      "C": "Eavesdropping",
+      "D": "SQL injection"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q096",
+    "hash": "e2619a96d8dde730",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "What is the name of the firmware embedded on the motherboard that initializes hardware components during the booting process before loading the operating system?",
+    "options": {
+      "A": "BIOS / UEFI",
+      "B": "CMOS Battery",
+      "C": "Kernel",
+      "D": "Chipset Driver"
+    },
+    "correctOption": "A",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q097",
+    "hash": "d9d6256fc0eb4e29",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "Which of the following is a high-level programming language?",
+    "options": {
+      "A": "Machine code",
+      "B": "C++",
+      "C": "Assembly language",
+      "D": "C"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q098",
+    "hash": "85425926a664d2a2",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "Which device is used to connect multiple computers within the same wired local network to share data?",
+    "options": {
+      "A": "Switch",
+      "B": "Router",
+      "C": "Modem",
+      "D": "Repeater"
+    },
+    "correctOption": "A",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q099",
+    "hash": "58d8163bb98ea046",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "The keyboard keys ‘Shift’, ‘Ctrl’, and ‘Alt’ are called –",
+    "options": {
+      "A": "Function Key",
+      "B": "Numeric Key",
+      "C": "Decoder Key",
+      "D": "Modifier Key"
+    },
+    "correctOption": "D",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  },
+  {
+    "id": "bb-ad-2026-q100",
+    "hash": "8055e5135fc9a2b5",
+    "subject": "MATH",
+    "topic": "MATH",
+    "hasMath": false,
+    "stem": "What type of file uses the ‘.ini’ extension?",
+    "options": {
+      "A": "Hypertext File",
+      "B": "Image File",
+      "C": "System File",
+      "D": "Video File"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Assistant Director",
+        "year": 2026,
+        "faculty": "BIBM"
+      }
+    ]
+  }
+]

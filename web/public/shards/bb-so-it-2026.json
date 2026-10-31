@@ -1,0 +1,347 @@
+[
+  {
+    "id": "bb-so-it-2026-q001",
+    "hash": "437d9d6882ca4e62",
+    "subject": "COMPUTER_ICT",
+    "topic": "Computer Hardware & Fundamentals",
+    "hasMath": false,
+    "stem": "What does CBS stand for in banking?",
+    "options": {
+      "A": "Central Banking Service",
+      "B": "Core Banking System",
+      "C": "Customer Banking Solution",
+      "D": "Commercial Banking Service"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Senior Officer (IT)",
+        "year": 2026,
+        "faculty": "CTI"
+      }
+    ]
+  },
+  {
+    "id": "bb-so-it-2026-q002",
+    "hash": "704bab3f864ad69b",
+    "subject": "COMPUTER_ICT",
+    "topic": "Computer Hardware & Fundamentals",
+    "hasMath": false,
+    "stem": "কোন প্রসেস শিডিউলিং অ্যালগরিদমে ‘Starvation’ সমস্যা দেখা যায়?",
+    "options": {
+      "A": "FCFS (First Come First Serve)",
+      "B": "Round Robin (RR)",
+      "C": "SJF (Shortest Job First)",
+      "D": "FIFO (First In First Out)"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Senior Officer (IT)",
+        "year": 2026,
+        "faculty": "CTI"
+      }
+    ]
+  },
+  {
+    "id": "bb-so-it-2026-q003",
+    "hash": "548b80dc220da69a",
+    "subject": "COMPUTER_ICT",
+    "topic": "Computer Hardware & Fundamentals",
+    "hasMath": false,
+    "stem": "Which processor architecture is most power efficient?",
+    "options": {
+      "A": "CISC (Complex Instruction Set Computer)",
+      "B": "RISC (Reduced Instruction Set Computer)",
+      "C": "VLIW (Very Long Instruction Word)",
+      "D": "EPIC (Explicitly Parallel Instruction Computing)"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Senior Officer (IT)",
+        "year": 2026,
+        "faculty": "CTI"
+      }
+    ]
+  },
+  {
+    "id": "bb-so-it-2026-q004",
+    "hash": "b0898fd8a2f08fa8",
+    "subject": "COMPUTER_ICT",
+    "topic": "Computer Memory",
+    "hasMath": false,
+    "stem": "Which is an extremely fast memory located near the CPU?",
+    "options": {
+      "A": "Cache Memory",
+      "B": "RAM (Random Access Memory)",
+      "C": "ROM (Read-Only Memory)",
+      "D": "Secondary Memory"
+    },
+    "correctOption": "A",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Senior Officer (IT)",
+        "year": 2026,
+        "faculty": "CTI"
+      }
+    ]
+  },
+  {
+    "id": "bb-so-it-2026-q005",
+    "hash": "1e94649a9b6f1b3d",
+    "subject": "COMPUTER_ICT",
+    "topic": "Computer Hardware & Fundamentals",
+    "hasMath": false,
+    "stem": "Where is the Boot Sector file located in a storage system?",
+    "options": {
+      "A": "RAM (Random Access Memory)",
+      "B": "ROM (Read-Only Memory)",
+      "C": "Cache Memory",
+      "D": "Hard Disk"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Senior Officer (IT)",
+        "year": 2026,
+        "faculty": "CTI"
+      }
+    ]
+  },
+  {
+    "id": "bb-so-it-2026-q006",
+    "hash": "32c87f12b191f918",
+    "subject": "COMPUTER_ICT",
+    "topic": "Computer Hardware & Fundamentals",
+    "hasMath": true,
+    "stem": "$X + XY = X$, this equation represents which Boolean law?",
+    "options": {
+      "A": "Commutative Law",
+      "B": "Associative Law",
+      "C": "Absorption Law",
+      "D": "Distributive Law"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Senior Officer (IT)",
+        "year": 2026,
+        "faculty": "CTI"
+      }
+    ]
+  },
+  {
+    "id": "bb-so-it-2026-q007",
+    "hash": "3e9a5cd729922a8c",
+    "subject": "COMPUTER_ICT",
+    "topic": "Computer Hardware & Fundamentals",
+    "hasMath": false,
+    "stem": "Convert ( 1 E .53 ) _{16} _{​} to the Octal system ( ?) _{8} ​ :",
+    "options": {
+      "A": "(36.256)8",
+      "B": "(37.246)8",
+      "C": "(35.246)8",
+      "D": "(36.246)8"
+    },
+    "correctOption": "D",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Senior Officer (IT)",
+        "year": 2026,
+        "faculty": "CTI"
+      }
+    ]
+  },
+  {
+    "id": "bb-so-it-2026-q008",
+    "hash": "bbb1ea9a0cec4145",
+    "subject": "COMPUTER_ICT",
+    "topic": "Networking & Internet",
+    "hasMath": false,
+    "stem": "Which protocol transfers web pages to the browser?",
+    "options": {
+      "A": "FTP (File Transfer Protocol)",
+      "B": "SMTP (Simple Mail Transfer Protocol)",
+      "C": "HTTP/HTTPS (Hypertext Transfer Protocol/Secure)",
+      "D": "DNS (Domain Name System)"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Senior Officer (IT)",
+        "year": 2026,
+        "faculty": "CTI"
+      }
+    ]
+  },
+  {
+    "id": "bb-so-it-2026-q009",
+    "hash": "a0221ff3f516ebbb",
+    "subject": "COMPUTER_ICT",
+    "topic": "Computer Hardware & Fundamentals",
+    "hasMath": false,
+    "stem": "What primary problem does an API Gateway solve?",
+    "options": {
+      "A": "Database Storage and Data Backup",
+      "B": "User Interface Design and Frontend Development",
+      "C": "Source Code Compilation and Debugging",
+      "D": "Request Routing, Authentication, Rate Limiting, and Load Balancing"
+    },
+    "correctOption": "D",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Senior Officer (IT)",
+        "year": 2026,
+        "faculty": "CTI"
+      }
+    ]
+  },
+  {
+    "id": "bb-so-it-2026-q010",
+    "hash": "4738e60df941eb6b",
+    "subject": "COMPUTER_ICT",
+    "topic": "Networking & Internet",
+    "hasMath": false,
+    "stem": "Which protocol is used to assign IP addresses dynamically?",
+    "options": {
+      "A": "DNS (Domain Name System)",
+      "B": "FTP (File Transfer Protocol)",
+      "C": "HTTP (Hypertext Transfer Protocol)",
+      "D": "DHCP (Dynamic Host Configuration Protocol)"
+    },
+    "correctOption": "D",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Senior Officer (IT)",
+        "year": 2026,
+        "faculty": "CTI"
+      }
+    ]
+  },
+  {
+    "id": "bb-so-it-2026-q011",
+    "hash": "ae21840fe0902eb6",
+    "subject": "COMPUTER_ICT",
+    "topic": "Computer Hardware & Fundamentals",
+    "hasMath": false,
+    "stem": "What security mechanism is added when using Multi-Factor Authentication (MFA)?",
+    "options": {
+      "A": "Password + Username",
+      "B": "Password + Security Question",
+      "C": "Username + Email Address",
+      "D": "Password + Biometrics"
+    },
+    "correctOption": "D",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Senior Officer (IT)",
+        "year": 2026,
+        "faculty": "CTI"
+      }
+    ]
+  },
+  {
+    "id": "bb-so-it-2026-q012",
+    "hash": "5698791a4755e855",
+    "subject": "COMPUTER_ICT",
+    "topic": "Computer Memory",
+    "hasMath": false,
+    "stem": "How does HTTPS differ from HTTP?",
+    "options": {
+      "A": "HTTPS is encrypted and secure",
+      "B": "HTTPS is faster but not secure",
+      "C": "HTTP is encrypted while HTTPS is not",
+      "D": "HTTP and HTTPS have no security difference"
+    },
+    "correctOption": "A",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Senior Officer (IT)",
+        "year": 2026,
+        "faculty": "CTI"
+      }
+    ]
+  },
+  {
+    "id": "bb-so-it-2026-q013",
+    "hash": "21cd89581d35dfca",
+    "subject": "COMPUTER_ICT",
+    "topic": "Computer Hardware & Fundamentals",
+    "hasMath": false,
+    "stem": "Which type of inheritance is NOT supported in Java (using classes)?",
+    "options": {
+      "A": "Single Inheritance",
+      "B": "Multilevel Inheritance",
+      "C": "Hierarchical Inheritance",
+      "D": "Multiple Inheritance"
+    },
+    "correctOption": "D",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Senior Officer (IT)",
+        "year": 2026,
+        "faculty": "CTI"
+      }
+    ]
+  },
+  {
+    "id": "bb-so-it-2026-q014",
+    "hash": "bb3fc3957b5c723f",
+    "subject": "COMPUTER_ICT",
+    "topic": "Networking & Internet",
+    "hasMath": false,
+    "stem": "Which is a primary client-side scripting language?",
+    "options": {
+      "A": "Python",
+      "B": "JavaScript",
+      "C": "Java",
+      "D": "C++"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Senior Officer (IT)",
+        "year": 2026,
+        "faculty": "CTI"
+      }
+    ]
+  },
+  {
+    "id": "bb-so-it-2026-q015",
+    "hash": "61ccba404bd22b4c",
+    "subject": "COMPUTER_ICT",
+    "topic": "Computer Memory",
+    "hasMath": false,
+    "stem": "What is a harmful program that disguises itself as legitimate software",
+    "options": {
+      "A": "Worm",
+      "B": "Spyware",
+      "C": "Trojan Horse",
+      "D": "Adware"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BB",
+        "post": "Senior Officer (IT)",
+        "year": 2026,
+        "faculty": "CTI"
+      }
+    ]
+  }
+]
