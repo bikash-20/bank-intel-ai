@@ -1,0 +1,46 @@
+{
+  "shardId": "writing-officer-it-2024-2026",
+  "title": "Combined Bank Officer (IT) & AME Written Question Bank",
+  "examBody": "BB / BSC",
+  "post": "Officer IT / Assistant Maintenance Engineer",
+  "totalQuestions": 6,
+  "questions": [
+    {
+      "id": "write-it-001",
+      "category": "Focus Writing & Essay",
+      "marks": 10,
+      "stem": "বাংলাদেশের ব্যাংকিং খাতে কৃত্রিম বুদ্ধিমত্তার (AI) প্রয়োগ কীভাবে কার্যক্রমের দক্ষতা ও নিরাপত্তা বৃদ্ধি করতে পারে? একই সঙ্গে, এর সম্ভাব্য ঝুঁকি ও নৈতিক চ্যালেঞ্জসমূহ বিশ্লেষণ করুন।"
+    },
+    {
+      "id": "write-it-002",
+      "category": "Cybersecurity & Compliance",
+      "marks": 10,
+      "stem": "Why are data privacy and regulatory compliance (such as AML, KYC, and international data-protection standards) vital for the stability and credibility of the banking sector in Bangladesh? Discuss with examples and practical recommendations."
+    },
+    {
+      "id": "write-it-003",
+      "category": "Database Architecture & SQL",
+      "marks": 15,
+      "stem": "Consider a database with two tables: Customers (customer_id, first_name) and Orders (order_id, customer_id, order_date, amount). Explain Inner Join, Left Join, Right Join, and Full Join with partial data representation and SQL syntax."
+    },
+    {
+      "id": "write-it-004",
+      "category": "Data Structures & Programming",
+      "marks": 15,
+      "stem": "Write a structured program (in C or Python) that takes an integer input n and prints the sum of all even numbers from 1 to n, with time and space complexity analysis."
+    },
+    {
+      "id": "write-it-005",
+      "category": "Networking & Protocols",
+      "marks": 10,
+      "stem": "Why does the Domain Name System (DNS) primarily use UDP as its transport layer protocol instead of TCP? Describe the sequence of events that take place during the DNS name resolution process when a user enters www.companybd.com into a web browser."
+    },
+    {
+      "id": "write-it-006",
+      "category": "Operating Systems & Virtual Memory",
+      "marks": 10,
+      "stem": "Explain the concept of thrashing in an operating system, describing how it occurs in a demand-paged virtual memory system and how it impacts CPU utilization and overall system performance."
+    }
+  ]
+}
+

@@ -192,11 +192,11 @@ export default function DashboardPage() {
       {/* 2. Desktop Nav Pills */}
       <DesktopNav />
 
-      {/* 3. Four Stat Cards (4 cols on desktop, 2 cols on mobile) */}
-      <section className="grid grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4.5">
+      {/* 3. Four Stat Cards (4 cols on desktop/tablet, 2 cols on mobile) */}
+      <section className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
         {/* Card 1: Net score (-0.25), in --ok, formatted "+0.00" */}
         <div
-          className="stat-card-rounded border p-5 sm:p-6 transition-colors duration-300"
+          className="stat-card-rounded border p-3.5 sm:p-5 lg:p-6 transition-colors duration-300 flex flex-col justify-between"
           style={{
             backgroundColor: 'var(--surface)',
             borderColor: 'var(--line)',
@@ -204,7 +204,7 @@ export default function DashboardPage() {
           }}
         >
           <div
-            className="text-[13px] sm:text-[14px] font-sans-app font-medium mb-1"
+            className="text-xs sm:text-[14px] font-sans-app font-medium mb-1 truncate"
             style={{ color: 'var(--mute)' }}
           >
             {isBn ? 'নেট স্কোর (-০.২৫)' : 'Net score (-0.25)'}
@@ -219,7 +219,7 @@ export default function DashboardPage() {
 
         {/* Card 2: Accuracy, in --brand, "100%" */}
         <div
-          className="stat-card-rounded border p-5 sm:p-6 transition-colors duration-300"
+          className="stat-card-rounded border p-3.5 sm:p-5 lg:p-6 transition-colors duration-300 flex flex-col justify-between"
           style={{
             backgroundColor: 'var(--surface)',
             borderColor: 'var(--line)',
@@ -227,7 +227,7 @@ export default function DashboardPage() {
           }}
         >
           <div
-            className="text-[13px] sm:text-[14px] font-sans-app font-medium mb-1"
+            className="text-xs sm:text-[14px] font-sans-app font-medium mb-1 truncate"
             style={{ color: 'var(--mute)' }}
           >
             {isBn ? 'সঠিকতার হার' : 'Accuracy'}
@@ -242,7 +242,7 @@ export default function DashboardPage() {
 
         {/* Card 3: Penalty deducted, in --bad, "-0.00" */}
         <div
-          className="stat-card-rounded border p-5 sm:p-6 transition-colors duration-300"
+          className="stat-card-rounded border p-3.5 sm:p-5 lg:p-6 transition-colors duration-300 flex flex-col justify-between"
           style={{
             backgroundColor: 'var(--surface)',
             borderColor: 'var(--line)',
@@ -250,7 +250,7 @@ export default function DashboardPage() {
           }}
         >
           <div
-            className="text-[13px] sm:text-[14px] font-sans-app font-medium mb-1"
+            className="text-xs sm:text-[14px] font-sans-app font-medium mb-1 truncate"
             style={{ color: 'var(--mute)' }}
           >
             {isBn ? 'পেনাল্টি কর্তন' : 'Penalty deducted'}
@@ -265,7 +265,7 @@ export default function DashboardPage() {
 
         {/* Card 4: Streak, in --ink, "1 day" (the unit is 16px muted) */}
         <div
-          className="stat-card-rounded border p-5 sm:p-6 transition-colors duration-300"
+          className="stat-card-rounded border p-3.5 sm:p-5 lg:p-6 transition-colors duration-300 flex flex-col justify-between"
           style={{
             backgroundColor: 'var(--surface)',
             borderColor: 'var(--line)',
@@ -273,7 +273,7 @@ export default function DashboardPage() {
           }}
         >
           <div
-            className="text-[13px] sm:text-[14px] font-sans-app font-medium mb-1"
+            className="text-xs sm:text-[14px] font-sans-app font-medium mb-1 truncate"
             style={{ color: 'var(--mute)' }}
           >
             {isBn ? 'ধারাবাহিকতা' : 'Streak'}
@@ -284,7 +284,7 @@ export default function DashboardPage() {
           >
             <span>{num(bootSummary.streakDays || 1)}</span>
             <span
-              className="text-[16px] font-sans-app font-normal"
+              className="text-xs sm:text-[15px] font-sans-app font-normal"
               style={{ color: 'var(--mute)' }}
             >
               {isBn ? 'দিন' : 'day'}
@@ -293,23 +293,23 @@ export default function DashboardPage() {
         </div>
       </section>
 
-      {/* 4. Filter Panel (36px radius, padding 22px 24px) */}
+      {/* 4. Filter Panel (Single-line horizontal scroll on mobile, wraps on desktop) */}
       <section
-        className="filter-panel-rounded border p-5 sm:p-6 transition-colors duration-300"
+        className="filter-panel-rounded border p-3.5 sm:p-5 lg:p-6 transition-colors duration-300"
         style={{
           backgroundColor: 'var(--surface)',
           borderColor: 'var(--line)',
         }}
       >
         {/* Row 1: Question Bank chips */}
-        <div className="space-y-3">
+        <div className="space-y-2.5">
           <div
-            className="text-[15px] font-sans-app font-semibold"
+            className="text-xs sm:text-[15px] font-sans-app font-semibold select-none"
             style={{ color: 'var(--ink)' }}
           >
             {isBn ? 'পরীক্ষার প্রশ্নব্যাংক' : 'Question bank'}
           </div>
-          <div className="flex flex-wrap items-center gap-2">
+          <div className="flex md:flex-wrap items-center gap-2 overflow-x-auto no-scrollbar py-0.5 snap-x">
             {(manifest?.shards || [
               { id: 'bb-ad-2026' },
               { id: 'bb-so-it-2026' },
@@ -324,7 +324,7 @@ export default function DashboardPage() {
                   key={s.id}
                   type="button"
                   onClick={() => handleShardChange(s.id)}
-                  className="px-4 py-2 rounded-full text-[14px] font-sans-app transition-all duration-200 border"
+                  className="shrink-0 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-[14px] font-sans-app transition-all duration-200 border"
                   style={{
                     backgroundColor: isSelected ? 'var(--pill)' : 'var(--surface)',
                     color: isSelected ? 'var(--pill-ink)' : 'var(--ink)',
@@ -351,20 +351,31 @@ export default function DashboardPage() {
 
         {/* 1px divider */}
         <div
-          className="my-5 border-b"
+          className="my-3.5 sm:my-5 border-b"
           style={{ borderColor: 'var(--line)' }}
         />
 
         {/* Row 2: Filter by subject chips + question count */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-          <div className="space-y-2.5">
-            <div
-              className="text-[15px] font-sans-app font-semibold"
-              style={{ color: 'var(--ink)' }}
-            >
-              {isBn ? 'বিষয়ভিত্তিক ফিল্টার' : 'Filter by subject'}
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-3">
+          <div className="space-y-2">
+            <div className="flex items-center justify-between gap-2">
+              <div
+                className="text-xs sm:text-[15px] font-sans-app font-semibold select-none"
+                style={{ color: 'var(--ink)' }}
+              >
+                {isBn ? 'বিষয়ভিত্তিক ফিল্টার' : 'Filter by subject'}
+              </div>
+              <div
+                className="md:hidden text-xs font-sans-app font-medium"
+                style={{ color: 'var(--mute)' }}
+              >
+                {isBn
+                  ? `${num(filteredQuestions.length)} টি প্রস্তুত`
+                  : `${filteredQuestions.length} ready`}
+              </div>
             </div>
-            <div className="flex flex-wrap items-center gap-2">
+
+            <div className="flex md:flex-wrap items-center gap-2 overflow-x-auto no-scrollbar py-0.5 snap-x">
               {SUBJECT_LIST.map(({ code, en, bn }) => {
                 const isSelected = selectedSubjects.includes(code);
                 const label = isBn ? bn : en;
@@ -374,7 +385,7 @@ export default function DashboardPage() {
                     key={code}
                     type="button"
                     onClick={() => toggleSubjectFilter(code)}
-                    className="px-4 py-2 rounded-full text-[14px] font-sans-app transition-all duration-200 border"
+                    className="shrink-0 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-[14px] font-sans-app transition-all duration-200 border"
                     style={{
                       backgroundColor: isSelected ? 'var(--pill)' : 'var(--surface)',
                       color: isSelected ? 'var(--pill-ink)' : 'var(--ink)',
@@ -399,9 +410,9 @@ export default function DashboardPage() {
             </div>
           </div>
 
-          {/* Far Right: Muted count "N টি প্রশ্ন প্রস্তুত / N questions ready" */}
+          {/* Far Right: Muted count (visible on desktop) */}
           <div
-            className="text-[14px] font-sans-app shrink-0 self-start sm:self-end pb-1"
+            className="hidden md:block text-[14px] font-sans-app shrink-0 self-end pb-1"
             style={{ color: 'var(--mute)' }}
           >
             {isBn
@@ -432,14 +443,14 @@ export default function DashboardPage() {
           </div>
         ) : filteredQuestions.length === 0 ? (
           <div
-            className="question-card-rounded border p-12 text-center"
+            className="question-card-rounded border p-8 sm:p-12 text-center"
             style={{
               backgroundColor: 'var(--surface)',
               borderColor: 'var(--line)',
             }}
           >
             <p
-              className="text-lg font-sans-app font-medium"
+              className="text-base sm:text-lg font-sans-app font-medium"
               style={{ color: 'var(--ink)' }}
             >
               {isBn
@@ -449,7 +460,7 @@ export default function DashboardPage() {
             <button
               type="button"
               onClick={() => setSelectedSubjects([])}
-              className="mt-4 px-5 py-2.5 rounded-full text-sm font-semibold transition-all"
+              className="mt-4 px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all"
               style={{
                 backgroundColor: 'var(--pill)',
                 color: 'var(--pill-ink)',
@@ -459,7 +470,7 @@ export default function DashboardPage() {
             </button>
           </div>
         ) : (
-          <div className="space-y-4">
+          <div className="space-y-4 max-w-[780px] mx-auto w-full">
             <QuestionCard
               key={activeQuestion.id}
               question={activeQuestion}
@@ -476,7 +487,7 @@ export default function DashboardPage() {
 
             {/* Question Carousel Navigation Bar */}
             <div
-              className="p-4 rounded-full border flex items-center justify-between shadow-sm transition-colors"
+              className="p-3 sm:p-4 rounded-full border flex items-center justify-between shadow-sm transition-colors"
               style={{
                 backgroundColor: 'var(--surface)',
                 borderColor: 'var(--line)',
@@ -486,7 +497,7 @@ export default function DashboardPage() {
                 type="button"
                 onClick={() => setCurrentIndex((i) => Math.max(0, i - 1))}
                 disabled={currentIndex === 0}
-                className="px-5 py-2.5 rounded-full border text-sm font-medium transition-all active:scale-95 disabled:opacity-30 disabled:pointer-events-none flex items-center gap-1.5"
+                className="px-4 sm:px-5 py-2 sm:py-2.5 rounded-full border text-xs sm:text-sm font-medium transition-all active:scale-95 disabled:opacity-30 disabled:pointer-events-none flex items-center gap-1.5"
                 style={{
                   backgroundColor: 'var(--surface2)',
                   borderColor: 'var(--line)',
@@ -499,11 +510,11 @@ export default function DashboardPage() {
 
               {/* Progress Indicator */}
               <div
-                className="text-sm font-serif-app font-semibold tabular-nums"
+                className="text-xs sm:text-sm font-serif-app font-semibold tabular-nums"
                 style={{ color: 'var(--ink)' }}
               >
                 <span>{num(currentIndex + 1)}</span>
-                <span className="mx-1.5 font-normal" style={{ color: 'var(--mute)' }}>
+                <span className="mx-1 sm:mx-1.5 font-normal" style={{ color: 'var(--mute)' }}>
                   /
                 </span>
                 <span>{num(filteredQuestions.length)}</span>
@@ -515,7 +526,7 @@ export default function DashboardPage() {
                   setCurrentIndex((i) => Math.min(filteredQuestions.length - 1, i + 1))
                 }
                 disabled={currentIndex === filteredQuestions.length - 1}
-                className="px-6 py-2.5 rounded-full text-sm font-semibold transition-all active:scale-95 disabled:opacity-30 disabled:pointer-events-none flex items-center gap-1.5 shadow-sm"
+                className="px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all active:scale-95 disabled:opacity-30 disabled:pointer-events-none flex items-center gap-1.5 shadow-sm"
                 style={{
                   backgroundColor: 'var(--brand)',
                   color: 'var(--brand-ink)',

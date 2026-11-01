@@ -7,36 +7,36 @@ import { useI18n } from '../../lib/i18n/context';
 import { useTheme } from '../../lib/theme/context';
 
 export const HeaderNav: React.FC = () => {
-  const { t, locale, setLocale } = useI18n();
+  const { locale, setLocale } = useI18n();
   const { theme, toggleTheme } = useTheme();
 
   const isBn = locale === 'bn';
   const isDark = theme === 'dark';
 
   return (
-    <header className="w-full flex items-center justify-between gap-4 py-2">
-      {/* Left: Brand Identity */}
-      <Link href="/" className="flex items-center gap-3.5 group">
-        {/* 44px Round Logo Mark in --brand with Bengali letter "ব" in serif */}
+    <header className="w-full flex items-center justify-between gap-2 sm:gap-4 py-2 select-none">
+      {/* Left: Brand Identity (fluid min-w-0 for small mobile screens) */}
+      <Link href="/" className="flex items-center gap-2 sm:gap-3.5 group min-w-0 shrink">
+        {/* Logo Mark: 36px on small mobile, 44px on tablet/desktop */}
         <div
-          className="h-11 w-11 shrink-0 rounded-full flex items-center justify-center shadow-sm transition-transform duration-200 group-hover:scale-105"
+          className="h-9 w-9 sm:h-11 sm:w-11 shrink-0 rounded-full flex items-center justify-center shadow-sm transition-transform duration-200 group-hover:scale-105"
           style={{
             backgroundColor: 'var(--brand)',
             color: 'var(--brand-ink)',
           }}
         >
-          <span className="font-serif-app text-[26px] font-semibold leading-none select-none">
+          <span className="font-serif-app text-[20px] sm:text-[26px] font-semibold leading-none select-none">
             ব
           </span>
         </div>
 
-        {/* App Name and Muted Subtitle */}
-        <div className="flex flex-col">
-          <span className="app-title font-serif-app">
+        {/* App Name & Subtitle */}
+        <div className="flex flex-col min-w-0">
+          <span className="app-title font-serif-app text-lg sm:text-[24px] font-semibold tracking-tight truncate">
             {isBn ? 'ব্যাংক-ইনটেল' : 'Bank-Intel'}
           </span>
           <span
-            className="text-[13px] leading-tight font-sans-app"
+            className="hidden sm:inline-block text-[12px] sm:text-[13px] leading-tight font-sans-app truncate"
             style={{ color: 'var(--mute)' }}
           >
             {isBn
@@ -46,11 +46,11 @@ export const HeaderNav: React.FC = () => {
         </div>
       </Link>
 
-      {/* Right: Language Switch & Theme Toggle */}
-      <div className="flex items-center gap-3">
-        {/* Language Switch: Pill container with 4px padding, --surface2 bg, --line border */}
+      {/* Right: Language Switch & Theme Toggle (8px gap) */}
+      <div className="flex items-center gap-2 shrink-0">
+        {/* Desktop & Tablet Language Switch: "বাংলা | English" */}
         <div
-          className="hidden md:flex items-center p-1 rounded-full border transition-colors"
+          className="hidden md:flex items-center h-10 p-1 rounded-full border transition-colors"
           style={{
             backgroundColor: 'var(--surface2)',
             borderColor: 'var(--line)',
@@ -59,7 +59,7 @@ export const HeaderNav: React.FC = () => {
           <button
             type="button"
             onClick={() => setLocale('bn')}
-            className="px-3.5 py-1.5 rounded-full text-[13px] font-medium transition-all duration-200"
+            className="px-3.5 py-1 rounded-full text-[13px] font-medium transition-all duration-200"
             style={{
               backgroundColor: isBn ? 'var(--pill)' : 'transparent',
               color: isBn ? 'var(--pill-ink)' : 'var(--mute)',
@@ -71,7 +71,7 @@ export const HeaderNav: React.FC = () => {
           <button
             type="button"
             onClick={() => setLocale('en')}
-            className="px-3.5 py-1.5 rounded-full text-[13px] font-medium transition-all duration-200"
+            className="px-3.5 py-1 rounded-full text-[13px] font-medium transition-all duration-200"
             style={{
               backgroundColor: !isBn ? 'var(--pill)' : 'transparent',
               color: !isBn ? 'var(--pill-ink)' : 'var(--mute)',
@@ -82,14 +82,48 @@ export const HeaderNav: React.FC = () => {
           </button>
         </div>
 
-        {/* Theme Toggle: 76x40px pill, --surface2 bg, 1px --line border, 32px knob sliding 36px */}
+        {/* Small Mobile Language Switch: Compact "বাং | EN" matching theme switch height */}
+        <div
+          className="flex md:hidden items-center h-10 p-1 rounded-full border transition-colors shrink-0"
+          style={{
+            backgroundColor: 'var(--surface2)',
+            borderColor: 'var(--line)',
+          }}
+        >
+          <button
+            type="button"
+            onClick={() => setLocale('bn')}
+            className="px-2.5 py-1 rounded-full text-[12px] font-medium transition-all duration-200"
+            style={{
+              backgroundColor: isBn ? 'var(--pill)' : 'transparent',
+              color: isBn ? 'var(--pill-ink)' : 'var(--mute)',
+              fontWeight: isBn ? 600 : 500,
+            }}
+          >
+            বাং
+          </button>
+          <button
+            type="button"
+            onClick={() => setLocale('en')}
+            className="px-2.5 py-1 rounded-full text-[12px] font-medium transition-all duration-200"
+            style={{
+              backgroundColor: !isBn ? 'var(--pill)' : 'transparent',
+              color: !isBn ? 'var(--pill-ink)' : 'var(--mute)',
+              fontWeight: !isBn ? 600 : 500,
+            }}
+          >
+            EN
+          </button>
+        </div>
+
+        {/* Theme Toggle: 76x40px pill, sliding knob with sun and moon */}
         <button
           type="button"
           role="switch"
           aria-checked={isDark}
           aria-label="Toggle day and night mode"
           onClick={toggleTheme}
-          className="relative w-[76px] h-10 rounded-full border p-1 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2"
+          className="relative w-[76px] h-10 rounded-full border p-1 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 shrink-0"
           style={{
             backgroundColor: 'var(--surface2)',
             borderColor: 'var(--line)',

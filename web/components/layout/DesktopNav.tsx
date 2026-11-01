@@ -3,11 +3,11 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Compass, Timer, AlertOctagon } from 'lucide-react';
+import { Compass, Timer, AlertOctagon, PenLine } from 'lucide-react';
 import { useI18n } from '../../lib/i18n/context';
 
 export const DesktopNav: React.FC = () => {
-  const { t, locale } = useI18n();
+  const { locale } = useI18n();
   const pathname = usePathname();
   const isBn = locale === 'bn';
 
@@ -29,6 +29,12 @@ export const DesktopNav: React.FC = () => {
       label: isBn ? 'ভুল ব্যাংক' : 'Mistake bank',
       icon: AlertOctagon,
       isActive: pathname.startsWith('/vault'),
+    },
+    {
+      href: '/writing',
+      label: isBn ? 'লিখিত প্রস্তুতি' : 'Writing',
+      icon: PenLine,
+      isActive: pathname.startsWith('/writing'),
     },
   ];
 

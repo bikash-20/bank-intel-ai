@@ -223,16 +223,16 @@ export function AIExplainSection({
       <button
         type="button"
         onClick={handleOpen}
-        className="group flex w-full items-center justify-between px-5 sm:px-6 py-3.5 sm:py-4 rounded-full border text-left transition-all duration-200 active:scale-[0.99] hover:border-[var(--brand)] shadow-sm"
+        className="group flex w-full items-center justify-between px-3.5 sm:px-6 py-3 sm:py-4 rounded-full border text-left transition-all duration-200 active:scale-[0.99] hover:border-[var(--brand)] shadow-sm"
         style={{
           backgroundColor: 'var(--surface2)',
           borderColor: 'var(--line)',
           color: 'var(--ink)',
         }}
       >
-        <div className="flex items-center gap-3.5">
+        <div className="flex items-center gap-2.5 sm:gap-3.5 min-w-0">
           <span
-            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full transition-transform group-hover:scale-105"
+            className="flex h-8 w-8 sm:h-9 sm:w-9 shrink-0 items-center justify-center rounded-full transition-transform group-hover:scale-105"
             style={{
               backgroundColor: 'var(--surface)',
               color: 'var(--brand)',
@@ -246,12 +246,12 @@ export function AIExplainSection({
             )}
           </span>
           <div className="min-w-0">
-            <div className="flex items-center gap-2">
-              <span className="font-serif-app font-semibold text-base sm:text-lg">
-                {isBn ? 'এআই ব্যাখ্যা (AI Explain)' : 'AI Explain'}
+            <div className="flex items-center gap-1.5 sm:gap-2">
+              <span className="font-serif-app font-semibold text-sm sm:text-lg truncate">
+                {isBn ? 'এআই ব্যাখ্যা' : 'AI Explain'}
               </span>
               <span
-                className="px-2 py-0.5 rounded-full text-xs font-medium border"
+                className="hidden sm:inline-block px-2 py-0.5 rounded-full text-xs font-medium border"
                 style={{
                   backgroundColor: 'var(--surface)',
                   color: 'var(--mute)',
@@ -262,7 +262,7 @@ export function AIExplainSection({
               </span>
               {explanation && !loading && (
                 <span
-                  className="px-2.5 py-0.5 rounded-full text-xs font-semibold"
+                  className="px-2 py-0.5 rounded-full text-[11px] sm:text-xs font-semibold shrink-0"
                   style={{
                     backgroundColor: 'var(--okbg)',
                     color: 'var(--ok)',
@@ -292,10 +292,10 @@ export function AIExplainSection({
         </div>
 
         <div
-          className="flex items-center gap-1.5 text-xs sm:text-sm font-semibold shrink-0 pl-2"
+          className="flex items-center gap-1.5 text-xs sm:text-sm font-semibold shrink-0 pl-1.5"
           style={{ color: 'var(--brand)' }}
         >
-          <span>{isBn ? 'ব্যাখ্যা দেখুন' : 'Explain'}</span>
+          <span className="hidden min-[400px]:inline-block">{isBn ? 'ব্যাখ্যা দেখুন' : 'Explain'}</span>
           <ChevronDown className="h-4 w-4" />
         </div>
       </button>

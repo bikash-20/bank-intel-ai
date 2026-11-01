@@ -45,3 +45,18 @@ export interface Env {
   OPENROUTER_API_KEY?: string;
 }
 
+export interface ExplainWritingRequest {
+  questionId: string;
+  category: string;
+  stem: string;
+  marks: number;
+}
+
+export interface ExplainWritingResponse {
+  ok: boolean;
+  modelAnswer?: string;
+  generatedBy?: string;
+  error?: string;
+}
+
+

@@ -63,6 +63,7 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 5,
   themeColor: '#9b2243',
+  viewportFit: 'cover',
 };
 
 export default function RootLayout({
@@ -104,19 +105,19 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-screen antialiased selection:bg-[#ffd3df] selection:text-[#2a1a20]">
+      <body className="min-h-dvh antialiased selection:bg-[#ffd3df] selection:text-[#2a1a20]">
         <ThemeProvider>
           <I18nProvider>
             {/* Background Falling Petals Signature Layer */}
             <Petals />
 
-            {/* Application Main Layout Wrapper (Centered Max Width 1040px, Padding 18px 20px 110px) */}
-            <div className="relative z-10 mx-auto max-w-[1040px] px-4 sm:px-5 pt-[18px] pb-[110px] space-y-6">
+            {/* Application Main Layout Wrapper (Fluid px-3/sm:px-5/lg:px-8, Max Width 1120px Centered) */}
+            <div className="relative z-10 mx-auto max-w-[1120px] px-3 sm:px-5 lg:px-8 pt-3 sm:pt-[18px] pb-24 md:pb-8 space-y-4 sm:space-y-6">
               {/* Header */}
               <HeaderNav />
 
               {/* Page Content */}
-              <main className="w-full">
+              <main className="w-full min-w-0">
                 {children}
               </main>
             </div>

@@ -3,11 +3,11 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Compass, Timer, AlertOctagon, Languages } from 'lucide-react';
+import { Compass, Timer, AlertOctagon, PenLine } from 'lucide-react';
 import { useI18n } from '../../lib/i18n/context';
 
 export const MobileBottomNav: React.FC = () => {
-  const { t, locale, toggleLocale } = useI18n();
+  const { locale } = useI18n();
   const pathname = usePathname();
   const isBn = locale === 'bn';
 
@@ -29,6 +29,12 @@ export const MobileBottomNav: React.FC = () => {
       label: isBn ? 'ভুল ব্যাংক' : 'Mistakes',
       icon: AlertOctagon,
       isActive: pathname.startsWith('/vault'),
+    },
+    {
+      href: '/writing',
+      label: isBn ? 'লিখিত' : 'Writing',
+      icon: PenLine,
+      isActive: pathname.startsWith('/writing'),
     },
   ];
 
@@ -63,22 +69,6 @@ export const MobileBottomNav: React.FC = () => {
             </Link>
           );
         })}
-
-        {/* Mobile Language Switcher Button */}
-        <button
-          type="button"
-          onClick={toggleLocale}
-          className="flex flex-col items-center justify-center py-2 px-1 rounded-full transition-all duration-200"
-          style={{
-            backgroundColor: 'transparent',
-            color: 'var(--brand)',
-          }}
-        >
-          <Languages className="h-4 w-4 mb-0.5" />
-          <span className="text-[11px] font-sans-app font-semibold leading-tight">
-            {isBn ? 'English' : 'বাংলা'}
-          </span>
-        </button>
       </div>
     </div>
   );

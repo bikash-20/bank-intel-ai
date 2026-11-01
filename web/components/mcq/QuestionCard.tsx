@@ -125,7 +125,7 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
 
   return (
     <div
-      className="w-full question-card-rounded border p-5 sm:p-9 transition-colors duration-300"
+      className="w-full question-card-rounded border p-4 sm:p-7 lg:p-8 transition-colors duration-300"
       style={{
         backgroundColor: 'var(--surface)',
         borderColor: 'var(--line)',
@@ -134,13 +134,13 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
     >
       {/* Top Metadata Header */}
       <div
-        className="flex flex-wrap items-center justify-between gap-3 border-b pb-4 mb-6"
+        className="flex flex-wrap items-center justify-between gap-2.5 border-b pb-3.5 mb-5"
         style={{ borderColor: 'var(--line)' }}
       >
         <div className="flex flex-wrap items-center gap-2">
           {/* Question count pill */}
           <span
-            className="px-3.5 py-1.5 rounded-full text-xs font-medium border"
+            className="px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full text-xs font-medium border"
             style={{
               backgroundColor: 'var(--surface2)',
               borderColor: 'var(--line)',
@@ -152,7 +152,7 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
 
           {/* Subject badge pill */}
           <span
-            className="px-3.5 py-1.5 rounded-full text-xs font-semibold border"
+            className="px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full text-xs font-semibold border"
             style={{
               backgroundColor: 'var(--surface2)',
               borderColor: 'var(--line)',
@@ -165,7 +165,7 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
           {/* Exam appearance badge pill */}
           {appearance && (
             <span
-              className="px-3.5 py-1.5 rounded-full text-xs border hidden sm:inline-block"
+              className="px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full text-xs border hidden sm:inline-block"
               style={{
                 backgroundColor: 'var(--surface2)',
                 borderColor: 'var(--line)',
@@ -183,7 +183,7 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
           type="button"
           onClick={handleToggleBookmark}
           aria-label={bookmarked ? 'Remove bookmark' : 'Bookmark question'}
-          className="h-10 w-10 rounded-full border flex items-center justify-center transition-all duration-200 active:scale-95 shadow-sm"
+          className="h-9 w-9 sm:h-10 sm:w-10 rounded-full border flex items-center justify-center transition-all duration-200 active:scale-95 shadow-sm"
           style={{
             backgroundColor: bookmarked ? 'var(--brand)' : 'var(--surface2)',
             color: bookmarked ? 'var(--brand-ink)' : 'var(--mute)',
@@ -197,8 +197,8 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
         </button>
       </div>
 
-      {/* Question Text in --serif weight 500, clamp(26px, 4.2vw, 38px) */}
-      <div className="question-heading mb-7">
+      {/* Question Text in --serif weight 500, clamp(22px, 4vw, 38px) */}
+      <div className="question-heading mb-5">
         <MathText content={question.stem} />
       </div>
 

@@ -96,7 +96,7 @@ export const OptionRow: React.FC<OptionRowProps> = ({
       onClick={onSelect}
       disabled={hasSubmitted}
       style={containerStyle}
-      className={`group relative flex w-full items-center gap-3.5 sm:gap-4 px-4 sm:px-6 py-3.5 sm:py-4 rounded-full border text-left transition-all duration-200 min-h-[58px] ${
+      className={`group relative flex w-full items-center gap-3.5 sm:gap-4 px-4 sm:px-6 py-3 sm:py-4 rounded-[24px] sm:rounded-full border text-left transition-all duration-200 min-h-[54px] sm:min-h-[58px] ${
         !hasSubmitted
           ? 'cursor-pointer hover:border-[var(--brand)] active:scale-[0.99]'
           : 'cursor-default'
