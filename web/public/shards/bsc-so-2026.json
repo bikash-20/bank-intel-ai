@@ -1,0 +1,2302 @@
+[
+  {
+    "id": "bsc-so-2026-q001",
+    "hash": "2f45528c58c0ed5c",
+    "subject": "ENGLISH",
+    "topic": "Vocabulary (Antonym)",
+    "hasMath": false,
+    "stem": "Choose the antonym of 'Coercive'?",
+    "options": {
+      "A": "Progressive",
+      "B": "Gentle",
+      "C": "Promoting",
+      "D": "Opinionated"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q002",
+    "hash": "648a693515531ba9",
+    "subject": "ENGLISH",
+    "topic": "Subjunctive Mood",
+    "hasMath": false,
+    "stem": "The board insisted that the CEO ___ a revised plan.",
+    "options": {
+      "A": "submits",
+      "B": "submit",
+      "C": "will submit",
+      "D": "has submitted"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q003",
+    "hash": "11c87ba53134d064",
+    "subject": "ENGLISH",
+    "topic": "Pronoun Case",
+    "hasMath": false,
+    "stem": "___ went to the market.",
+    "options": {
+      "A": "Him and I",
+      "B": "He and I",
+      "C": "He and me",
+      "D": "Him and me"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q004",
+    "hash": "015807d427ce47cf",
+    "subject": "ENGLISH",
+    "topic": "Conditionals",
+    "hasMath": false,
+    "stem": "Don't worry ___ late tonight.",
+    "options": {
+      "A": "if I am",
+      "B": "when I am",
+      "C": "when I'll",
+      "D": "if I'll be"
+    },
+    "correctOption": "A",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q005",
+    "hash": "490d656bd60634ac",
+    "subject": "ENGLISH",
+    "topic": "Second Conditional",
+    "hasMath": false,
+    "stem": "It would be pleasant if we ___ where to go.",
+    "options": {
+      "A": "known",
+      "B": "know",
+      "C": "knew",
+      "D": "had known"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q006",
+    "hash": "c585da9981d7dce7",
+    "subject": "ENGLISH",
+    "topic": "Past Obligation & Tense",
+    "hasMath": false,
+    "stem": "I ___ to the hospital last Saturday.",
+    "options": {
+      "A": "had go",
+      "B": "have to go",
+      "C": "have being",
+      "D": "had to go"
+    },
+    "correctOption": "D",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q007",
+    "hash": "5d1cc596b467f0b2",
+    "subject": "ENGLISH",
+    "topic": "Subject-Verb Agreement",
+    "hasMath": false,
+    "stem": "A number of students ___ absent from the class, but the number of absentees ___ small.",
+    "options": {
+      "A": "was; were",
+      "B": "were; was",
+      "C": "is; are",
+      "D": "has; have"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q008",
+    "hash": "a364b1e0a764d8e8",
+    "subject": "ENGLISH",
+    "topic": "Determiners & Quantifiers",
+    "hasMath": false,
+    "stem": "The intruder stood quietly ___.",
+    "options": {
+      "A": "for the few moments",
+      "B": "for few time",
+      "C": "for moments",
+      "D": "for a few moments"
+    },
+    "correctOption": "D",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q009",
+    "hash": "84faee56174d741d",
+    "subject": "ENGLISH",
+    "topic": "Proverbs & Idioms",
+    "hasMath": false,
+    "stem": "Complete the phrase: 'A penny saved is a penny ___.'",
+    "options": {
+      "A": "lost",
+      "B": "earned",
+      "C": "spent",
+      "D": "wasted"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q010",
+    "hash": "1f098a89a6aaaf84",
+    "subject": "ENGLISH",
+    "topic": "Idioms & Phrases",
+    "hasMath": false,
+    "stem": "The phrase 'spill the beans' means:",
+    "options": {
+      "A": "Waste food",
+      "B": "Tell a secret",
+      "C": "Make a mistake",
+      "D": "Start a fight"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q011",
+    "hash": "5e18ce358f7db986",
+    "subject": "ENGLISH",
+    "topic": "Literary Devices",
+    "hasMath": false,
+    "stem": "Which literary device is used when human qualities are given to non-human beings?",
+    "options": {
+      "A": "Simile",
+      "B": "Personification",
+      "C": "Hyperbole",
+      "D": "Irony"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q012",
+    "hash": "f6fc398ade8e6155",
+    "subject": "ENGLISH",
+    "topic": "English Literature",
+    "hasMath": false,
+    "stem": "In Shakespeare's 'Othello', the tragic flaw of the protagonist is primarily:",
+    "options": {
+      "A": "Ambition",
+      "B": "Jealousy",
+      "C": "Indecision",
+      "D": "Pride"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q013",
+    "hash": "5aa09d74e023374b",
+    "subject": "ENGLISH",
+    "topic": "Linguistics & One-Word Substitution",
+    "hasMath": false,
+    "stem": "The variety of language used by a particular group of individuals is called:",
+    "options": {
+      "A": "Creole",
+      "B": "Dialect",
+      "C": "Register",
+      "D": "Pidgin"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q014",
+    "hash": "894223b90f47f0a3",
+    "subject": "ENGLISH",
+    "topic": "English Literature Quotes",
+    "hasMath": false,
+    "stem": "\"Knowledge comes, but wisdom lingers\" — this quote is extracted from which poet?",
+    "options": {
+      "A": "Tennyson",
+      "B": "Shelley",
+      "C": "Keats",
+      "D": "T.S. Eliot"
+    },
+    "correctOption": "A",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q015",
+    "hash": "bf6f2d7030fa664d",
+    "subject": "ENGLISH",
+    "topic": "Vocabulary (Synonym)",
+    "hasMath": false,
+    "stem": "Choose the synonym of 'Obfuscate'?",
+    "options": {
+      "A": "Clarify",
+      "B": "Confuse",
+      "C": "Illuminate",
+      "D": "Simplify"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q016",
+    "hash": "8433314eb6eb0976",
+    "subject": "ENGLISH",
+    "topic": "Vocabulary (Synonym)",
+    "hasMath": false,
+    "stem": "Choose the synonym of 'Pusillanimous'?",
+    "options": {
+      "A": "Courageous",
+      "B": "Cowardly",
+      "C": "Transparent",
+      "D": "Loquacious"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q017",
+    "hash": "e030d3f886dcd9c2",
+    "subject": "ENGLISH",
+    "topic": "Vocabulary (Synonym)",
+    "hasMath": false,
+    "stem": "Choose the synonym of 'Perfunctory'?",
+    "options": {
+      "A": "Thorough",
+      "B": "Cursory",
+      "C": "Diligent",
+      "D": "Meticulous"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q018",
+    "hash": "e0b586cf4b23d2ab",
+    "subject": "ENGLISH",
+    "topic": "Vocabulary (Synonym)",
+    "hasMath": false,
+    "stem": "Choose the synonym of 'Eloquent'?",
+    "options": {
+      "A": "Silent",
+      "B": "Expressive",
+      "C": "Confused",
+      "D": "Ordinary"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q019",
+    "hash": "bff29e149f539b41",
+    "subject": "ENGLISH",
+    "topic": "Vocabulary (Antonym)",
+    "hasMath": false,
+    "stem": "Choose the antonym of 'Loquacious'?",
+    "options": {
+      "A": "Verbose",
+      "B": "Garrulous",
+      "C": "Taciturn",
+      "D": "Eloquent"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q020",
+    "hash": "922530ed25ed1723",
+    "subject": "ENGLISH",
+    "topic": "Vocabulary (Antonym)",
+    "hasMath": false,
+    "stem": "Choose the antonym of 'Alacrity'?",
+    "options": {
+      "A": "Reluctance",
+      "B": "Enthusiasm",
+      "C": "Swiftness",
+      "D": "Clarity"
+    },
+    "correctOption": "A",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q021",
+    "hash": "c946ea5f7d90649c",
+    "subject": "BANGLA",
+    "topic": "সন্ধি",
+    "hasMath": false,
+    "stem": "সন্ধিতে কীসের মিলন হয়?",
+    "options": {
+      "A": "বর্ণ",
+      "B": "শব্দ",
+      "C": "পদ",
+      "D": "ধ্বনি"
+    },
+    "correctOption": "D",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q022",
+    "hash": "d4e53d469fc693c9",
+    "subject": "BANGLA",
+    "topic": "সমাস",
+    "hasMath": false,
+    "stem": "'গগনচুম্বী' কোন সমাসের উদাহরণ?",
+    "options": {
+      "A": "দ্বন্দ্ব",
+      "B": "তৎপুরুষ",
+      "C": "বহুব্রীহি",
+      "D": "কর্মধারয়"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q023",
+    "hash": "e80e9c5fc41d4260",
+    "subject": "BANGLA",
+    "topic": "সমাস",
+    "hasMath": false,
+    "stem": "কোনটি 'ব্যতিহার বহুব্রীহি' সমাসের উদাহরণ?",
+    "options": {
+      "A": "হাতেখড়ি",
+      "B": "দশানন",
+      "C": "কানাকানি",
+      "D": "পীতাম্বর"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q024",
+    "hash": "c3f107239893d0d9",
+    "subject": "BANGLA",
+    "topic": "বাংলা সাহিত্য",
+    "hasMath": false,
+    "stem": "অগ্নিবীণা কাব্যগ্রন্থে সংকলিত প্রথম কবিতা কোনটি?",
+    "options": {
+      "A": "অগ্রপথিক",
+      "B": "বিদ্রোহী",
+      "C": "প্রলয়োল্লাস",
+      "D": "ধূমকেতু"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q025",
+    "hash": "a7fd98e8df81d9b9",
+    "subject": "BANGLA",
+    "topic": "ভাষা",
+    "hasMath": false,
+    "stem": "আঞ্চলিক ভাষার অপর নাম কী?",
+    "options": {
+      "A": "উপভাষা",
+      "B": "কথ্যভাষা",
+      "C": "সাধুভাষা",
+      "D": "চলিতভাষা"
+    },
+    "correctOption": "A",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q026",
+    "hash": "e6e11ca7e832f5ff",
+    "subject": "BANGLA",
+    "topic": "লিঙ্গ ও নারীবাচক শব্দ",
+    "hasMath": false,
+    "stem": "কোনটি পত্নী অর্থে নারীবাচক শব্দ?",
+    "options": {
+      "A": "ছাত্রী",
+      "B": "জেলেনি",
+      "C": "আয়া",
+      "D": "সামা"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q027",
+    "hash": "a4c922774fabe7bc",
+    "subject": "BANGLA",
+    "topic": "পদ প্রকরণ (বিশেষণ)",
+    "hasMath": false,
+    "stem": "গুণবাচক বিশেষণের উদাহরণ কোনটি?",
+    "options": {
+      "A": "কেমন",
+      "B": "চলন্ত",
+      "C": "সবুজ",
+      "D": "চালাক"
+    },
+    "correctOption": "D",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q028",
+    "hash": "ae89ff38ba5c752c",
+    "subject": "BANGLA",
+    "topic": "পদ প্রকরণ (বিশেষণ)",
+    "hasMath": false,
+    "stem": "'গাড়িটা বেশ জোরে চলছে' — এই বাক্যে ভাববাচক বিশেষণ কোনটি?",
+    "options": {
+      "A": "গাড়িটা",
+      "B": "বেশ",
+      "C": "জোরে",
+      "D": "চলছে"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q029",
+    "hash": "25073ebcd4681b9d",
+    "subject": "BANGLA",
+    "topic": "কারক ও বিভক্তি",
+    "hasMath": false,
+    "stem": "'সারা রাত বৃষ্টি হয়েছে' — এখানে 'সারা রাত' কোন বিভক্তি?",
+    "options": {
+      "A": "শূন্য",
+      "B": "৭মী",
+      "C": "৩য়া",
+      "D": "৫মী"
+    },
+    "correctOption": "A",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q030",
+    "hash": "e86f10e1a7030dfa",
+    "subject": "BANGLA",
+    "topic": "বিরাম চিহ্ন",
+    "hasMath": false,
+    "stem": "বাক্যে সামান্য বিরতি নির্দেশ করে কোনটি?",
+    "options": {
+      "A": "দাঁড়ি",
+      "B": "সেমিকোলন",
+      "C": "কমা",
+      "D": "কোলন"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q031",
+    "hash": "991d93511f57c6aa",
+    "subject": "BANGLA",
+    "topic": "বাক্য সংকোচন",
+    "hasMath": false,
+    "stem": "'গমনের ইচ্ছা'-কে এককথায় কী বলে?",
+    "options": {
+      "A": "জুগুপ্সা",
+      "B": "গমনেচ্ছা",
+      "C": "জিগীষা",
+      "D": "জিগমিষা"
+    },
+    "correctOption": "D",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q032",
+    "hash": "a3f5d072eb600ef1",
+    "subject": "BANGLA",
+    "topic": "সমার্থক শব্দ",
+    "hasMath": false,
+    "stem": "'প্রতীচী' শব্দের সমার্থক শব্দ—",
+    "options": {
+      "A": "উন্মুক্ত",
+      "B": "পাশ্চাত্য",
+      "C": "প্রাচ্য",
+      "D": "উত্তরা"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q033",
+    "hash": "e63a4e81bd7e8f27",
+    "subject": "BANGLA",
+    "topic": "ছন্দ",
+    "hasMath": false,
+    "stem": "অমিত্রাক্ষর ছন্দ মূলত কোন ছন্দের ওপর ভিত্তি করে গঠিত?",
+    "options": {
+      "A": "মাত্রাবৃত্ত",
+      "B": "অক্ষরবৃত্ত",
+      "C": "গদ্যছন্দ",
+      "D": "স্বরবৃত্ত"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q034",
+    "hash": "9f1af2d2b927e323",
+    "subject": "BANGLA",
+    "topic": "শব্দার্থ",
+    "hasMath": false,
+    "stem": "'অনিকেত' শব্দের অর্থ কী?",
+    "options": {
+      "A": "অল্পভাষী",
+      "B": "অস্থায়ী",
+      "C": "গৃহহীন",
+      "D": "অসুন্দর"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q035",
+    "hash": "fe99ef8494e1b6d3",
+    "subject": "BANGLA",
+    "topic": "প্রকৃতি ও প্রত্যয়",
+    "hasMath": false,
+    "stem": "'সত্য' শব্দের প্রকৃতি ও প্রত্যয়—",
+    "options": {
+      "A": "সতি + য",
+      "B": "সৎ + য",
+      "C": "সপ্ + য",
+      "D": "সত্তি + য"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q036",
+    "hash": "fccbf0099f190804",
+    "subject": "BANGLA",
+    "topic": "সন্ধিবিচ্ছেদ",
+    "hasMath": false,
+    "stem": "'অন্তরঙ্গ' শব্দের সন্ধিবিচ্ছেদ—",
+    "options": {
+      "A": "অন্ত + রঙ্গ",
+      "B": "অন্তর + অঙ্গ",
+      "C": "অন্তঃ + রঙ্গ",
+      "D": "অন্তঃ + অঙ্গ"
+    },
+    "correctOption": "D",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q037",
+    "hash": "296123d9be8bbff8",
+    "subject": "BANGLA",
+    "topic": "শব্দের উৎস",
+    "hasMath": false,
+    "stem": "'অজুহাত' কোন ভাষা থেকে আসা শব্দ?",
+    "options": {
+      "A": "উর্দু",
+      "B": "আরবি",
+      "C": "হিন্দি",
+      "D": "ফারসি"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q038",
+    "hash": "9bad38d1442600ae",
+    "subject": "BANGLA",
+    "topic": "সমাস",
+    "hasMath": false,
+    "stem": "'তপোবন' কোন সমাস?",
+    "options": {
+      "A": "রূপক কর্মধারয়",
+      "B": "দ্বিগু",
+      "C": "চতুর্থী তৎপুরুষ",
+      "D": "বহুব্রীহি"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q039",
+    "hash": "668663aa9847d6f5",
+    "subject": "BANGLA",
+    "topic": "বানান শুদ্ধিকরণ",
+    "hasMath": false,
+    "stem": "শুদ্ধ বানান কোনটি?",
+    "options": {
+      "A": "অনুসঙ্গিক",
+      "B": "আনুসঙ্গিক",
+      "C": "অনুষাঙ্গিক",
+      "D": "আনুষঙ্গিক"
+    },
+    "correctOption": "D",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q040",
+    "hash": "668663aa9847d6f5",
+    "subject": "BANGLA",
+    "topic": "বানান শুদ্ধিকরণ",
+    "hasMath": false,
+    "stem": "শুদ্ধ বানান কোনটি?",
+    "options": {
+      "A": "প্রতিযোগীতা",
+      "B": "প্রতিদ্বন্দ্বিতা",
+      "C": "মন্ত্রীত্ব",
+      "D": "প্রাণীবিদ্যা"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q041",
+    "hash": "aaaa549f28bf5427",
+    "subject": "MATH",
+    "topic": "LCM & HCF",
+    "hasMath": true,
+    "stem": "Three numbers are in the ratio $2:3:5$ and their LCM is $300$. What is their HCF?",
+    "options": {
+      "A": "5",
+      "B": "10",
+      "C": "15",
+      "D": "20"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q042",
+    "hash": "502774e85edb0791",
+    "subject": "MATH",
+    "topic": "Algebraic Identities",
+    "hasMath": true,
+    "stem": "If $x + \\frac{1}{x} = 3$, find the value of $x^3 + \\frac{1}{x^3} = ?$",
+    "options": {
+      "A": "18",
+      "B": "21",
+      "C": "24",
+      "D": "27"
+    },
+    "correctOption": "A",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q043",
+    "hash": "f915f5e454c031e8",
+    "subject": "MATH",
+    "topic": "Functions & Polynomials",
+    "hasMath": true,
+    "stem": "If $f(x) = x^2 + ax + b$ and $f(1) = 0, f(3) = 0$, find $f(-1)$.",
+    "options": {
+      "A": "4",
+      "B": "6",
+      "C": "8",
+      "D": "10"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q044",
+    "hash": "3c081a555072db8d",
+    "subject": "MATH",
+    "topic": "System of Linear Equations",
+    "hasMath": true,
+    "stem": "For what value of $k$ does the system $2x + ky = 4$ and $kx + 8y = 8$ have infinitely many solutions?",
+    "options": {
+      "A": "$k = -4$",
+      "B": "$k = 4$",
+      "C": "$k = 2$",
+      "D": "$k = -2$"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q045",
+    "hash": "f431af10678187a8",
+    "subject": "MATH",
+    "topic": "Geometry (Pythagorean Theorem)",
+    "hasMath": true,
+    "stem": "A ladder $13\\text{m}$ long leans against a wall. The foot of the ladder is $5\\text{m}$ from the wall. How high up the wall does the ladder reach?",
+    "options": {
+      "A": "8m",
+      "B": "10m",
+      "C": "12m",
+      "D": "13m"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q046",
+    "hash": "3b568e55edaa2e25",
+    "subject": "MATH",
+    "topic": "Permutations & Combinations",
+    "hasMath": false,
+    "stem": "How many distinct 5-digit numbers can be formed using the digits 0, 1, 2, 3, 4, and 5 such that the number is divisible by 5 and digits are not repeated?",
+    "options": {
+      "A": "120",
+      "B": "216",
+      "C": "240",
+      "D": "256"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q047",
+    "hash": "45f731470dc2e599",
+    "subject": "MATH",
+    "topic": "Number System (Factorials)",
+    "hasMath": true,
+    "stem": "How many trailing zeros are there at the end of the number $100!$?",
+    "options": {
+      "A": "24",
+      "B": "20",
+      "C": "25",
+      "D": "26"
+    },
+    "correctOption": "A",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q048",
+    "hash": "0a0d8cf1d5034b65",
+    "subject": "MATH",
+    "topic": "Mensuration (Squares)",
+    "hasMath": false,
+    "stem": "The ratio of the areas of two squares, one having its diagonal double that of the other, is—",
+    "options": {
+      "A": "2:1",
+      "B": "3:1",
+      "C": "4:1",
+      "D": "8:1"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q049",
+    "hash": "cb72048f97be2e17",
+    "subject": "MATH",
+    "topic": "Ratio & Proportion",
+    "hasMath": false,
+    "stem": "A sum of money is to be distributed among A, B, C, D in the proportion of 5:2:4:3. If C gets Tk. 1000 more than D, what is B's share?",
+    "options": {
+      "A": "Tk. 500",
+      "B": "Tk. 1500",
+      "C": "Tk. 2000",
+      "D": "Tk. 2500"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q050",
+    "hash": "f12b8895b9133c13",
+    "subject": "MATH",
+    "topic": "Linear Word Problems",
+    "hasMath": false,
+    "stem": "A family swimming pool membership costs Tk. 450 per month plus a one-time registration fee of Tk. 350. If a family has paid a total of Tk. 3,950, how many months have they been members?",
+    "options": {
+      "A": "4",
+      "B": "5",
+      "C": "8",
+      "D": "10"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q051",
+    "hash": "a49b8c20c89d4747",
+    "subject": "MATH",
+    "topic": "Weighted Average",
+    "hasMath": false,
+    "stem": "If the average marks of three batches of 55, 60 and 45 students respectively are 50, 55, 60, then the average marks of all the students is—",
+    "options": {
+      "A": "53.33",
+      "B": "54.68",
+      "C": "55",
+      "D": "55.03"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q052",
+    "hash": "17843c104c6d136f",
+    "subject": "MATH",
+    "topic": "Speed, Time & Distance",
+    "hasMath": true,
+    "stem": "A person travels from $x$ to $y$ at a speed of $40\\text{ km/h}$ and returns by increasing his speed $50\\%$. What is his average speed for both the trips?",
+    "options": {
+      "A": "$36\\text{ km/h}$",
+      "B": "$45\\text{ km/h}$",
+      "C": "$48\\text{ km/h}$",
+      "D": "$50\\text{ km/h}$"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q053",
+    "hash": "b6326b0542a04eb0",
+    "subject": "MATH",
+    "topic": "Age Word Problems",
+    "hasMath": false,
+    "stem": "Today is Khadija's birthday. After one year, she will become two times as she was ten years ago. What is the current age of Khadija?",
+    "options": {
+      "A": "19",
+      "B": "20",
+      "C": "21",
+      "D": "22"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q054",
+    "hash": "a5a7aea64a6cf311",
+    "subject": "MATH",
+    "topic": "Polynomials & Factor Theorem",
+    "hasMath": true,
+    "stem": "If $f(x) = px^2 + qx + r$ and $p + q + r = 0$, then which one will be a factor of $f(x)$?",
+    "options": {
+      "A": "$x - p$",
+      "B": "$x - q$",
+      "C": "$x - 2$",
+      "D": "$x - 1$"
+    },
+    "correctOption": "D",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q055",
+    "hash": "ed54c4e985dbbefb",
+    "subject": "MATH",
+    "topic": "Variation",
+    "hasMath": true,
+    "stem": "If $y = \\frac{1}{x}$, then what will be the constant of variation?",
+    "options": {
+      "A": "-20",
+      "B": "1",
+      "C": "4",
+      "D": "20"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q056",
+    "hash": "db213ad497d222e6",
+    "subject": "MATH",
+    "topic": "Mensuration (3D Sphere)",
+    "hasMath": true,
+    "stem": "What is the volume of a sphere having diameter 6 meter in cubic meter?",
+    "options": {
+      "A": "$12\\pi$",
+      "B": "$27\\pi$",
+      "C": "$36\\pi$",
+      "D": "$108\\pi$"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q057",
+    "hash": "558c4aa1d046d930",
+    "subject": "MATH",
+    "topic": "Profit & Loss",
+    "hasMath": false,
+    "stem": "If there is a profit of 20% on the cost price, the percentage of profit on the sale price is—",
+    "options": {
+      "A": "13.36%",
+      "B": "16.67%",
+      "C": "15.57%",
+      "D": "17.76%"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q058",
+    "hash": "6a8bab7e6566b679",
+    "subject": "MATH",
+    "topic": "Algebraic Identities",
+    "hasMath": true,
+    "stem": "If $x + y = a$ and $x - y = b$, then $2xy = ?$",
+    "options": {
+      "A": "$\\frac{b^2 - a^2}{2}$",
+      "B": "$\\frac{a^2 + b^2}{2}$",
+      "C": "$\\frac{a^2 - b^2}{2}$",
+      "D": "$\\frac{a^2b^2}{2}$"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q059",
+    "hash": "b889ed3988e49b81",
+    "subject": "MATH",
+    "topic": "Coordinate Geometry",
+    "hasMath": true,
+    "stem": "The midpoint of the line joining two points $(36, 6)$ and $(16, 4)$ is—",
+    "options": {
+      "A": "(10, 1)",
+      "B": "(1, 10)",
+      "C": "(26, 5)",
+      "D": "(5, 26)"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q060",
+    "hash": "d2682deeff975807",
+    "subject": "MATH",
+    "topic": "Mensuration (Cubes)",
+    "hasMath": false,
+    "stem": "If the length of an edge of cube M is twice that of an edge of cube N, what is the ratio of the volume of cube N to the volume of cube M?",
+    "options": {
+      "A": "1:2",
+      "B": "1:4",
+      "C": "1:6",
+      "D": "1:8"
+    },
+    "correctOption": "D",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q061",
+    "hash": "5dcc5888c57bb47f",
+    "subject": "GENERAL_KNOWLEDGE",
+    "topic": "Finance & Money Market",
+    "hasMath": false,
+    "stem": "Which one is the short-term source of financing?",
+    "options": {
+      "A": "Stock",
+      "B": "Debenture",
+      "C": "Mutual fund",
+      "D": "Commercial paper"
+    },
+    "correctOption": "D",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q062",
+    "hash": "c76f9cfa47cf87c8",
+    "subject": "GENERAL_KNOWLEDGE",
+    "topic": "Banking Law & Practice",
+    "hasMath": false,
+    "stem": "Payment of a cheque can be stopped by:",
+    "options": {
+      "A": "Beneficiary",
+      "B": "Nominee",
+      "C": "Drawer",
+      "D": "Drawee"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q063",
+    "hash": "fb07692940426cb0",
+    "subject": "GENERAL_KNOWLEDGE",
+    "topic": "Corporate Finance",
+    "hasMath": false,
+    "stem": "Which one is the internal source of financing for a business?",
+    "options": {
+      "A": "Bond",
+      "B": "Share",
+      "C": "T-bill",
+      "D": "Sinking fund"
+    },
+    "correctOption": "D",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q064",
+    "hash": "1d4dcca604b4aac0",
+    "subject": "GENERAL_KNOWLEDGE",
+    "topic": "Bangladesh Economy & Fiscal Policy",
+    "hasMath": false,
+    "stem": "What is the largest source of tax revenue for Bangladesh Government?",
+    "options": {
+      "A": "Income tax",
+      "B": "VAT",
+      "C": "Duties",
+      "D": "Fees"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q065",
+    "hash": "778542ed2e17f513",
+    "subject": "GENERAL_KNOWLEDGE",
+    "topic": "Business Finance",
+    "hasMath": false,
+    "stem": "Business finance always focuses on maximization of—",
+    "options": {
+      "A": "Welfare",
+      "B": "Profit",
+      "C": "Self-interest",
+      "D": "Revenue"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q066",
+    "hash": "1b0d9a8a21bf4154",
+    "subject": "GENERAL_KNOWLEDGE",
+    "topic": "Negotiable Instruments Act",
+    "hasMath": false,
+    "stem": "Which one is not a negotiable instrument?",
+    "options": {
+      "A": "Bank draft",
+      "B": "Cheque",
+      "C": "Promissory note",
+      "D": "Bill of exchange"
+    },
+    "correctOption": "A",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q067",
+    "hash": "aa9ba47049bb4f22",
+    "subject": "GENERAL_KNOWLEDGE",
+    "topic": "Banking Law",
+    "hasMath": false,
+    "stem": "A collecting banker is given protection only when collecting:",
+    "options": {
+      "A": "Crossed cheque",
+      "B": "Order cheque",
+      "C": "Bearer cheque",
+      "D": "Draft"
+    },
+    "correctOption": "A",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q068",
+    "hash": "b49a9057a41511a3",
+    "subject": "GENERAL_KNOWLEDGE",
+    "topic": "Bank Company Act",
+    "hasMath": false,
+    "stem": "Banking businesses are run according to Bank Company Act of—",
+    "options": {
+      "A": "1991",
+      "B": "1992",
+      "C": "1993",
+      "D": "1994"
+    },
+    "correctOption": "A",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q069",
+    "hash": "808ef8fd2e763411",
+    "subject": "GENERAL_KNOWLEDGE",
+    "topic": "Central Banking",
+    "hasMath": false,
+    "stem": "Currency notes in Bangladesh are issued by—",
+    "options": {
+      "A": "Bangladesh Bank",
+      "B": "Ministry of Finance",
+      "C": "Takshal",
+      "D": "Finance Secretary"
+    },
+    "correctOption": "A",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q070",
+    "hash": "cb9629753699a38e",
+    "subject": "GENERAL_KNOWLEDGE",
+    "topic": "Bank Company Act",
+    "hasMath": false,
+    "stem": "A bank cannot hold any immovable property, not acquired for its own use, for a period exceeding ___ years.",
+    "options": {
+      "A": "7",
+      "B": "5",
+      "C": "10",
+      "D": "15"
+    },
+    "correctOption": "A",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q071",
+    "hash": "ce7a8ae535a67e87",
+    "subject": "ANALYTICAL",
+    "topic": "Number Sequences",
+    "hasMath": true,
+    "stem": "What is the $20^{\\text{th}}$ term of the sequence $2, 3, 5, 9, 17, \\dots$?",
+    "options": {
+      "A": "$2^{19} + 1$",
+      "B": "$2^{20} + 1$",
+      "C": "$220$",
+      "D": "$219$"
+    },
+    "correctOption": "A",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q072",
+    "hash": "3e431e313a1c6885",
+    "subject": "ANALYTICAL",
+    "topic": "Recursive Sequences",
+    "hasMath": true,
+    "stem": "A sequence $S$ is defined by $S_n = S_{n-1} + S_{n-2} - 3$ for each integer $n \\ge 3$. If $S_1 = 5$ and $S_2 = 0$, what is the value of $S_6$?",
+    "options": {
+      "A": "-6",
+      "B": "-5",
+      "C": "-3",
+      "D": "-1"
+    },
+    "correctOption": "A",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q073",
+    "hash": "f3f4cfd59d897596",
+    "subject": "MATH",
+    "topic": "Arithmetic Progression",
+    "hasMath": false,
+    "stem": "The first three terms in an arithmetic sequence are 30, 33, and 36. What is the 80th term?",
+    "options": {
+      "A": "269",
+      "B": "267",
+      "C": "271",
+      "D": "270"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q074",
+    "hash": "b86aac31e2e9d5a9",
+    "subject": "MATH",
+    "topic": "Arithmetic Series Sum",
+    "hasMath": true,
+    "stem": "The sequence $A$ is defined by $A_n = A_{n-1} + 2$ for each integer $n \\ge 2$ and $A_1 = 45$. What is the sum of the first 100 terms in sequence $A$?",
+    "options": {
+      "A": "243",
+      "B": "14400",
+      "C": "14500",
+      "D": "24300"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q075",
+    "hash": "bd3175d9b0d8300e",
+    "subject": "MATH",
+    "topic": "Geometric Progression",
+    "hasMath": false,
+    "stem": "In a geometric progression with positive terms, the sum of the second and third terms is 6, and the sum of the fourth and fifth terms is 54. What is the common ratio?",
+    "options": {
+      "A": "9",
+      "B": "3",
+      "C": "2",
+      "D": "6"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q076",
+    "hash": "3964facc1034a23a",
+    "subject": "ANALYTICAL",
+    "topic": "Prime Difference Series",
+    "hasMath": false,
+    "stem": "Identify the next term: 2, 4, 7, 12, 19, 30, ?",
+    "options": {
+      "A": "41",
+      "B": "43",
+      "C": "45",
+      "D": "39"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q077",
+    "hash": "8430212b57c73960",
+    "subject": "ANALYTICAL",
+    "topic": "Fibonacci Series",
+    "hasMath": false,
+    "stem": "Identify the next term: 2, 3, 5, 8, 13, 21, ?",
+    "options": {
+      "A": "29",
+      "B": "32",
+      "C": "34",
+      "D": "36"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q078",
+    "hash": "ec0780151e2ca06c",
+    "subject": "ANALYTICAL",
+    "topic": "Defined Operations & Rounding",
+    "hasMath": true,
+    "stem": "$*n$ denotes the number obtained when $n$ is rounded to the nearest tenth. For example, $*4.31 = 4.3$. Then $*0.089 - *1.135 = ?$",
+    "options": {
+      "A": "1.05",
+      "B": "1.04",
+      "C": "-1.05",
+      "D": "-1.0"
+    },
+    "correctOption": "D",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q079",
+    "hash": "6f6a6202e0ffdfd6",
+    "subject": "ANALYTICAL",
+    "topic": "Custom Algebraic Operators",
+    "hasMath": true,
+    "stem": "If $y \\odot x = y^{2x}$ for all positive integers, then $(3 \\odot 4) \\odot 2 = ?$",
+    "options": {
+      "A": "$3^{12}$",
+      "B": "$3^{32}$",
+      "C": "$3^{16}$",
+      "D": "$3^{34}$"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q080",
+    "hash": "f4718a8af28266c3",
+    "subject": "ANALYTICAL",
+    "topic": "Custom Algebraic Operators",
+    "hasMath": true,
+    "stem": "If $x \\otimes y = (x+y)^2 - (x-y)^2$, then $\\sqrt{5} \\otimes \\sqrt{5} = ?$",
+    "options": {
+      "A": "5",
+      "B": "10",
+      "C": "15",
+      "D": "20"
+    },
+    "correctOption": "D",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q081",
+    "hash": "126424be1a621027",
+    "subject": "MATH",
+    "topic": "Geometric Series",
+    "hasMath": true,
+    "stem": "How many terms are there in the series $2, 4, 8, 16, \\dots, 1024$?",
+    "options": {
+      "A": "7",
+      "B": "8",
+      "C": "9",
+      "D": "10"
+    },
+    "correctOption": "D",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q082",
+    "hash": "560f8cc80538f3d2",
+    "subject": "ANALYTICAL",
+    "topic": "Data Sufficiency",
+    "hasMath": true,
+    "stem": "What is the value of $y$?\nI. $x^2 - y^2 = 5$\nII. $x$ and $y$ are each positive integers",
+    "options": {
+      "A": "Statement I alone is sufficient",
+      "B": "Statement II alone is sufficient",
+      "C": "Both statements I and II together are sufficient",
+      "D": "Each statement alone is sufficient"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q083",
+    "hash": "ebbe2fe2069c4060",
+    "subject": "ANALYTICAL",
+    "topic": "Data Sufficiency",
+    "hasMath": true,
+    "stem": "If $n > 0$, is $20\\%$ of $n$ greater than $10\\%$ of the sum of $n$ and $0.5$?\nI. $n < 0.1$\nII. $n > 0.01$",
+    "options": {
+      "A": "Statement I alone is sufficient",
+      "B": "Statement II alone is sufficient",
+      "C": "Both statements I and II together are sufficient",
+      "D": "Each statement alone is sufficient"
+    },
+    "correctOption": "A",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q084",
+    "hash": "790c284eb235a72e",
+    "subject": "ANALYTICAL",
+    "topic": "Data Sufficiency",
+    "hasMath": true,
+    "stem": "If $r, s,$ and $t$ are positive integers and $rst = 343$, what is the value of $t$?\nI. $r < s < t$\nII. $rs = 7$",
+    "options": {
+      "A": "Statement I alone is sufficient",
+      "B": "Statement II alone is sufficient",
+      "C": "Both statements I and II together are sufficient",
+      "D": "Each statement alone is sufficient"
+    },
+    "correctOption": "D",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q085",
+    "hash": "ec8a23b6e692c167",
+    "subject": "ANALYTICAL",
+    "topic": "Data Sufficiency",
+    "hasMath": true,
+    "stem": "If $n$ is a positive integer, is $n$ odd?\nI. $3n$ is odd\nII. $(n + 3)$ is even",
+    "options": {
+      "A": "Statement I alone is sufficient",
+      "B": "Statement II alone is sufficient",
+      "C": "Both statements I and II together are sufficient",
+      "D": "Each statement alone is sufficient"
+    },
+    "correctOption": "D",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q086",
+    "hash": "b55df8df81bcfc40",
+    "subject": "ANALYTICAL",
+    "topic": "Data Sufficiency",
+    "hasMath": true,
+    "stem": "If $a, b,$ and $c$ are integers, is $2a - b + c$ greater than $a - b - 2c$?\nI. $a$ is positive\nII. $c$ is positive",
+    "options": {
+      "A": "Statement I alone is sufficient",
+      "B": "Statement II alone is sufficient",
+      "C": "Both statements I and II together are sufficient",
+      "D": "Each statement alone is sufficient"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q087",
+    "hash": "a44899b384f87c54",
+    "subject": "ANALYTICAL",
+    "topic": "Data Sufficiency",
+    "hasMath": true,
+    "stem": "If $x + y = 6$, then what does $x - y$ equal?\nI. $x^2 - y^2 = 12$\nII. $2y + x = 8$",
+    "options": {
+      "A": "Statement I alone is sufficient",
+      "B": "Statement II alone is sufficient",
+      "C": "Both statements I and II together are sufficient",
+      "D": "Each statement alone is sufficient"
+    },
+    "correctOption": "D",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q088",
+    "hash": "3388c0b944e60485",
+    "subject": "ANALYTICAL",
+    "topic": "Data Sufficiency",
+    "hasMath": true,
+    "stem": "If $y$ is an odd integer and the product of $x$ and $y$ equals $222$, what is the value of $x$?\nI. $x$ is a prime number\nII. $y$ is a 3-digit number",
+    "options": {
+      "A": "Statement I alone is sufficient",
+      "B": "Statement II alone is sufficient",
+      "C": "Both statements I and II together are sufficient",
+      "D": "Each statement alone is sufficient"
+    },
+    "correctOption": "D",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q089",
+    "hash": "85d9a45ce1d3716e",
+    "subject": "ANALYTICAL",
+    "topic": "Data Sufficiency",
+    "hasMath": true,
+    "stem": "If $x, y,$ and $z$ are lengths of three sides of a triangle, is $x < 3$?\nI. $z = y + 3$\nII. $y = 3$ and $z = 6$",
+    "options": {
+      "A": "Statement I alone is sufficient",
+      "B": "Statement II alone is sufficient",
+      "C": "Both statements I and II together are sufficient",
+      "D": "Each statement alone is sufficient"
+    },
+    "correctOption": "D",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q090",
+    "hash": "9dbe1929d47249d9",
+    "subject": "ANALYTICAL",
+    "topic": "Data Sufficiency",
+    "hasMath": true,
+    "stem": "Set $J$ consists of terms $(2, 7, 12, 17, u)$. Is $u > 7$?\nI. $u$ is the median of set $J$\nII. Set $J$ does not have a mode",
+    "options": {
+      "A": "Statement I alone is sufficient",
+      "B": "Statement II alone is sufficient",
+      "C": "Both statements I and II together are sufficient",
+      "D": "Each statement alone is sufficient"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q091",
+    "hash": "6195574b909d3ef8",
+    "subject": "COMPUTER_ICT",
+    "topic": "Networking & Data Communication",
+    "hasMath": false,
+    "stem": "The delay before data transfer begins is called—",
+    "options": {
+      "A": "Bandwidth",
+      "B": "Latency",
+      "C": "Throughput",
+      "D": "Network Jitter"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q092",
+    "hash": "01b93a84b9233195",
+    "subject": "COMPUTER_ICT",
+    "topic": "Data Representation",
+    "hasMath": false,
+    "stem": "A 'Bit' is the smallest unit of data in a computer. How many bits make up a single Byte?",
+    "options": {
+      "A": "4",
+      "B": "8",
+      "C": "16",
+      "D": "32"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q093",
+    "hash": "a801b789c42bce6c",
+    "subject": "COMPUTER_ICT",
+    "topic": "Programming Languages",
+    "hasMath": false,
+    "stem": "Which of these is a widely used high-level programming language known for its readability?",
+    "options": {
+      "A": "Binary",
+      "B": "Assembly",
+      "C": "Python",
+      "D": "Machine Code"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q094",
+    "hash": "d6ac12e2b0934804",
+    "subject": "COMPUTER_ICT",
+    "topic": "Computer Architecture & Memory",
+    "hasMath": false,
+    "stem": "Which component is responsible for permanently storing the instructions a computer needs to start up (the firmware)?",
+    "options": {
+      "A": "ROM",
+      "B": "Cache Memory",
+      "C": "RAM",
+      "D": "Motherboard"
+    },
+    "correctOption": "A",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q095",
+    "hash": "a51233dc5e002fcb",
+    "subject": "COMPUTER_ICT",
+    "topic": "Binary Fundamentals",
+    "hasMath": false,
+    "stem": "The basic unit of information in computing that is represented by a single '0' or '1' is called a—",
+    "options": {
+      "A": "Byte",
+      "B": "Nibble",
+      "C": "MS Word",
+      "D": "Bit"
+    },
+    "correctOption": "D",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q096",
+    "hash": "ef7f3395614dcd74",
+    "subject": "COMPUTER_ICT",
+    "topic": "Digital Logic Gates",
+    "hasMath": false,
+    "stem": "In digital logic, which logic gate outputs a '1' (True) ONLY when both of its input values are '1' (True)?",
+    "options": {
+      "A": "OR Gate",
+      "B": "XOR Gate",
+      "C": "AND Gate",
+      "D": "NAND Gate"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q097",
+    "hash": "4f5a07a67fbf4498",
+    "subject": "COMPUTER_ICT",
+    "topic": "Hardware Ports & Networking",
+    "hasMath": false,
+    "stem": "Which port is most commonly used for wired Ethernet connections?",
+    "options": {
+      "A": "HDMI",
+      "B": "RJ45",
+      "C": "USB-C",
+      "D": "VGA"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q098",
+    "hash": "d937255b057991b4",
+    "subject": "COMPUTER_ICT",
+    "topic": "Data Transmission Modes",
+    "hasMath": false,
+    "stem": "Which communication mode allows bidirectional flow, but only one way at a time?",
+    "options": {
+      "A": "Simplex",
+      "B": "Half-duplex",
+      "C": "Full-duplex",
+      "D": "Multiplex"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q099",
+    "hash": "6e5b858358e1736d",
+    "subject": "COMPUTER_ICT",
+    "topic": "Network Protocols",
+    "hasMath": false,
+    "stem": "Which protocol ensures reliable data transmission?",
+    "options": {
+      "A": "UDP",
+      "B": "IP",
+      "C": "TCP",
+      "D": "ARP"
+    },
+    "correctOption": "C",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "id": "bsc-so-2026-q100",
+    "hash": "a492dccf73cf290e",
+    "subject": "COMPUTER_ICT",
+    "topic": "Big Data & Distributed Systems",
+    "hasMath": false,
+    "stem": "Which technology is commonly used for real-time Big Data processing?",
+    "options": {
+      "A": "Hadoop MapReduce",
+      "B": "Apache Spark",
+      "C": "MySQL Database",
+      "D": "Oracle ERP"
+    },
+    "correctOption": "B",
+    "appearances": [
+      {
+        "examBody": "BSC",
+        "post": "Senior Officer",
+        "year": 2026,
+        "examDate": "2026-05-15"
+      }
+    ]
+  }
+]

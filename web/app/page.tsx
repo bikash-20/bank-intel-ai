@@ -33,6 +33,10 @@ const SUBJECT_LIST: { code: SubjectCode; en: string; bn: string }[] = [
 ];
 
 const SHARD_NAMES: Record<string, { en: string; bn: string }> = {
+  'bsc-so-2026': {
+    en: 'Combined Bank Senior Officer 2026',
+    bn: 'সম্মিলিত ব্যাংক সিনিয়র অফিসার ২০২৬',
+  },
   'bb-ad-2026': {
     en: 'Bangladesh Bank Assistant Director 2026',
     bn: 'বাংলাদেশ ব্যাংক সহকারী পরিচালক ২০২৬',
@@ -106,7 +110,8 @@ export default function DashboardPage() {
         if (!questions || questions.length === 0) {
           const shardRes = await fetch(`/shards/${activeMeta.fileName}`);
           if (!shardRes.ok) throw new Error('Failed to fetch shard JSON');
-          questions = await shardRes.json();
+          const rawData = await shardRes.json();
+          questions = Array.isArray(rawData) ? rawData : rawData.questions || [];
           try {
             await bulkWriteQuestions(questions);
             await setMeta(`shard_version_${activeMeta.id}`, activeMeta.versionHash);

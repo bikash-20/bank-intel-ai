@@ -1,4 +1,4 @@
-const CACHE_NAME = 'bank-intel-v4';
+const CACHE_NAME = 'bank-intel-v5';
 
 const PRECACHE_ASSETS = [
   '/',
@@ -8,6 +8,8 @@ const PRECACHE_ASSETS = [
   '/pwa-512x512.png',
   '/pwa-512x512-maskable.png',
   '/shards/manifest.json',
+  '/shards/bsc-so-2026.json',
+  '/shards/writing-index.json',
 ];
 
 const OFFLINE_HTML = `<!DOCTYPE html>
@@ -23,8 +25,8 @@ const OFFLINE_HTML = `<!DOCTYPE html>
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: #050608;
-      color: #f1f5f9;
+      background-color: #0c0a0e;
+      color: #f6ecef;
       font-family: system-ui, -apple-system, sans-serif;
       padding: 1rem;
       box-sizing: border-box;
@@ -32,53 +34,56 @@ const OFFLINE_HTML = `<!DOCTYPE html>
     .card {
       max-width: 420px;
       width: 100%;
-      background: rgba(15, 23, 42, 0.85);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 1.5rem;
-      padding: 2rem;
+      background: #16131a;
+      border: 1px solid #2a2530;
+      border-radius: 2rem;
+      padding: 2.25rem 2rem;
       text-align: center;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+      box-shadow: 0 18px 50px -24px rgba(0,0,0,0.8);
     }
     .icon {
-      width: 56px;
-      height: 56px;
+      width: 60px;
+      height: 60px;
       margin: 0 auto 1.25rem;
-      border-radius: 1rem;
-      background: rgba(16, 185, 129, 0.15);
-      border: 1px solid rgba(16, 185, 129, 0.3);
+      border-radius: 9999px;
+      background: #ff8fab15;
+      border: 1px solid #ff8fab40;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #34d399;
-      font-size: 24px;
+      color: #ff8fab;
+      font-size: 26px;
     }
     h1 {
       font-size: 1.25rem;
       margin: 0 0 0.5rem;
-      color: #ffffff;
+      color: #f6ecef;
+      font-weight: 600;
     }
     p {
       font-size: 0.875rem;
-      color: #94a3b8;
+      color: #a1939a;
       line-height: 1.5;
       margin: 0 0 1.5rem;
     }
     .btn {
       display: block;
       width: 100%;
-      padding: 0.75rem 1rem;
-      border-radius: 0.75rem;
-      background: #075b3b;
+      padding: 0.85rem 1.25rem;
+      border-radius: 9999px;
+      background: #9b2243;
       color: #ffffff;
       font-weight: 600;
       font-size: 0.95rem;
-      border: 1px solid rgba(52, 211, 153, 0.4);
+      border: none;
       cursor: pointer;
       text-decoration: none;
       box-sizing: border-box;
+      transition: opacity 0.2s;
     }
     .btn:active {
       transform: scale(0.98);
+      opacity: 0.9;
     }
   </style>
 </head>
@@ -145,23 +150,25 @@ self.addEventListener('fetch', (event) => {
           if (networkResponse && networkResponse.status === 200) {
             const copy = networkResponse.clone();
             caches.open(CACHE_NAME).then((cache) => {
-              cache.put(event.request, copy.clone()).catch(() => {});
-              cache.put('/', copy).catch(() => {});
-            });
+              cache.put(event.request.url, copy.clone()).catch(() => {});
+              if (url.pathname === '/' || url.pathname === '') {
+                cache.put('/', copy).catch(() => {});
+              }
+            }).catch(() => {});
           }
           return networkResponse;
         })
         .catch(async () => {
           try {
             const cached =
-              (await caches.match(event.request, { ignoreSearch: true })) ||
-              (await caches.match('/', { ignoreSearch: true }));
+              (await caches.match(event.request.url)) ||
+              (await caches.match('/'));
             if (cached) return cached;
           } catch {
             // Ignore cache errors
           }
 
-          // Guaranteed valid HTML response fallback - NEVER return undefined
+          // Guaranteed valid HTML response fallback - NEVER return undefined or reject
           return new Response(OFFLINE_HTML, {
             status: 200,
             headers: { 'Content-Type': 'text/html; charset=utf-8' },
@@ -171,7 +178,7 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // 5. Next.js Static Chunks, Images, Fonts, Shards -> Safe Stale-While-Revalidate
+  // 5. Next.js Static Chunks, Images, Fonts, Shards -> Safe Stale-While-Revalidate with Error Resilience
   if (
     url.pathname.startsWith('/_next/static/') ||
     url.pathname.startsWith('/shards/') ||
@@ -195,14 +202,20 @@ self.addEventListener('fetch', (event) => {
           return cached;
         }
 
-        // Cache miss: must fetch directly from network and return valid Response
-        return fetch(event.request).then((networkResponse) => {
-          if (networkResponse && networkResponse.status === 200) {
-            const copy = networkResponse.clone();
-            caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy).catch(() => {}));
-          }
-          return networkResponse;
-        });
+        // Cache miss: must fetch directly from network and catch network errors safely
+        return fetch(event.request)
+          .then((networkResponse) => {
+            if (networkResponse && networkResponse.status === 200) {
+              const copy = networkResponse.clone();
+              caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy).catch(() => {}));
+            }
+            return networkResponse;
+          })
+          .catch(async () => {
+            const fallback = await caches.match(event.request);
+            if (fallback) return fallback;
+            return new Response('', { status: 404, statusText: 'Not Found' });
+          });
       })
     );
     return;

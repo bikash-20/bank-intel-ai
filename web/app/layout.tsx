@@ -128,7 +128,7 @@ export default function RootLayout({
             {/* PWA Installation Prompt Banner */}
             <PWAInstallBanner />
 
-            {/* PWA Service Worker Registration with Immediate Update Check */}
+            {/* PWA Service Worker Registration with Immediate Update Check & Chunk Recovery */}
             <script
               dangerouslySetInnerHTML={{
                 __html: `
@@ -141,6 +141,17 @@ export default function RootLayout({
                       });
                     });
                   }
+
+                  // Auto-recover from deployment chunk skew
+                  window.addEventListener('error', function(e) {
+                    var msg = e && e.message ? String(e.message) : '';
+                    if (/Loading chunk|Failed to fetch dynamically imported module|CSS chunk/i.test(msg)) {
+                      if (!sessionStorage.getItem('bi_chunk_retry')) {
+                        sessionStorage.setItem('bi_chunk_retry', '1');
+                        window.location.reload();
+                      }
+                    }
+                  });
                 `,
               }}
             />

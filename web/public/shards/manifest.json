@@ -39,7 +39,20 @@
       "versionHash": "9a5d2f59ccb2a04c",
       "updatedAt": "2026-10-31T22:22:19.333Z",
       "sizeBytes": 30755
+    },
+    {
+      "id": "bsc-so-2026",
+      "title": "Combined Bank Senior Officer 2026",
+      "examBody": "BSC",
+      "post": "Senior Officer",
+      "year": 2026,
+      "faculty": "BSC",
+      "questionCount": 100,
+      "fileName": "bsc-so-2026.json",
+      "versionHash": "fb01cbc0ce27237f",
+      "updatedAt": "2026-11-01T01:15:02.949Z",
+      "sizeBytes": 57412
     }
   ],
-  "generatedAt": "2026-10-31T23:27:09.248Z"
+  "generatedAt": "2026-11-01T01:15:02.950Z"
 }

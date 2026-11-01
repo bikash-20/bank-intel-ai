@@ -38,7 +38,8 @@ export default function PracticeShardPage() {
         if (meta) {
           setShardTitle(meta.title);
           const shardRes = await fetch(`/shards/${meta.fileName}`);
-          const shardData: QuestionItem[] = await shardRes.json();
+          const rawShard = await shardRes.json();
+          const shardData: QuestionItem[] = Array.isArray(rawShard) ? rawShard : rawShard.questions || [];
           setQuestions(shardData);
           try {
             await bulkWriteQuestions(shardData);
