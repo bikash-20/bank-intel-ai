@@ -77,6 +77,13 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
+        {/* KaTeX Math Styling for Equations */}
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+          crossOrigin="anonymous"
+        />
+
         {/* Zero-CLS / Zero-Flicker Theme & Language Init */}
         <script
           dangerouslySetInnerHTML={{

@@ -4,13 +4,15 @@ import React, { useState, useEffect, useCallback } from 'react';
 import {
   Sparkles,
   ChevronDown,
-  ChevronUp,
   Zap,
   CheckCircle2,
   AlertTriangle,
   Loader2,
   BookOpen,
   Layers,
+  X,
+  ChevronRight,
+  HelpCircle,
 } from 'lucide-react';
 import { MathText } from './MathText';
 import { useI18n } from '../../lib/i18n/context';
@@ -26,6 +28,7 @@ interface AIExplainSectionProps {
   correctOption: OptionKey;
   selectedOption: OptionKey | null;
   workerUrl?: string;
+  onNext?: () => void;
 }
 
 // L1 In-Memory Client Cache for 0ms repeat toggles & prefetch deduplication
@@ -42,6 +45,7 @@ export function AIExplainSection({
   selectedOption,
   workerUrl = process.env.NEXT_PUBLIC_WORKER_URL ||
     'https://bank-intel-worker.talukderbikash500.workers.dev',
+  onNext,
 }: AIExplainSectionProps) {
   const { t, locale } = useI18n();
   const isBn = locale === 'bn';
@@ -75,6 +79,17 @@ export function AIExplainSection({
         .catch(() => {});
     }
   }, [questionId]);
+
+  // Lock body scroll when modal sheet is open
+  useEffect(() => {
+    if (isOpen) {
+      const prevOverflow = document.body.style.overflow;
+      document.body.style.overflow = 'hidden';
+      return () => {
+        document.body.style.overflow = prevOverflow;
+      };
+    }
+  }, [isOpen]);
 
   const fetchExplanation = useCallback(async (): Promise<AIExplanationPayload | null> => {
     // 1. Check L1 Memory Cache
@@ -157,28 +172,42 @@ export function AIExplainSection({
     }
   }, [selectedOption, questionId, fetchExplanation]);
 
-  const handleToggle = useCallback(() => {
-    const nextState = !isOpen;
-    setIsOpen(nextState);
-    if (nextState && !explanation && !loading) {
+  const handleOpen = useCallback(() => {
+    setIsOpen(true);
+    if (!explanation && !loading) {
       void fetchExplanation();
     }
-  }, [isOpen, explanation, loading, fetchExplanation]);
+  }, [explanation, loading, fetchExplanation]);
 
-  // Keyboard shortcut [E]
+  const handleClose = useCallback(() => {
+    setIsOpen(false);
+  }, []);
+
+  // Keyboard shortcut [E] to toggle, [Escape] to close
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
-      if (
-        e.key.toLowerCase() === 'e' &&
-        !['INPUT', 'TEXTAREA'].includes((e.target as HTMLElement)?.tagName)
-      ) {
+      if (['INPUT', 'TEXTAREA'].includes((e.target as HTMLElement)?.tagName)) {
+        return;
+      }
+
+      if (e.key.toLowerCase() === 'e') {
         e.preventDefault();
-        handleToggle();
+        setIsOpen((prev) => {
+          if (!prev && !explanation && !loading) {
+            void fetchExplanation();
+          }
+          return !prev;
+        });
+      }
+
+      if (e.key === 'Escape' && isOpen) {
+        e.preventDefault();
+        setIsOpen(false);
       }
     };
     window.addEventListener('keydown', onKeyDown);
     return () => window.removeEventListener('keydown', onKeyDown);
-  }, [handleToggle]);
+  }, [isOpen, explanation, loading, fetchExplanation]);
 
   const isAnswered = selectedOption !== null;
   const isUserCorrect = isAnswered && selectedOption === correctOption;
@@ -193,13 +222,12 @@ export function AIExplainSection({
       {/* ALWAYS-VISIBLE AI EXPLAIN TOGGLE PILL */}
       <button
         type="button"
-        onClick={handleToggle}
-        className="group flex w-full items-center justify-between px-5 sm:px-6 py-3.5 sm:py-4 rounded-full border text-left transition-all duration-200 active:scale-[0.99]"
+        onClick={handleOpen}
+        className="group flex w-full items-center justify-between px-5 sm:px-6 py-3.5 sm:py-4 rounded-full border text-left transition-all duration-200 active:scale-[0.99] hover:border-[var(--brand)] shadow-sm"
         style={{
-          backgroundColor: isOpen ? 'var(--surface2)' : 'var(--surface2)',
-          borderColor: isOpen ? 'var(--brand)' : 'var(--line)',
+          backgroundColor: 'var(--surface2)',
+          borderColor: 'var(--line)',
           color: 'var(--ink)',
-          boxShadow: isOpen ? 'var(--shadow)' : 'none',
         }}
       >
         <div className="flex items-center gap-3.5">
@@ -267,253 +295,390 @@ export function AIExplainSection({
           className="flex items-center gap-1.5 text-xs sm:text-sm font-semibold shrink-0 pl-2"
           style={{ color: 'var(--brand)' }}
         >
-          <span>
-            {isOpen ? (isBn ? 'লুকান' : 'Hide') : (isBn ? 'ব্যাখ্যা দেখুন' : 'Explain')}
-          </span>
-          {isOpen ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
+          <span>{isBn ? 'ব্যাখ্যা দেখুন' : 'Explain'}</span>
+          <ChevronDown className="h-4 w-4" />
         </div>
       </button>
 
-      {/* EXPANDABLE EXPLANATION DRAWER */}
+      {/* STICKY SCROLLABLE EXPLANATION SHEET (10/10 UX) */}
       {isOpen && (
-        <div
-          className="mt-3.5 space-y-4 p-5 sm:p-7 rounded-[32px] border transition-colors shadow-lg"
-          style={{
-            backgroundColor: 'var(--surface2)',
-            borderColor: 'var(--line)',
-            color: 'var(--ink)',
-          }}
-        >
-          {loading && !explanation && (
-            <div
-              className="flex items-center gap-3 py-8 justify-center font-sans-app"
-              style={{ color: 'var(--mute)' }}
-            >
-              <Loader2 className="h-5 w-5 animate-spin text-[var(--brand)]" />
-              <span className="text-sm sm:text-base font-medium">
-                {isBn
-                  ? 'এআই মডেল ক্যাসকেড বিশ্লেষণ সম্পন্ন করছে...'
-                  : 'Analyzing MCQ across Edge AI cascade...'}
-              </span>
-            </div>
-          )}
+        <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4">
+          {/* Backdrop overlay */}
+          <div
+            className="fixed inset-0 bg-black/60 backdrop-blur-md transition-opacity animate-in fade-in duration-200"
+            onClick={handleClose}
+          />
 
-          {error && !explanation && (
+          {/* Modal / Slide-Up Sheet */}
+          <div
+            className="relative w-full max-w-3xl max-h-[92vh] sm:max-h-[86vh] rounded-t-[36px] sm:rounded-[36px] flex flex-col border shadow-2xl z-10 overflow-hidden animate-in slide-in-from-bottom-6 sm:zoom-in-95 duration-250"
+            style={{
+              backgroundColor: 'var(--surface)',
+              borderColor: 'var(--line)',
+              boxShadow: 'var(--shadow)',
+              color: 'var(--ink)',
+            }}
+          >
+            {/* Sticky Header */}
             <div
-              className="flex items-center justify-between p-4 rounded-2xl border text-sm"
+              className="sticky top-0 z-20 px-6 sm:px-8 py-4.5 border-b flex items-center justify-between backdrop-blur-xl transition-colors"
               style={{
-                backgroundColor: 'var(--badbg)',
-                borderColor: 'var(--bad)',
-                color: 'var(--bad)',
+                backgroundColor: 'var(--surface)',
+                borderColor: 'var(--line)',
               }}
             >
-              <span>{error}</span>
-              <button
-                type="button"
-                onClick={() => void fetchExplanation()}
-                className="px-3.5 py-1.5 rounded-full font-semibold border text-xs"
-                style={{
-                  backgroundColor: 'var(--surface)',
-                  borderColor: 'var(--bad)',
-                  color: 'var(--bad)',
-                }}
-              >
-                {isBn ? 'পুনরায় চেষ্টা' : 'Retry'}
-              </button>
-            </div>
-          )}
-
-          {explanation && (
-            <>
-              {/* 1. Core Concept */}
-              <div
-                className="p-4 sm:p-5 rounded-2xl border"
-                style={{
-                  backgroundColor: 'var(--surface)',
-                  borderColor: 'var(--line)',
-                }}
-              >
+              <div className="flex items-center gap-3">
                 <div
-                  className="mb-1.5 flex items-center gap-2 text-xs font-semibold uppercase"
-                  style={{ color: 'var(--brand)' }}
-                >
-                  <BookOpen className="h-4 w-4" />
-                  <span>{t.explain.coreConcept}</span>
-                </div>
-                <div className="text-base sm:text-[17px] leading-relaxed font-sans-app font-normal">
-                  <MathText content={explanation.coreConcept} />
-                </div>
-              </div>
-
-              {/* 2. Exam Shortcut */}
-              <div
-                className="p-4 sm:p-5 rounded-2xl border"
-                style={{
-                  backgroundColor: 'var(--surface)',
-                  borderColor: 'var(--line)',
-                }}
-              >
-                <div
-                  className="mb-1.5 flex items-center gap-2 text-xs font-semibold uppercase"
-                  style={{ color: 'var(--ok)' }}
-                >
-                  <Zap className="h-4 w-4" />
-                  <span>{t.explain.examShortcut}</span>
-                </div>
-                <div
-                  className="text-base sm:text-[17px] leading-relaxed font-sans-app font-medium"
-                  style={{ color: 'var(--ink)' }}
-                >
-                  <MathText content={explanation.examHallShortcut} />
-                </div>
-              </div>
-
-              {/* 3. Step-by-Step Derivation */}
-              {explanation.stepByStep && (
-                <div
-                  className="p-4 sm:p-5 rounded-2xl border"
+                  className="h-10 w-10 rounded-full flex items-center justify-center shadow-sm"
                   style={{
-                    backgroundColor: 'var(--surface)',
-                    borderColor: 'var(--line)',
+                    backgroundColor: 'var(--brand)',
+                    color: 'var(--brand-ink)',
                   }}
                 >
-                  <div
-                    className="mb-1.5 flex items-center gap-2 text-xs font-semibold uppercase"
+                  <Sparkles className="h-5 w-5" />
+                </div>
+                <div>
+                  <h3 className="font-serif-app text-lg sm:text-xl font-semibold">
+                    {isBn ? 'এআই ব্যাখ্যা ও সমাধান' : 'AI Explanation & Diagnostics'}
+                  </h3>
+                  <p
+                    className="text-xs font-sans-app mt-0.5"
                     style={{ color: 'var(--mute)' }}
                   >
-                    <Layers className="h-4 w-4 text-[var(--brand)]" />
-                    <span>{t.explain.stepByStep}</span>
-                  </div>
-                  <div className="whitespace-pre-line text-sm sm:text-base leading-relaxed font-sans-app">
-                    <MathText content={explanation.stepByStep} />
-                  </div>
+                    {isBn
+                      ? 'বাংলাদেশ ব্যাংক ও বিসিএস পরীক্ষার বিশ্লেষণ'
+                      : 'Bangladesh Bank & BCS Pattern Analysis'}
+                  </p>
+                </div>
+              </div>
+
+              {/* Close Button and Esc Badge */}
+              <div className="flex items-center gap-2">
+                <span
+                  className="hidden sm:inline-block px-2.5 py-1 rounded-full text-xs font-medium border"
+                  style={{
+                    backgroundColor: 'var(--surface2)',
+                    borderColor: 'var(--line)',
+                    color: 'var(--mute)',
+                  }}
+                >
+                  Esc
+                </span>
+                <button
+                  type="button"
+                  onClick={handleClose}
+                  className="h-10 w-10 rounded-full border flex items-center justify-center transition-all duration-200 hover:scale-105 active:scale-95"
+                  style={{
+                    backgroundColor: 'var(--surface2)',
+                    borderColor: 'var(--line)',
+                    color: 'var(--ink)',
+                  }}
+                  aria-label="Close explanation"
+                >
+                  <X className="h-5 w-5" />
+                </button>
+              </div>
+            </div>
+
+            {/* Scrollable Body */}
+            <div className="flex-1 overflow-y-auto overscroll-contain p-6 sm:p-8 space-y-6">
+              {/* Question Stem Card Reference */}
+              <div
+                className="p-4 sm:p-5 rounded-2xl border"
+                style={{
+                  backgroundColor: 'var(--surface2)',
+                  borderColor: 'var(--line)',
+                }}
+              >
+                <div
+                  className="text-xs font-semibold uppercase mb-1.5 flex items-center gap-1.5"
+                  style={{ color: 'var(--mute)' }}
+                >
+                  <HelpCircle className="h-3.5 w-3.5" />
+                  <span>{isBn ? 'প্রশ্ন' : 'Question'}</span>
+                </div>
+                <div className="font-serif-app text-lg sm:text-xl font-medium leading-relaxed">
+                  <MathText content={stem} />
+                </div>
+              </div>
+
+              {/* Loading State */}
+              {loading && !explanation && (
+                <div
+                  className="flex flex-col items-center justify-center py-16 space-y-3 font-sans-app"
+                  style={{ color: 'var(--mute)' }}
+                >
+                  <Loader2 className="h-8 w-8 animate-spin text-[var(--brand)]" />
+                  <span className="text-base font-medium">
+                    {isBn
+                      ? 'এআই মডেল ক্যাসকেড গভীর বিশ্লেষণ সম্পন্ন করছে...'
+                      : 'Generating multi-model edge AI explanation...'}
+                  </span>
                 </div>
               )}
 
-              {/* 4. Option-by-Option Diagnostics */}
-              <div className="space-y-2.5 pt-1">
+              {/* Error State */}
+              {error && !explanation && (
                 <div
-                  className="text-xs font-semibold uppercase"
-                  style={{ color: 'var(--mute)' }}
+                  className="p-5 rounded-2xl border flex items-center justify-between text-sm sm:text-base"
+                  style={{
+                    backgroundColor: 'var(--badbg)',
+                    borderColor: 'var(--bad)',
+                    color: 'var(--bad)',
+                  }}
                 >
-                  {isBn
-                    ? 'প্রতিটি অপশনের ফাঁদ ও সঠিক উত্তরের যুক্তি'
-                    : 'Why Right vs. Why Wrong (Option Diagnostics)'}
+                  <span>{error}</span>
+                  <button
+                    type="button"
+                    onClick={() => void fetchExplanation()}
+                    className="px-4 py-2 rounded-full font-semibold border text-xs sm:text-sm shadow-sm"
+                    style={{
+                      backgroundColor: 'var(--surface)',
+                      borderColor: 'var(--bad)',
+                      color: 'var(--bad)',
+                    }}
+                  >
+                    {isBn ? 'পুনরায় চেষ্টা' : 'Retry'}
+                  </button>
                 </div>
-                {(['A', 'B', 'C', 'D'] as OptionKey[]).map((key) => {
-                  const diag = explanation.optionDiagnostics?.[key];
-                  const isCorrect = key === correctOption;
-                  const isSelectedWrong = selectedOption === key && !isCorrect;
-                  const displayKey = getOptionLabel(key);
+              )}
 
-                  let pillBg = 'var(--surface)';
-                  let pillBorder = 'var(--line)';
-                  let pillText = 'var(--ink)';
-
-                  if (isCorrect) {
-                    pillBg = 'var(--okbg)';
-                    pillBorder = 'var(--ok)';
-                    pillText = 'var(--ok)';
-                  } else if (isSelectedWrong) {
-                    pillBg = 'var(--badbg)';
-                    pillBorder = 'var(--bad)';
-                    pillText = 'var(--bad)';
-                  }
-
-                  return (
+              {/* Rich Explanation Content */}
+              {explanation && (
+                <>
+                  {/* 1. Core Concept */}
+                  <div
+                    className="p-5 sm:p-6 rounded-3xl border transition-colors shadow-sm"
+                    style={{
+                      backgroundColor: 'var(--surface)',
+                      borderColor: 'var(--line)',
+                    }}
+                  >
                     <div
-                      key={key}
-                      className="flex items-start gap-3 p-3.5 sm:p-4 rounded-2xl border transition-all text-sm sm:text-base"
+                      className="mb-2 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider"
+                      style={{ color: 'var(--brand)' }}
+                    >
+                      <BookOpen className="h-4 w-4" />
+                      <span>{t.explain.coreConcept}</span>
+                    </div>
+                    <div className="text-base sm:text-lg leading-relaxed font-sans-app">
+                      <MathText content={explanation.coreConcept} />
+                    </div>
+                  </div>
+
+                  {/* 2. 30-Second Exam Hall Shortcut */}
+                  <div
+                    className="p-5 sm:p-6 rounded-3xl border transition-colors shadow-sm"
+                    style={{
+                      backgroundColor: 'var(--surface2)',
+                      borderColor: 'var(--ok)',
+                    }}
+                  >
+                    <div
+                      className="mb-2 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider"
+                      style={{ color: 'var(--ok)' }}
+                    >
+                      <Zap className="h-4 w-4" />
+                      <span>{t.explain.examShortcut}</span>
+                    </div>
+                    <div
+                      className="text-base sm:text-lg leading-relaxed font-sans-app font-medium"
+                      style={{ color: 'var(--ink)' }}
+                    >
+                      <MathText content={explanation.examHallShortcut} />
+                    </div>
+                  </div>
+
+                  {/* 3. Step-by-Step Derivation */}
+                  {explanation.stepByStep && (
+                    <div
+                      className="p-5 sm:p-6 rounded-3xl border transition-colors shadow-sm"
                       style={{
-                        backgroundColor: pillBg,
-                        borderColor: pillBorder,
-                        color: pillText,
+                        backgroundColor: 'var(--surface)',
+                        borderColor: 'var(--line)',
                       }}
                     >
-                      <span
-                        className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full font-serif-app font-semibold text-sm border"
-                        style={{
-                          backgroundColor: isCorrect
-                            ? 'var(--ok)'
-                            : isSelectedWrong
-                            ? 'var(--bad)'
-                            : 'var(--surface2)',
-                          color: isCorrect || isSelectedWrong ? '#ffffff' : 'var(--ink)',
-                          borderColor: 'transparent',
-                        }}
+                      <div
+                        className="mb-2 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider"
+                        style={{ color: 'var(--mute)' }}
                       >
-                        {displayKey}
-                      </span>
-                      <div className="flex-1 min-w-0">
-                        <div className="flex flex-wrap items-center gap-2 font-semibold">
-                          <span style={{ color: 'var(--ink)' }}>
-                            <MathText content={options[key]} />
-                          </span>
-                          {isCorrect && (
-                            <span
-                              className="inline-flex items-center gap-1 text-xs px-2.5 py-0.5 rounded-full font-semibold"
-                              style={{
-                                backgroundColor: 'var(--ok)',
-                                color: '#ffffff',
-                              }}
-                            >
-                              <CheckCircle2 className="h-3 w-3" />
-                              <span>{isBn ? 'সঠিক উত্তর' : 'Correct'}</span>
-                            </span>
-                          )}
-                          {isSelectedWrong && (
-                            <span
-                              className="inline-flex items-center gap-1 text-xs px-2.5 py-0.5 rounded-full font-semibold"
-                              style={{
-                                backgroundColor: 'var(--bad)',
-                                color: '#ffffff',
-                              }}
-                            >
-                              <AlertTriangle className="h-3 w-3" />
-                              <span>{isBn ? 'আপনার পছন্দ (ফাঁদ)' : 'Trap Pick'}</span>
-                            </span>
-                          )}
-                        </div>
-                        <div
-                          className="mt-1.5 text-xs sm:text-sm leading-relaxed"
-                          style={{ color: 'var(--ink)' }}
-                        >
-                          <MathText
-                            content={
-                              diag?.verdict ||
-                              (isCorrect
-                                ? 'Matches the derived solution.'
-                                : 'Does not satisfy the conditions in the stem.')
-                            }
-                          />
-                        </div>
+                        <Layers className="h-4 w-4 text-[var(--brand)]" />
+                        <span>{t.explain.stepByStep}</span>
+                      </div>
+                      <div className="whitespace-pre-line text-base leading-relaxed font-sans-app">
+                        <MathText content={explanation.stepByStep} />
                       </div>
                     </div>
-                  );
-                })}
-              </div>
+                  )}
 
-              {/* Model Telemetry Footer */}
-              <div
-                className="flex items-center justify-between border-t pt-3 text-[12px] font-sans-app"
+                  {/* 4. Option Diagnostics Breakdown */}
+                  <div className="space-y-3 pt-2">
+                    <div
+                      className="text-xs font-semibold uppercase tracking-wider"
+                      style={{ color: 'var(--mute)' }}
+                    >
+                      {isBn
+                        ? 'প্রতিটি অপশনের ফাঁদ ও সঠিক উত্তরের যুক্তি'
+                        : 'Why Right vs. Why Wrong (Option Diagnostics)'}
+                    </div>
+
+                    {(['A', 'B', 'C', 'D'] as OptionKey[]).map((key) => {
+                      const diag = explanation.optionDiagnostics?.[key];
+                      const isCorrect = key === correctOption;
+                      const isSelectedWrong = selectedOption === key && !isCorrect;
+                      const displayKey = getOptionLabel(key);
+
+                      let cardBg = 'var(--surface)';
+                      let cardBorder = 'var(--line)';
+                      let cardText = 'var(--ink)';
+
+                      if (isCorrect) {
+                        cardBg = 'var(--okbg)';
+                        cardBorder = 'var(--ok)';
+                        cardText = 'var(--ok)';
+                      } else if (isSelectedWrong) {
+                        cardBg = 'var(--badbg)';
+                        cardBorder = 'var(--bad)';
+                        cardText = 'var(--bad)';
+                      }
+
+                      return (
+                        <div
+                          key={key}
+                          className="flex items-start gap-3.5 p-4 sm:p-5 rounded-2xl border transition-all text-base"
+                          style={{
+                            backgroundColor: cardBg,
+                            borderColor: cardBorder,
+                            color: cardText,
+                          }}
+                        >
+                          <span
+                            className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full font-serif-app font-semibold text-base border"
+                            style={{
+                              backgroundColor: isCorrect
+                                ? 'var(--ok)'
+                                : isSelectedWrong
+                                ? 'var(--bad)'
+                                : 'var(--surface2)',
+                              color: isCorrect || isSelectedWrong ? '#ffffff' : 'var(--ink)',
+                              borderColor: 'transparent',
+                            }}
+                          >
+                            {displayKey}
+                          </span>
+
+                          <div className="flex-1 min-w-0">
+                            <div className="flex flex-wrap items-center gap-2 font-semibold">
+                              <span style={{ color: 'var(--ink)' }}>
+                                <MathText content={options[key]} />
+                              </span>
+                              {isCorrect && (
+                                <span
+                                  className="inline-flex items-center gap-1 text-xs px-2.5 py-0.5 rounded-full font-semibold"
+                                  style={{
+                                    backgroundColor: 'var(--ok)',
+                                    color: '#ffffff',
+                                  }}
+                                >
+                                  <CheckCircle2 className="h-3.5 w-3.5" />
+                                  <span>{isBn ? 'সঠিক উত্তর' : 'Correct'}</span>
+                                </span>
+                              )}
+                              {isSelectedWrong && (
+                                <span
+                                  className="inline-flex items-center gap-1 text-xs px-2.5 py-0.5 rounded-full font-semibold"
+                                  style={{
+                                    backgroundColor: 'var(--bad)',
+                                    color: '#ffffff',
+                                  }}
+                                >
+                                  <AlertTriangle className="h-3.5 w-3.5" />
+                                  <span>{isBn ? 'আপনার পছন্দ (ফাঁদ)' : 'Trap Pick'}</span>
+                                </span>
+                              )}
+                            </div>
+                            <div
+                              className="mt-2 text-sm sm:text-base leading-relaxed"
+                              style={{ color: 'var(--ink)' }}
+                            >
+                              <MathText
+                                content={
+                                  diag?.verdict ||
+                                  (isCorrect
+                                    ? 'Matches the derived solution.'
+                                    : 'Does not satisfy the conditions in the stem.')
+                                }
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+
+                  {/* AI Model Telemetry */}
+                  <div
+                    className="flex items-center justify-between border-t pt-3.5 text-xs font-sans-app"
+                    style={{
+                      borderColor: 'var(--line)',
+                      color: 'var(--mute)',
+                    }}
+                  >
+                    <span>
+                      Model:{' '}
+                      {explanation.generatedBy
+                        .replace('@cf/meta/', '')
+                        .replace('@cf/mistralai/', '')
+                        .replace('workers-ai:', '')}
+                    </span>
+                    <span style={{ color: 'var(--ok)', fontWeight: 600 }}>
+                      {isBn ? '✓ লাইভ এজ এআই' : '✓ Live Edge AI'}
+                    </span>
+                  </div>
+                </>
+              )}
+            </div>
+
+            {/* Sticky Footer */}
+            <div
+              className="sticky bottom-0 z-20 px-6 sm:px-8 py-4 border-t flex items-center justify-between backdrop-blur-xl transition-colors"
+              style={{
+                backgroundColor: 'var(--surface)',
+                borderColor: 'var(--line)',
+              }}
+            >
+              <button
+                type="button"
+                onClick={handleClose}
+                className="px-5 py-2.5 rounded-full border text-sm font-medium transition-colors"
                 style={{
+                  backgroundColor: 'var(--surface2)',
                   borderColor: 'var(--line)',
-                  color: 'var(--mute)',
+                  color: 'var(--ink)',
                 }}
               >
-                <span>
-                  AI Model:{' '}
-                  {explanation.generatedBy
-                    .replace('@cf/meta/', '')
-                    .replace('@cf/mistralai/', '')
-                    .replace('workers-ai:', '')}
-                </span>
-                <span style={{ color: 'var(--ok)', fontWeight: 600 }}>
-                  {isBn ? '✓ লাইভ এজ এআই' : '✓ Live Edge AI'}
-                </span>
-              </div>
-            </>
-          )}
+                {isBn ? 'বন্ধ করুন' : 'Close'}
+              </button>
+
+              {onNext && (
+                <button
+                  type="button"
+                  onClick={() => {
+                    handleClose();
+                    onNext();
+                  }}
+                  className="flex items-center gap-2 px-6 py-2.5 rounded-full text-sm font-semibold shadow-md transition-all active:scale-95"
+                  style={{
+                    backgroundColor: 'var(--brand)',
+                    color: 'var(--brand-ink)',
+                  }}
+                >
+                  <span>{isBn ? 'পরবর্তী প্রশ্ন' : 'Next Question'}</span>
+                  <ChevronRight className="h-4 w-4" />
+                </button>
+              )}
+            </div>
+          </div>
         </div>
       )}
     </div>

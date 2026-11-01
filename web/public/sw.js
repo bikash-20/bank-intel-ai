@@ -1,4 +1,4 @@
-const CACHE_NAME = 'bank-intel-v3';
+const CACHE_NAME = 'bank-intel-v4';
 
 const PRECACHE_ASSETS = [
   '/',
@@ -145,18 +145,21 @@ self.addEventListener('fetch', (event) => {
           if (networkResponse && networkResponse.status === 200) {
             const copy = networkResponse.clone();
             caches.open(CACHE_NAME).then((cache) => {
-              cache.put(event.request, copy.clone());
-              cache.put('/', copy);
+              cache.put(event.request, copy.clone()).catch(() => {});
+              cache.put('/', copy).catch(() => {});
             });
           }
           return networkResponse;
         })
         .catch(async () => {
-          // Check cache for matching request or root
-          const cached =
-            (await caches.match(event.request, { ignoreSearch: true })) ||
-            (await caches.match('/', { ignoreSearch: true }));
-          if (cached) return cached;
+          try {
+            const cached =
+              (await caches.match(event.request, { ignoreSearch: true })) ||
+              (await caches.match('/', { ignoreSearch: true }));
+            if (cached) return cached;
+          } catch {
+            // Ignore cache errors
+          }
 
           // Guaranteed valid HTML response fallback - NEVER return undefined
           return new Response(OFFLINE_HTML, {
@@ -168,7 +171,7 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // 5. Next.js Static Chunks, Images, Fonts, Shards -> Stale-While-Revalidate
+  // 5. Next.js Static Chunks, Images, Fonts, Shards -> Safe Stale-While-Revalidate
   if (
     url.pathname.startsWith('/_next/static/') ||
     url.pathname.startsWith('/shards/') ||
@@ -179,17 +182,27 @@ self.addEventListener('fetch', (event) => {
   ) {
     event.respondWith(
       caches.match(event.request).then((cached) => {
-        const fetchPromise = fetch(event.request)
-          .then((networkResponse) => {
-            if (networkResponse && networkResponse.status === 200) {
-              const copy = networkResponse.clone();
-              caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
-            }
-            return networkResponse;
-          })
-          .catch(() => cached);
+        if (cached) {
+          // Stale-While-Revalidate: return cache immediately, update in background
+          fetch(event.request)
+            .then((networkResponse) => {
+              if (networkResponse && networkResponse.status === 200) {
+                const copy = networkResponse.clone();
+                caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy).catch(() => {}));
+              }
+            })
+            .catch(() => {});
+          return cached;
+        }
 
-        return cached || fetchPromise;
+        // Cache miss: must fetch directly from network and return valid Response
+        return fetch(event.request).then((networkResponse) => {
+          if (networkResponse && networkResponse.status === 200) {
+            const copy = networkResponse.clone();
+            caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy).catch(() => {}));
+          }
+          return networkResponse;
+        });
       })
     );
     return;

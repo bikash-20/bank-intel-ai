@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useCallback } from 'react';
-import { Bookmark, ChevronRight } from 'lucide-react';
+import { Bookmark } from 'lucide-react';
 import { MathText } from './MathText';
 import { OptionRow } from './OptionRow';
 import { AIExplainSection } from './AIExplainSection';
@@ -233,28 +233,8 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
         options={question.options}
         correctOption={question.correctOption}
         selectedOption={selectedOption}
+        onNext={onNext}
       />
-
-      {/* Bottom Action Footer with Next Question button */}
-      {onNext && hasSubmitted && (
-        <div
-          className="flex items-center justify-end pt-5 mt-5 border-t"
-          style={{ borderColor: 'var(--line)' }}
-        >
-          <button
-            type="button"
-            onClick={onNext}
-            className="flex items-center gap-2 px-7 py-3 rounded-full text-base font-semibold shadow-md transition-all active:scale-95"
-            style={{
-              backgroundColor: 'var(--brand)',
-              color: 'var(--brand-ink)',
-            }}
-          >
-            <span className="font-sans-app">{t.card.nextQuestion}</span>
-            <ChevronRight className="h-5 w-5" />
-          </button>
-        </div>
-      )}
     </div>
   );
 };
